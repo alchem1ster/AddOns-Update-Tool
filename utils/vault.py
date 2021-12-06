@@ -96,6 +96,7 @@ class Vault:
     repositories: List[Repository] = []
     cache_db_path: Path = Path("./cache.db")
     threads: List[Thread] = []
+    session: List[Repository] = []
 
     def __init__(self, basedir: Path) -> None:
         self.basedir: Path = Path("./vault" / Path(basedir))
@@ -142,15 +143,16 @@ class Vault:
         repository: Repository = Repository(url, branch, self.basedir)
         if not repository.repo_path.exists():
             repository.repo_path.mkdir(parents=True, exist_ok=True)
-        if repository.download():
-            with lock:
-                self.repositories.append(repository)
+        repository.download()
+        with lock:
+            self.session.append(repository)
 
     def refresh(self) -> None:
         """Refresh Vault database"""
 
         for thread in self.threads:
             thread.join()
+        self.repositories: List[Repository] = self.session
         try:
             with open(self.cache_db_path, "wb") as cache_db:
                 dump(self.repositories, cache_db)
