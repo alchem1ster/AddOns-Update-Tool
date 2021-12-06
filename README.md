@@ -11,7 +11,7 @@
 
 <br>
 
-<img src="https://i.ibb.co/3WXB8ZP/runtime-record.gif" width="70%"/>
+<img src="./_res/runtime_record.gif" width="70%"/>
 
 <br>
 
