@@ -4,7 +4,7 @@ from pathlib import Path
 from pickle import dump, load
 from shutil import copytree, move, rmtree
 from threading import Lock, Thread
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 from utils.log import log
 from utils.threads import threaded
@@ -68,7 +68,7 @@ class AddOnsUpdater:
                 for folder in all_backups[5:]:
                     try:
                         rmtree(folder)
-                    except:
+                    except Exception:
                         log.error("Something went wrong while deleting old backups")
 
     @threaded
@@ -103,9 +103,9 @@ class AddOnsUpdater:
         repo_name: str = addon_to_install[0]
         repo_head: str = addon_to_install[1]
         dirs_tocopy_list: List[Path] = addon_to_install[2]
-        for dir in dirs_tocopy_list:
+        for folder in dirs_tocopy_list:
             try:
-                copytree(str(dir), str(self.addons_folder / dir.name))
+                copytree(str(folder), str(self.addons_folder / folder.name))
             except Exception:
                 log.error(f"Something went wrong while updating {repo_name}")
                 return
@@ -120,23 +120,7 @@ class AddOnsUpdater:
             vault (Vault): Vault instance
         """
 
-        addons_to_backup: List[str] = []
-        addons_to_install: List[List] = []
-        for repository in vault.repositories:
-            if repository.name not in self.cache.keys():
-                log.info(f"{repository.name} will be installed")
-            elif repository.head != self.cache[repository.name]:
-                log.info(f"{repository.name} will be updated")
-            else:
-                continue
-            to_copy: List[Path] = [Path(x).parent for x in glob(str(repository.repo_path / "*.toc"))] or [
-                Path(x).parent for x in glob(str(repository.repo_path / "*" / "*.toc"))
-            ]
-            to_backup: List[str] = [Path(x).parent.name for x in glob(str(repository.repo_path / "*.toc"))] or [
-                Path(x).parent.name for x in glob(str(repository.repo_path / "*" / "*.toc"))
-            ]
-            addons_to_backup.extend(to_backup)
-            addons_to_install.append([repository.name, repository.head, to_copy])
+        addons_to_backup, addons_to_install = self._prepare(vault)
         if addons_to_backup:
             self._backup_init()
             for addon_to_backup in addons_to_backup:
@@ -156,3 +140,34 @@ class AddOnsUpdater:
                 log.critical("Something went wrong while saving AddOnsUpdater DB")
                 exit(1)
         log.info("All AddOns up to date")
+
+    def _prepare(self, vault: Vault) -> Tuple[List[str], List[List]]:
+        """PRIVATE FUNCTION
+
+        Parse and prepare Vault repositories
+
+        Args:
+            vault (Vault): Vault instance
+
+        Returns:
+            Tuple[List[str], List[List]]: lists of addons to backup and install
+        """
+
+        addons_to_backup: List[str] = []
+        addons_to_install: List[List] = []
+        for repository in vault.repositories:
+            if repository.name not in self.cache.keys():
+                log.info(f"{repository.name} will be installed")
+            elif repository.head != self.cache[repository.name]:
+                log.info(f"{repository.name} will be updated")
+            else:
+                continue
+            to_copy: List[Path] = [Path(x).parent for x in glob(str(repository.repo_path / "*.toc"))] or [
+                Path(x).parent for x in glob(str(repository.repo_path / "*" / "*.toc"))
+            ]
+            to_backup: List[str] = [Path(x).parent.name for x in glob(str(repository.repo_path / "*.toc"))] or [
+                Path(x).parent.name for x in glob(str(repository.repo_path / "*" / "*.toc"))
+            ]
+            addons_to_backup.extend(to_backup)
+            addons_to_install.append([repository.name, repository.head, to_copy])
+        return addons_to_backup, addons_to_install
