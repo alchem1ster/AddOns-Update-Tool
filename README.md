@@ -1,7 +1,7 @@
 # AddOns Update Tool
  Tool to update World of Warcraft AddOns hosted on GitHub
 
-![](https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/stars/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/forks/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/v/release/alchem1ster/AddOns-Update-Tool)
+![](https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/stars/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/forks/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/v/release/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool)
 
 ### Features
 - [x] Almost pure Python: only [Dulwich](https://github.com/dulwich/dulwich "Dulwich") and [Colorlog](https://github.com/borntyping/python-colorlog "Colorlog")
@@ -47,11 +47,11 @@ When you run the script from the release version or the source code with the `-h
 | \--config | -c | path to json config file | -c ".\config_335a.json" |
 
 ### Launching from RELEASE version
-1. Download latest release
+1. Download [latest release](https://github.com/alchem1ster/AddOns-Update-Tool//releases/latest)
 2. Unpack to any folder
-3. Copy and edit `config.json` as you need (see previous paragraph)
+3. Copy and edit `config.json` as you need (see [Configuration](https://github.com/alchem1ster/AddOns-Update-Tool#configuration-file) paragraph)
 4. Run app with the `-h` parameter via `cmd` or `powershell` to read the help
-5. As an example, use the following command:
+5. As an example, use the following command:  
 `    .\app.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`
 6. If you want, you can create a shortcut to start with the necessary arguments and place it on the desktop or start menu
 
