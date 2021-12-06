@@ -32,7 +32,11 @@ def main(args: parser):
         log.critical("Need to specify the correct path to Wow.exe")
         exit(1)
     with args.config as fobj:
-        data = jload(fobj)
+        try:
+            data = jload(fobj)
+        except Exception:
+            log.critical(f"Your {args.config.name} has the wrong JSON structure")
+            exit(1)
     db = Vault(args.vault)
     for url, branch in data.items():
         db.new_or_update(url, branch)

@@ -1,6 +1,7 @@
 from argparse import ArgumentParser, FileType, _ArgumentGroup
 from json import load as jload
 
+from utils.log import log
 from utils.vault import Vault
 
 parser = ArgumentParser(description="Manual update of repositories Vault")
@@ -13,7 +14,11 @@ required.add_argument(
 
 def main():
     with args.cfg as fobj:
-        data = jload(fobj)
+        try:
+            data = jload(fobj)
+        except Exception:
+            log.critical(f"Your {args.config.name} has the wrong JSON structure")
+            exit(1)
     db = Vault(args.name)
     for url, branch in data.items():
         db.new_or_update(url, branch)
