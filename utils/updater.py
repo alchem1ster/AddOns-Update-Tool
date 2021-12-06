@@ -3,6 +3,7 @@ from glob import glob
 from pathlib import Path
 from pickle import dump, load
 from shutil import copytree, move, rmtree
+from sys import exit
 from threading import Lock, Thread
 from typing import Dict, List, Tuple
 

@@ -1,6 +1,7 @@
 from io import BytesIO
 from pathlib import Path
 from pickle import dump, load
+from sys import exit
 from threading import Lock, Thread
 from typing import List
 

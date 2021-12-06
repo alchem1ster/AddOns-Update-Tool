@@ -1,5 +1,6 @@
 from argparse import ArgumentParser, FileType, _ArgumentGroup
 from json import load as jload
+from sys import exit
 
 from utils.log import log
 from utils.vault import Vault

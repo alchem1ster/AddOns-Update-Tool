@@ -1,6 +1,7 @@
 from argparse import ArgumentParser, _ArgumentGroup
 from glob import glob
 from pathlib import Path
+from sys import exit
 
 from utils.log import log
 from utils.updater import AddOnsUpdater

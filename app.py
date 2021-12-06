@@ -2,6 +2,7 @@ from argparse import ArgumentParser, FileType, _ArgumentGroup
 from json import load as jload
 from pathlib import Path
 from subprocess import call
+from sys import exit
 from time import sleep
 
 from utils.log import log
