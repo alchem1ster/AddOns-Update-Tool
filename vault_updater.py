@@ -1,6 +1,6 @@
+import sys
 from argparse import ArgumentParser, FileType, _ArgumentGroup
 from json import load as jload
-from sys import exit
 
 from utils.log import log
 from utils.vault import Vault
@@ -19,7 +19,7 @@ def main():
             data = jload(fobj)
         except Exception:
             log.critical(f"Your {args.config.name} has the wrong JSON structure")
-            exit(1)
+            sys.exit(1)
     db = Vault(args.name)
     for url, branch in data.items():
         db.new_or_update(url, branch)

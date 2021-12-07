@@ -1,7 +1,7 @@
+import sys
 from io import BytesIO
 from pathlib import Path
 from pickle import dump, load
-from sys import exit
 from threading import Lock, Thread
 from typing import List
 
@@ -111,7 +111,7 @@ class Vault:
                     dump(self.repositories, cache_db)
             except Exception:
                 log.critical("Something went wrong while saving Vault DB")
-                exit(1)
+                sys.exit(1)
         self._load()
         log.info(f"Vault loaded: {self.basedir.name}")
         log.info(f"Repositories in Vault cache: {len(self.repositories)}")
@@ -126,7 +126,7 @@ class Vault:
                 cached_db: List[Repository] = load(cache_db)
         except Exception:
             log.critical("Something went wrong while loading Vault DB")
-            exit(1)
+            sys.exit(1)
         self.repositories.clear()
         for repository in cached_db:
             if repository.repo_path not in [x.repo_path for x in self.repositories]:
@@ -159,7 +159,7 @@ class Vault:
                 dump(self.repositories, cache_db)
         except Exception:
             log.critical("Something went wrong while saving Vault DB")
-            exit(1)
+            sys.exit(1)
         self._load()
         log.info(f"Vault updated: {self.basedir.name}")
         log.info(f"Repositories in Vault: {len(self.repositories)}")

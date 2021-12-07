@@ -1,9 +1,9 @@
+import sys
 from datetime import datetime
 from glob import glob
 from pathlib import Path
 from pickle import dump, load
 from shutil import copytree, move, rmtree
-from sys import exit
 from threading import Lock, Thread
 from typing import Dict, List, Tuple
 
@@ -32,14 +32,14 @@ class AddOnsUpdater:
                     dump(self.cache, cache_db)
             except Exception:
                 log.critical("Something went wrong while saving AddOnsUpdater DB")
-                exit(1)
+                sys.exit(1)
         else:
             try:
                 with open(self.updater_cache_db_path, "rb") as cache_db:
                     self.cache: Dict[str, str] = load(cache_db)
             except Exception:
                 log.critical("Something went wrong while loading AddOnsUpdater DB")
-                exit(1)
+                sys.exit(1)
         log.info("Game folder initialized")
 
     def _backup_init(self) -> None:
@@ -140,7 +140,7 @@ class AddOnsUpdater:
                     dump(self.cache, cache_db)
             except Exception:
                 log.critical("Something went wrong while saving AddOnsUpdater DB")
-                exit(1)
+                sys.exit(1)
         log.info("All AddOns up to date")
 
     def _prepare(self, vault: Vault) -> Tuple[List[str], List[List]]:

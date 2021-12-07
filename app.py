@@ -1,8 +1,8 @@
+import sys
 from argparse import ArgumentParser, _ArgumentGroup
 from json import load as jload
 from pathlib import Path
 from subprocess import call
-from sys import argv, exit
 from time import sleep
 
 from utils.log import log
@@ -24,7 +24,7 @@ required.add_argument("-c", "--config", help="path to json config file", metavar
 
 
 def process_args(args):
-    if len(argv) == 1:
+    if len(sys.argv) == 1:
         args.verbose = True
         log.setLevel(10)
     if not args.vault:
@@ -45,14 +45,14 @@ def main(args):
     addons_folder_path: Path = Path(Path(args.wow).parent / "Interface" / "AddOns")
     if not (Path(args.wow).exists() and addons_folder_path.exists()):
         log.critical("Need to specify the correct path to Wow.exe")
-        exit(1)
+        sys.exit(1)
     if Path(args.config).exists():
         with open(args.config, "r") as fobj:
             try:
                 data = jload(fobj)
             except Exception:
                 log.critical(f"Your {args.config.name} has the wrong JSON structure")
-                exit(1)
+                sys.exit(1)
     db = Vault(args.vault)
     for url, branch in data.items():
         db.new_or_update(url, branch)
@@ -67,7 +67,7 @@ def main(args):
             log.error("Something went wrong while starting Wow.exe")
     log.warning("Bye-bye! Will close in 5 seconds")
     sleep(5)
-    exit(0)
+    sys.exit(0)
 
 
 if __name__ == "__main__":

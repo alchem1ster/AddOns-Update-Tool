@@ -1,7 +1,7 @@
+import sys
 from argparse import ArgumentParser, _ArgumentGroup
 from glob import glob
 from pathlib import Path
-from sys import exit
 
 from utils.log import log
 from utils.updater import AddOnsUpdater
@@ -19,11 +19,11 @@ def main(args: parser):
     else:
         log.critical(f"Vault name ./vault/{args.name} doest not exist")
         log.critical(f"Available Vaults: {', '.join(Path(x).name for x in glob('./vault/*'))}")
-        exit(1)
+        sys.exit(1)
     addons_folder_path: Path = Path(Path(args.wow).parent / "Interface" / "AddOns")
     if not (Path(args.wow).exists() and addons_folder_path.exists()):
         log.critical("Need to specify the correct path to Wow.exe")
-        exit(1)
+        sys.exit(1)
 
     updater: AddOnsUpdater = AddOnsUpdater(addons_folder_path)
     updater.install(db)
