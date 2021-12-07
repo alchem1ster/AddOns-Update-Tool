@@ -52,10 +52,10 @@ When you run the script from the release version or the source code with the `-h
 3. Copy and edit `config.json` as you need (see [Configuration](https://github.com/alchem1ster/AddOns-Update-Tool#configuration-file) paragraph)
 4. Run app with the `-h` parameter via `cmd` or `powershell` to read the help
 5. As an example, use one of the following commands:  
-`    .\app.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`
-`    .\AddOnsUpdateTool.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`
-or the next one if you put `AddOnsUpdateTool.exe` and `config.json` in the game folder:
-`    .\AddOnsUpdateTool.exe -v github -w -c -s --verbose`
+`    .\app.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`  
+`    .\AddOnsUpdateTool.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`  
+or the next one if you put `AddOnsUpdateTool.exe` and `config.json` in the game folder:  
+`    .\AddOnsUpdateTool.exe -v github -w -c -s --verbose`  
 or even just start `AddOnsUpdateTool.exe` inside game folder
 6. If you want, you can create a shortcut to start with the necessary arguments and place it on the desktop or start menu
 
