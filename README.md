@@ -22,7 +22,7 @@ Before running this script for the first time, I STRONGLY RECOMMEND making a bac
 
 ### Configuration file
 Before using this script, you need to configure the list of repositories (AddOns) for updating.
-Just see how this is done in the `config_example.json` file.  In general terms, it is a simple [JSON](https://en.wikipedia.org/wiki/JSON "JSON") file, where you need to specify the repository URL and the branch you want to clone (usually it will be `master`):
+Just see how this is done in the `config_example.json` file.  In general terms, it is a simple [JSON](https://en.wikipedia.org/wiki/JSON "JSON") file, where you need to specify the repository URL and the branch you want to clone (usually it will be `master` or `main`):
 ```json
 {
 	"URL1" : "master",
@@ -51,8 +51,12 @@ When you run the script from the release version or the source code with the `-h
 2. Unpack to any folder
 3. Copy and edit `config.json` as you need (see [Configuration](https://github.com/alchem1ster/AddOns-Update-Tool#configuration-file) paragraph)
 4. Run app with the `-h` parameter via `cmd` or `powershell` to read the help
-5. As an example, use the following command:  
+5. As an example, use one of the following commands:  
 `    .\app.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`
+`    .\AddOnsUpdateTool.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`
+or the next one if you put `AddOnsUpdateTool.exe` and `config.json` in the game folder:
+`    .\AddOnsUpdateTool.exe -v github -w -c -s --verbose`
+or even just start `AddOnsUpdateTool.exe` inside game folder
 6. If you want, you can create a shortcut to start with the necessary arguments and place it on the desktop or start menu
 
 ### Launching from SOURCE code

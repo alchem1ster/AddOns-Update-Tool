@@ -99,8 +99,8 @@ class Vault:
     threads: List[Thread] = []
     session: List[Repository] = []
 
-    def __init__(self, basedir: Path) -> None:
-        self.basedir: Path = Path("./vault" / Path(basedir))
+    def __init__(self, name: str) -> None:
+        self.basedir: Path = Path("./vault" / Path(name))
         if not (self.basedir.is_dir() or self.basedir.exists()):
             log.warning(f'Path "{Path.cwd() / self.basedir}" not found. Let\'s create..')
             self.basedir.mkdir(parents=True, exist_ok=True)
