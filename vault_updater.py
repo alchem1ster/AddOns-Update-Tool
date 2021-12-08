@@ -20,10 +20,11 @@ def main():
         except Exception:
             log.critical(f"Your {args.config.name} has the wrong JSON structure")
             sys.exit(1)
-    db = Vault(args.name)
-    for url, branch in data.items():
-        db.new_or_update(url, branch)
-    db.refresh()
+    if data:
+        db = Vault(args.name)
+        for url, branch in data.items():
+            db.new_or_update(url, branch)
+        db.refresh()
 
 
 if __name__ == "__main__":

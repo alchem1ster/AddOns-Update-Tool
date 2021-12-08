@@ -53,18 +53,19 @@ def main(args):
             except Exception:
                 log.critical(f"Your {args.config.name} has the wrong JSON structure")
                 sys.exit(1)
-    db = Vault(args.vault)
-    for url, branch in data.items():
-        db.new_or_update(url, branch)
-    db.refresh()
-    updater: AddOnsUpdater = AddOnsUpdater(addons_folder_path)
-    updater.install(db)
-    if args.start:
-        log.info("Starting the game..")
-        try:
-            call(args.wow)
-        except Exception:
-            log.error("Something went wrong while starting Wow.exe")
+    if data:
+        db = Vault(args.vault)
+        for url, branch in data.items():
+            db.new_or_update(url, branch)
+        db.refresh()
+        updater: AddOnsUpdater = AddOnsUpdater(addons_folder_path, db)
+        updater.install()
+        if args.start:
+            log.info("Starting the game..")
+            try:
+                call(args.wow)
+            except Exception:
+                log.error("Something went wrong while starting Wow.exe")
     log.warning("Bye-bye! Will close in 5 seconds")
     sleep(5)
     sys.exit(0)
