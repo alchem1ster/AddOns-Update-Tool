@@ -2,19 +2,21 @@ import sys
 from io import BytesIO
 from pathlib import Path
 from pickle import dump, load
-from threading import Lock, Thread
+from re import findall as re_findall
+from re import search as re_search
+from shutil import rmtree
+from threading import Thread
 from typing import List
 
 from dulwich.porcelain import clean, clone, pull, reset
 from dulwich.repo import Repo
-from regex import search as re_search
+from urllib3 import PoolManager
 
 from utils.log import log
 from utils.threads import threaded
 
 custom_outstream: BytesIO = BytesIO()
 custom_errstream: BytesIO = BytesIO()
-lock: Lock = Lock()
 
 
 class Repository:
@@ -60,7 +62,7 @@ class Repository:
 
         if self._reset():
             try:
-                pull(self.repo_path)
+                pull(self.repo_path, refspecs=f"refs/heads/{self.branch}".encode())
             except Exception:
                 log.error(f"Something went wrong while updating {self.url}@{self.branch}")
                 return False
@@ -68,26 +70,84 @@ class Repository:
         log.debug(f"Updated: {self.author}/{self.name}@{self.branch}")
         return True
 
-    def download(self) -> bool:
+    def check_remote_refs(self) -> bool:
+        """Check branch existence on GitHub
+
+        Returns:
+            True: branch found
+            False: branch not found
+        """
+
+        refs_check_url: str = f"https://api.github.com/repos/{self.author}/{self.name}/git/refs/heads/"
+        refs: str = PoolManager().request("GET", refs_check_url).data
+        remote_refs: set[str] = set(re_findall(b'refs/heads/(.*?)",', refs))
+        if self.branch.encode() not in remote_refs:
+            log.error(f"{self.name}@{self.branch} doesnt exist on GitHub")
+            return False
+        return True
+
+    def download(self) -> "bool | int":
         """Download Repository if not exist or update if exist
 
         Returns:
             True: downloaded
-            False: fail or already exist and has been successfully updated
+            -1:  already exist and has been successfully updated
+            False: fail
         """
 
         try:
+            self.repo_path.mkdir(parents=True, exist_ok=True)
             clone(
-                self.url, self.repo_path, checkout=self.branch, errstream=custom_errstream, outstream=custom_outstream
+                self.url,
+                self.repo_path,
+                checkout=True,
+                branch=self.branch.encode(),
+                errstream=custom_errstream,
+                outstream=custom_outstream,
             )
         except Exception as e:
             if type(e) == FileExistsError:
                 if self._update():
-                    return False
+                    return -1
             log.error(f"Something went wrong while saving {self.url}@{self.branch} into {self.repo_path}")
             return False
         self.head: str = Repo(self.repo_path).head().decode()
         log.debug(f"Downloaded: {self.author}/{self.name}@{self.branch}")
+        return True
+
+    def remove(self) -> bool:
+        """Remove Repository from Vault
+
+        Returns:
+            True: success
+            False: fail
+        """
+
+        try:
+            rmtree(self.repo_path)
+        except Exception:
+            log.warning(f"Something went wrong while removing {self.author}/{self.name} from Vault")
+            return False
+        return True
+
+    def checkout(self, old_branch: str) -> bool:
+        """Change branch of Repository
+
+        Args:
+            old_branch (str): name of cached branch
+
+        Returns:
+            True: branch changed
+            False: checkout fail
+        """
+
+        log.warning(f"{self.author}/{self.name} will have its branch changed from @{old_branch} to @{self.branch}")
+        try:
+            rmtree(self.repo_path)
+            self.download()
+        except Exception:
+            log.error(f"Something went wrong while checkout {self.author}/{self.name}")
+            return False
         return True
 
 
@@ -142,11 +202,19 @@ class Vault:
         """
 
         repository: Repository = Repository(url, branch, self.basedir)
-        if not repository.repo_path.exists():
-            repository.repo_path.mkdir(parents=True, exist_ok=True)
-        repository.download()
-        with lock:
-            self.session.append(repository)
+        if not repository.check_remote_refs():
+            self.session.append([x for x in self.repositories if x.repo_path == repository.repo_path][0])
+            return
+        for cached_repository in self.repositories:
+            if (
+                cached_repository.repo_path == repository.repo_path
+                and (old_branch := cached_repository.branch) != repository.branch
+            ):
+                repository.checkout(old_branch)
+                break
+        else:
+            repository.download()
+        self.session.append(repository)
 
     def refresh(self) -> None:
         """Refresh Vault database"""
