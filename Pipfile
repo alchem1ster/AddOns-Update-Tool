@@ -4,12 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-dulwich = "*"
 colorlog = "*"
+urllib3 = "*"
 
 [dev-packages]
-black = "*"
 pyinstaller = "*"
+black = "*"
 
 [requires]
 python_version = "3.8"
