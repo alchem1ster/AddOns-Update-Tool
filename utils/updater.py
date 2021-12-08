@@ -112,8 +112,8 @@ class AddOnsUpdater:
                 return
             with lock:
                 self.cache[repo_name] = repo_head
-            if repo_head and repo_name:
-                log.debug(f"{repo_name}@{repo_head[:7]} has been installed")
+        if repo_head and repo_name:
+            log.debug(f"{repo_name}@{repo_head[:7]} has been installed")
 
     def install(self, vault: Vault) -> None:
         """Backup and Install/Update AddOns
