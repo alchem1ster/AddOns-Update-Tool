@@ -20,12 +20,13 @@ class AddOnsUpdater:
     cache: Dict[str, str] = {}
     threads: List[Thread] = []
 
-    def __init__(self, path_to_addons_folder: Path):
+    def __init__(self, path_to_addons_folder: Path, vault: Vault):
         self.addons_folder: Path = path_to_addons_folder
         self.interface_folder: Path = path_to_addons_folder.parent
         self.addons_backup_folder: Path = self.interface_folder / "AddOns_backups"
         self.addons_backup_folder.mkdir(parents=True, exist_ok=True)
         self.updater_cache_db_path: Path = self.interface_folder / "updater_cache.db"
+        self.vault: Vault = vault
         if not self.updater_cache_db_path.exists():
             try:
                 with open(self.updater_cache_db_path, "wb") as cache_db:
@@ -115,14 +116,14 @@ class AddOnsUpdater:
         if repo_head and repo_name:
             log.debug(f"{repo_name}@{repo_head[:7]} has been installed")
 
-    def install(self, vault: Vault) -> None:
+    def install(self) -> None:
         """Backup and Install/Update AddOns
 
         Args:
             vault (Vault): Vault instance
         """
 
-        addons_to_backup, addons_to_install = self._prepare(vault)
+        addons_to_backup, addons_to_install = self._prepare(self.vault)
         if addons_to_backup:
             self._backup_init()
             for addon_to_backup in addons_to_backup:
@@ -135,13 +136,21 @@ class AddOnsUpdater:
                 self._copy(addon)
             for thread in self.threads:
                 thread.join()
-            try:
-                with open(self.updater_cache_db_path, "wb") as cache_db:
-                    dump(self.cache, cache_db)
-            except Exception:
-                log.critical("Something went wrong while saving AddOnsUpdater DB")
-                sys.exit(1)
+            self._save_db()
         log.info("All AddOns up to date")
+
+    def _save_db(self):
+        """PRIVATE FUNCTION
+
+        Update AddOnsUpdater DB
+        """
+
+        try:
+            with open(self.updater_cache_db_path, "wb") as cache_db:
+                dump(self.cache, cache_db)
+        except Exception:
+            log.critical("Something went wrong while saving AddOnsUpdater DB")
+            sys.exit(1)
 
     def _prepare(self, vault: Vault) -> Tuple[List[str], List[List]]:
         """PRIVATE FUNCTION
