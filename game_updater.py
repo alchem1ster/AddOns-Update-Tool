@@ -25,8 +25,8 @@ def main(args: parser):
         log.critical("Need to specify the correct path to Wow.exe")
         sys.exit(1)
 
-    updater: AddOnsUpdater = AddOnsUpdater(addons_folder_path)
-    updater.install(db)
+    updater: AddOnsUpdater = AddOnsUpdater(addons_folder_path, db)
+    updater.install()
 
 
 if __name__ == "__main__":
