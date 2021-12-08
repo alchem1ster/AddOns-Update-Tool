@@ -4,7 +4,7 @@
 ![](https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/stars/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/forks/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/v/release/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool)
 
 ### Features
-- [x] Almost pure Python: only [Dulwich](https://github.com/dulwich/dulwich "Dulwich") and [Colorlog](https://github.com/borntyping/python-colorlog "Colorlog")
+- [x] Pure Python: only [Dulwich](https://github.com/dulwich/dulwich "Dulwich") and [Colorlog](https://github.com/borntyping/python-colorlog "Colorlog")
 - [x] Multithreaded tasks
 - [x] Manual and automatic modes
 - [x] Able to start the game after an updates
