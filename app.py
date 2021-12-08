@@ -53,6 +53,9 @@ def main(args):
             except Exception:
                 log.critical(f"Your {args.config.name} has the wrong JSON structure")
                 sys.exit(1)
+    else:
+        log.critical(f"{args.config.name} not found")
+        sys.exit(1)
     if data:
         db = Vault(args.vault)
         for url, branch in data.items():
