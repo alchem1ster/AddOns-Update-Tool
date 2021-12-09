@@ -24,8 +24,12 @@ class Repository:
 
     def __init__(self, url: str, branch: str, basedir: Path):
         self.url: str = url
-        self.author: str = re_search("github.com/(.*)/", url).group(1)
-        self.name: str = re_search("(?s:.*)/(.*)", url).group(1)
+        try:
+            self.author: str = re_search("github.com/(.*)/", url).group(1)
+            self.name: str = re_search("(?s:.*)/(.*)", url).group(1)
+        except Exception:
+            log.error(f"{self.url} seems to be incorrect to process")
+            sys.exit(1)
         self.branch: str = branch
         self.basedir: Path = basedir
         self.repo_path: Path = Path(f"{self.basedir}/{self.author}/{self.name}")
