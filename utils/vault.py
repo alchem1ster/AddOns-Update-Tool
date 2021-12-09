@@ -76,7 +76,7 @@ class Repository:
             False: branch not found
         """
         try:
-            refs: str = ls_remote(self.url)
+            refs: dict = ls_remote(self.url)
         except Exception:
             log.error(f"Something went wrong while checking {self.author}/{self.name} remote refs")
             return False
