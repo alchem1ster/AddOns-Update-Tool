@@ -59,7 +59,7 @@ def main(args):
     if data:
         db = Vault(args.vault)
         for url, branch in data.items():
-            db.new_or_update(url, branch)
+            db.new_or_update(url.strip(), branch.strip())
         db.refresh()
         updater: AddOnsUpdater = AddOnsUpdater(addons_folder_path, db)
         updater.install()

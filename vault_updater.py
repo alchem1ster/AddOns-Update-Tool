@@ -23,7 +23,7 @@ def main():
     if data:
         db = Vault(args.name)
         for url, branch in data.items():
-            db.new_or_update(url, branch)
+            db.new_or_update(url.strip(), branch.strip())
         db.refresh()
 
 
