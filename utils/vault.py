@@ -2,15 +2,13 @@ import sys
 from io import BytesIO
 from pathlib import Path
 from pickle import dump, load
-from re import findall as re_findall
 from re import search as re_search
 from shutil import rmtree
 from threading import Thread
 from typing import List
 
-from dulwich.porcelain import clean, clone, pull, reset
+from dulwich.porcelain import clean, clone, ls_remote, pull, reset
 from dulwich.repo import Repo
-from urllib3 import PoolManager
 
 from utils.log import log
 from utils.threads import threaded
@@ -77,11 +75,13 @@ class Repository:
             True: branch found
             False: branch not found
         """
-
-        refs_check_url: str = f"https://api.github.com/repos/{self.author}/{self.name}/git/refs/heads/"
-        refs: str = PoolManager().request("GET", refs_check_url).data
-        remote_refs: set[str] = set(re_findall(b'refs/heads/(.*?)",', refs))
-        if self.branch.encode() not in remote_refs:
+        try:
+            refs: str = ls_remote(self.url)
+        except Exception:
+            log.error(f"Something went wrong while checking {self.author}/{self.name} remote refs")
+            return False
+        branch_ref: str = f"refs/heads/{self.branch}".encode()
+        if branch_ref not in refs.keys():
             log.error(f"{self.name}@{self.branch} doesnt exist on GitHub")
             return False
         return True
