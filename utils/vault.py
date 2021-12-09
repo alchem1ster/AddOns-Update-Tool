@@ -203,7 +203,8 @@ class Vault:
 
         repository: Repository = Repository(url, branch, self.basedir)
         if not repository.check_remote_refs():
-            self.session.append([x for x in self.repositories if x.repo_path == repository.repo_path][0])
+            if in_cache := [x for x in self.repositories if x.repo_path == repository.repo_path]:
+                self.session.append(in_cache[0])
             return
         for cached_repository in self.repositories:
             if (
