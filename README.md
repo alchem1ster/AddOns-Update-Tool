@@ -56,7 +56,7 @@ URL2 : master
 Curly brackets, quotation marks, colons, and commas are mandatory <br> You can't use comments
 </td>
 <td>
-Only commas are mandatory <br> Allows to create comment blocks
+Only colons are mandatory <br> Allows to create comment blocks
 </td>
 </tr>
 </table>
