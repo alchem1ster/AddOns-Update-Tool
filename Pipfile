@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 colorlog = "*"
 urllib3 = "*"
+pyyaml = "*"
 
 [dev-packages]
 pyinstaller = "*"
