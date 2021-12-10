@@ -22,7 +22,7 @@ Before running this script for the first time, I STRONGLY RECOMMEND making a bac
 
 ### Configuration file
 Before using this script, you need to configure the list of repositories (AddOns) for updating.
-Just see how this is done in the `config_example.json` or `config_example.yml` files. Just choose what you are more comfortable with.  
+Just see how this is done in the `config_example.json` or `config_example.yaml` files. Just choose what you are more comfortable with.  
 In general terms, they are [JSON](https://en.wikipedia.org/wiki/JSON "JSON") and [YAML](https://en.wikipedia.org/wiki/YAML) structures, where you need to specify the repository URL and the branch you want to clone (usually it will be `master` or `main`).  
 
 <table>
@@ -75,15 +75,15 @@ When you run the script from the release version or the source code with the `-h
 | ------------ | ------------ | ------------ | ------------ |
 | \--vault | -v |  new or existing Vault name | -v github |
 | \--wow | -w | path to Wow.exe | -w "G:\World of Warcraft 3.3.5a HD\Wow.exe" <br> -w ".\Wow.exe" |
-| \--config | -c | path to config file | -c ".\config_335a.yml" <br> -c ".\new_config.json" |
+| \--config | -c | path to config file | -c ".\config_335a.yaml" <br> -c ".\new_config.json" |
 
 ### Launching from RELEASE version
 1. Download [latest release](https://github.com/alchem1ster/AddOns-Update-Tool//releases/latest)
 2. Unpack to any folder
-3. Copy and edit `config.yml` or `config.json` as you need (see [Configuration](https://github.com/alchem1ster/AddOns-Update-Tool#configuration-file) paragraph)
+3. Copy and edit `config.yaml` or `config.json` as you need (see [Configuration](https://github.com/alchem1ster/AddOns-Update-Tool#configuration-file) paragraph)
 4. Run app with the `-h` parameter via `cmd` or `powershell` to read the help
 5. As an example, use one of the following commands:  
-`    .\app.exe -v github -w ..\wow\Wow.exe -c .\config.yml -s --verbose`  
+`    .\app.exe -v github -w ..\wow\Wow.exe -c .\config.yaml -s --verbose`  
 `    .\AddOnsUpdateTool.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`  
 or the next one if you put `AddOnsUpdateTool.exe` and Config file in the game folder:  
 `    .\AddOnsUpdateTool.exe -v github -w -c -s --verbose`  
