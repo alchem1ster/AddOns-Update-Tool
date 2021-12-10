@@ -1,9 +1,10 @@
 import sys
 from argparse import ArgumentParser, _ArgumentGroup
-from json import load as jload
 from pathlib import Path
 from subprocess import call
 from time import sleep
+
+from yaml import safe_load
 
 from utils.log import log
 from utils.updater import AddOnsUpdater
@@ -20,7 +21,7 @@ parser.add_argument(
     action="store_true",
 )
 parser.add_argument("--verbose", help="verbose debug output", action="store_true")
-required.add_argument("-c", "--config", help="path to json config file", metavar="PATH", nargs="?", const="")
+required.add_argument("-c", "--config", help="path to config file", metavar="PATH", nargs="?", const="")
 
 
 def process_args(args):
@@ -34,8 +35,14 @@ def process_args(args):
         log.debug("Path to Wow.exe is not specified, will be used from the current directory")
         args.wow = Path(".\Wow.exe")
     if not args.config:
-        log.debug("Path to config.json is not specified, will be used from the current directory")
-        args.config = Path(".\config.json")
+        log.debug("Path to config file is not specified, will be used from the current directory")
+        if (config_file := Path(".\config.yaml")) and config_file.exists():
+            args.config = config_file
+        elif (config_file := Path(".\config.json")) and config_file.exists():
+            args.config = config_file
+        else:
+            log.critical(f"Neither 'config.yaml' nor 'config.json' file was found in current directory")
+            sys.exit(1)
 
 
 def main(args):
@@ -49,9 +56,9 @@ def main(args):
     if Path(args.config).exists():
         with open(args.config, "r") as fobj:
             try:
-                data = jload(fobj)
+                data = safe_load(fobj)
             except Exception:
-                log.critical(f"Your {args.config.name} has the wrong JSON structure")
+                log.critical(f"Your {args.config.name} has the wrong Config structure")
                 sys.exit(1)
     else:
         log.critical(f"{args.config.name} not found")
