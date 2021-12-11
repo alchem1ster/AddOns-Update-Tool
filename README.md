@@ -108,7 +108,10 @@ Running the script from source code will require some knowledge of both Git and 
 <br>
 
 ## Dev dependencies
-If you want to change something in the code, I strongly recommend that you set the PEP-8 code formatter `black` and `pyinstaller` via `pipenv install --dev` command. Dont forget to re-format code after changes to keep it within the PEP-8.
+Python dev and recommended build: `Python 3.8.10 [64 bit (AMD64)]`  
+Pipenv profile includes `pyinstaller` package (for packing code into PE (.exe) file) that you can install via `pipenv install --dev` command.   
+If you want to change something in the code, I strongly recommend that you set the PEP-8 linters such as `pylint`, `flake8`, also code formatter `black`.  
+Dont forget to re-format code after changes to keep it within the PEP-8.
 
 ## Creating an EXE
 To package a set of scripts into a standalone distributable directory, or a single EXE file, use the `pyinstaller` module:
