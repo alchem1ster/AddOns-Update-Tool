@@ -1,6 +1,6 @@
 # Game Updater
 
-> Auto-generated documentation for [game_updater](blob/master/game_updater.py) module.
+> Auto-generated documentation for [game_updater](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/game_updater.py) module.
 
 Ingame AddOns update CLI
 
@@ -9,7 +9,7 @@ Ingame AddOns update CLI
 
 ## main
 
-[[find in source code]](blob/master/game_updater.py#L24)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/game_updater.py#L24)
 
 ```python
 def main():

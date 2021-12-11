@@ -1,17 +1,17 @@
 # File
 
-> Auto-generated documentation for [dulwich.file](blob/master/dulwich/file.py) module.
+> Auto-generated documentation for [dulwich.file](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/file.py) module.
 
 Safe access to git files.
 
-- [Addons-update-tool](..\README.md#addons-update-tool) / [Modules](..\MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / File
+- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / File
     - [FileLocked](#filelocked)
     - [GitFile](#gitfile)
     - [ensure_dir_exists](#ensure_dir_exists)
 
 ## FileLocked
 
-[[find in source code]](blob/master/dulwich/file.py#L97)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/file.py#L97)
 
 ```python
 class FileLocked(Exception):
@@ -22,7 +22,7 @@ File is already locked.
 
 ## GitFile
 
-[[find in source code]](blob/master/dulwich/file.py#L69)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/file.py#L69)
 
 ```python
 def GitFile(filename, mode='rb', bufsize=-1, mask=420):
@@ -44,7 +44,7 @@ world-readable.
 
 ## ensure_dir_exists
 
-[[find in source code]](blob/master/dulwich/file.py#L28)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/file.py#L28)
 
 ```python
 def ensure_dir_exists(dirname):

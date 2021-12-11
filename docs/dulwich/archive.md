@@ -1,17 +1,17 @@
 # Archive
 
-> Auto-generated documentation for [dulwich.archive](blob/master/dulwich/archive.py) module.
+> Auto-generated documentation for [dulwich.archive](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/archive.py) module.
 
 Generates tarballs for Git trees.
 
-- [Addons-update-tool](..\README.md#addons-update-tool) / [Modules](..\MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Archive
+- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Archive
     - [ChunkedBytesIO](#chunkedbytesio)
         - [ChunkedBytesIO().read](#chunkedbytesioread)
     - [tar_stream](#tar_stream)
 
 ## ChunkedBytesIO
 
-[[find in source code]](blob/master/dulwich/archive.py#L35)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/archive.py#L35)
 
 ```python
 class ChunkedBytesIO(object):
@@ -31,7 +31,7 @@ BytesIO(b''.join(list_of_bytestrings)) =~= ChunkedBytesIO(
 
 ### ChunkedBytesIO().read
 
-[[find in source code]](blob/master/dulwich/archive.py#L50)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/archive.py#L50)
 
 ```python
 def read(maxbytes=None):
@@ -39,7 +39,7 @@ def read(maxbytes=None):
 
 ## tar_stream
 
-[[find in source code]](blob/master/dulwich/archive.py#L72)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/archive.py#L72)
 
 ```python
 def tar_stream(store, tree, mtime, prefix=b'', format=''):

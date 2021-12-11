@@ -1,10 +1,10 @@
 # Ignore
 
-> Auto-generated documentation for [dulwich.ignore](blob/master/dulwich/ignore.py) module.
+> Auto-generated documentation for [dulwich.ignore](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py) module.
 
 Parsing of gitignore files.
 
-- [Addons-update-tool](..\README.md#addons-update-tool) / [Modules](..\MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Ignore
+- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Ignore
     - [IgnoreFilter](#ignorefilter)
         - [IgnoreFilter().append_pattern](#ignorefilterappend_pattern)
         - [IgnoreFilter().find_matching](#ignorefilterfind_matching)
@@ -27,7 +27,7 @@ For details for the matching rules, see https://git-scm.com/docs/gitignore
 
 ## IgnoreFilter
 
-[[find in source code]](blob/master/dulwich/ignore.py#L202)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L202)
 
 ```python
 class IgnoreFilter(object):
@@ -40,7 +40,7 @@ class IgnoreFilter(object):
 
 ### IgnoreFilter().append_pattern
 
-[[find in source code]](blob/master/dulwich/ignore.py#L210)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L210)
 
 ```python
 def append_pattern(pattern: bytes) -> None:
@@ -50,7 +50,7 @@ Add a pattern to the set.
 
 ### IgnoreFilter().find_matching
 
-[[find in source code]](blob/master/dulwich/ignore.py#L214)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L214)
 
 ```python
 def find_matching(path: Union[bytes, str]) -> Iterable[Pattern]:
@@ -68,7 +68,7 @@ Iterator over iterators
 
 ### IgnoreFilter.from_path
 
-[[find in source code]](blob/master/dulwich/ignore.py#L241)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L241)
 
 ```python
 @classmethod
@@ -77,7 +77,7 @@ def from_path(path, ignorecase: bool = False) -> 'IgnoreFilter':
 
 ### IgnoreFilter().is_ignored
 
-[[find in source code]](blob/master/dulwich/ignore.py#L228)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L228)
 
 ```python
 def is_ignored(path: bytes) -> Optional[bool]:
@@ -92,7 +92,7 @@ Returns: status is None if file is not mentioned, True if it is
 
 ## IgnoreFilterManager
 
-[[find in source code]](blob/master/dulwich/ignore.py#L293)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L293)
 
 ```python
 class IgnoreFilterManager(object):
@@ -107,7 +107,7 @@ Ignore file manager.
 
 ### IgnoreFilterManager().find_matching
 
-[[find in source code]](blob/master/dulwich/ignore.py#L328)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L328)
 
 ```python
 def find_matching(path: str) -> Iterable[Pattern]:
@@ -125,7 +125,7 @@ Iterator over Pattern instances
 
 ### IgnoreFilterManager.from_repo
 
-[[find in source code]](blob/master/dulwich/ignore.py#L371)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L371)
 
 ```python
 @classmethod
@@ -144,7 +144,7 @@ A [IgnoreFilterManager](#ignorefiltermanager) object
 
 ### IgnoreFilterManager().is_ignored
 
-[[find in source code]](blob/master/dulwich/ignore.py#L357)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L357)
 
 ```python
 def is_ignored(path: str) -> Optional[bool]:
@@ -163,7 +163,7 @@ False if it is explicitly excluded.
 
 ## IgnoreFilterStack
 
-[[find in source code]](blob/master/dulwich/ignore.py#L254)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L254)
 
 ```python
 class IgnoreFilterStack(object):
@@ -174,7 +174,7 @@ Check for ignore status in multiple filters.
 
 ### IgnoreFilterStack().is_ignored
 
-[[find in source code]](blob/master/dulwich/ignore.py#L260)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L260)
 
 ```python
 def is_ignored(path: str) -> Optional[bool]:
@@ -193,7 +193,7 @@ False if it is explicitly excluded.
 
 ## Pattern
 
-[[find in source code]](blob/master/dulwich/ignore.py#L154)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L154)
 
 ```python
 class Pattern(object):
@@ -204,7 +204,7 @@ A single ignore pattern.
 
 ### Pattern().match
 
-[[find in source code]](blob/master/dulwich/ignore.py#L192)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L192)
 
 ```python
 def match(path: bytes) -> bool:
@@ -219,7 +219,7 @@ Try to match a path against this ignore pattern.
 
 ## default_user_ignore_filter_path
 
-[[find in source code]](blob/master/dulwich/ignore.py#L277)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L277)
 
 ```python
 def default_user_ignore_filter_path(config: Config) -> str:
@@ -241,7 +241,7 @@ Path to a global ignore file
 
 ## match_pattern
 
-[[find in source code]](blob/master/dulwich/ignore.py#L141)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L141)
 
 ```python
 def match_pattern(
@@ -265,7 +265,7 @@ bool indicating whether the pattern matched
 
 ## read_ignore_patterns
 
-[[find in source code]](blob/master/dulwich/ignore.py#L114)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L114)
 
 ```python
 def read_ignore_patterns(f: BinaryIO) -> Iterable[bytes]:
@@ -280,7 +280,7 @@ Read a git ignore file.
 
 ## translate
 
-[[find in source code]](blob/master/dulwich/ignore.py#L78)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/ignore.py#L78)
 
 ```python
 def translate(pat: bytes) -> bytes:

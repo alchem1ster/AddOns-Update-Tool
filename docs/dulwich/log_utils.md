@@ -1,10 +1,10 @@
 # Log Utils
 
-> Auto-generated documentation for [dulwich.log_utils](blob/master/dulwich/log_utils.py) module.
+> Auto-generated documentation for [dulwich.log_utils](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/log_utils.py) module.
 
 Logging utilities for Dulwich.
 
-- [Addons-update-tool](..\README.md#addons-update-tool) / [Modules](..\MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Log Utils
+- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Log Utils
     - [default_logging_config](#default_logging_config)
     - [remove_null_handler](#remove_null_handler)
 
@@ -24,7 +24,7 @@ directly.
 
 ## default_logging_config
 
-[[find in source code]](blob/master/dulwich/log_utils.py#L56)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/log_utils.py#L56)
 
 ```python
 def default_logging_config():
@@ -34,7 +34,7 @@ Set up the default Dulwich loggers.
 
 ## remove_null_handler
 
-[[find in source code]](blob/master/dulwich/log_utils.py#L66)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/log_utils.py#L66)
 
 ```python
 def remove_null_handler():

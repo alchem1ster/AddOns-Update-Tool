@@ -1,10 +1,10 @@
 # Vault
 
-> Auto-generated documentation for [utils.vault](blob/master/utils/vault.py) module.
+> Auto-generated documentation for [utils.vault](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py) module.
 
 Vault fetch and caching logic
 
-- [Addons-update-tool](..\README.md#addons-update-tool) / [Modules](..\MODULES.md#addons-update-tool-modules) / [Utils](index.md#utils) / Vault
+- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Utils](index.md#utils) / Vault
     - [Repository](#repository)
         - [Repository().check_remote_refs](#repositorycheck_remote_refs)
         - [Repository().checkout](#repositorycheckout)
@@ -16,7 +16,7 @@ Vault fetch and caching logic
 
 ## Repository
 
-[[find in source code]](blob/master/utils/vault.py#L21)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L21)
 
 ```python
 class Repository():
@@ -27,7 +27,7 @@ The base class of Repository in Vault
 
 ### Repository().check_remote_refs
 
-[[find in source code]](blob/master/utils/vault.py#L89)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L89)
 
 ```python
 def check_remote_refs() -> bool:
@@ -42,7 +42,7 @@ Check branch existence on GitHub
 
 ### Repository().checkout
 
-[[find in source code]](blob/master/utils/vault.py#L163)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L163)
 
 ```python
 def checkout(old_branch: str) -> bool:
@@ -61,7 +61,7 @@ Change branch of Repository
 
 ### Repository().download
 
-[[find in source code]](blob/master/utils/vault.py#L111)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L111)
 
 ```python
 def download() -> 'bool | int':
@@ -77,7 +77,7 @@ Download Repository if not exist or update if exist
 
 ### Repository().remove
 
-[[find in source code]](blob/master/utils/vault.py#L144)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L144)
 
 ```python
 def remove() -> bool:
@@ -92,7 +92,7 @@ Remove Repository from Vault
 
 ## Vault
 
-[[find in source code]](blob/master/utils/vault.py#L194)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L194)
 
 ```python
 class Vault():
@@ -103,7 +103,7 @@ The base class of repositories Vault
 
 ### Vault().new_or_update
 
-[[find in source code]](blob/master/utils/vault.py#L240)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L240)
 
 ```python
 @threaded
@@ -123,7 +123,7 @@ Create new Repository in Vault (or update exist in child function)
 
 ### Vault().refresh
 
-[[find in source code]](blob/master/utils/vault.py#L270)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/vault.py#L270)
 
 ```python
 def refresh() -> None:

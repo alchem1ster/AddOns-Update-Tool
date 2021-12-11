@@ -1,15 +1,15 @@
 # Clone
 
-> Auto-generated documentation for [dulwich.clone](blob/master/dulwich/clone.py) module.
+> Auto-generated documentation for [dulwich.clone](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/clone.py) module.
 
 Repository clone handling.
 
-- [Addons-update-tool](..\README.md#addons-update-tool) / [Modules](..\MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Clone
+- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Clone
     - [do_clone](#do_clone)
 
 ## do_clone
 
-[[find in source code]](blob/master/dulwich/clone.py#L38)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/clone.py#L38)
 
 ```python
 def do_clone(
