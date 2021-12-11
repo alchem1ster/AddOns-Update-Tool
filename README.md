@@ -1,7 +1,7 @@
 # AddOns Update Tool
  Tool to update World of Warcraft AddOns hosted on GitHub
 
-![](https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/stars/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/forks/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/github/v/release/alchem1ster/AddOns-Update-Tool) ![](https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool)
+![](https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/stars/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/forks/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/v/release/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/downloads/alchem1ster/AddOns-Update-Tool/total?style=flat-square) ![](https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool?style=flat-square)
 
 ### Features
 - [x] Pure Python: only [Dulwich](https://github.com/dulwich/dulwich "Dulwich"), [Colorlog](https://github.com/borntyping/python-colorlog "Colorlog") and [PyYAML](https://github.com/yaml/pyyaml/)
