@@ -1,3 +1,5 @@
+"""Vault update CLI"""
+
 import sys
 from argparse import ArgumentParser, FileType, _ArgumentGroup
 
@@ -8,22 +10,35 @@ from utils.vault import Vault
 
 parser = ArgumentParser(description="Manual update of repositories Vault")
 required: _ArgumentGroup = parser.add_argument_group("required arguments")
-required.add_argument("-n", "--name", help="Vault name", required=True, metavar="NAME")
-required.add_argument("-c", "--cfg", help="path to config file", required=True, metavar="PATH", type=FileType("r"))
+required.add_argument(
+    "-n", "--name", help="Vault name", required=True, metavar="NAME"
+)
+required.add_argument(
+    "-c",
+    "--cfg",
+    help="path to config file",
+    required=True,
+    metavar="PATH",
+    type=FileType("r"),
+)
 
 
 def main():
+    """Entry point"""
+
     with args.cfg as fobj:
         try:
             data = safe_load(fobj)
         except Exception:
-            log.critical(f"Your {args.config.name} has the wrong Config structure")
+            log.critical(
+                "Your %s has the wrong Config structure", args.config.name
+            )
             sys.exit(1)
     if data:
-        db = Vault(args.name)
+        vault_db = Vault(args.name)
         for url, branch in data.items():
-            db.new_or_update(url.strip(), branch.strip())
-        db.refresh()
+            vault_db.new_or_update(url.strip(), branch.strip())
+        vault_db.refresh()
 
 
 if __name__ == "__main__":

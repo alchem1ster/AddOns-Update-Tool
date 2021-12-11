@@ -1,3 +1,5 @@
+"""Ingame AddOns update and caching logic"""
+
 import sys
 from datetime import datetime
 from glob import glob
@@ -14,7 +16,7 @@ from utils.vault import Vault
 lock: Lock = Lock()
 
 
-class AddOnsUpdater:
+class AddOnsUpdater:  # pylint: disable=too-few-public-methods
     """The base class of AddOns updating service"""
 
     cache: Dict[str, str] = {}
@@ -23,23 +25,32 @@ class AddOnsUpdater:
     def __init__(self, path_to_addons_folder: Path, vault: Vault):
         self.addons_folder: Path = path_to_addons_folder
         self.interface_folder: Path = path_to_addons_folder.parent
-        self.addons_backup_folder: Path = self.interface_folder / "AddOns_backups"
+        self.addons_backup_folder: Path = (
+            self.interface_folder / "AddOns_backups"
+        )
         self.addons_backup_folder.mkdir(parents=True, exist_ok=True)
-        self.updater_cache_db_path: Path = self.interface_folder / "updater_cache.db"
+        self.timestamp_backup_folder: Path = None
+        self.updater_cache_db_path: Path = (
+            self.interface_folder / "updater_cache.db"
+        )
         self.vault: Vault = vault
         if not self.updater_cache_db_path.exists():
             try:
                 with open(self.updater_cache_db_path, "wb") as cache_db:
                     dump(self.cache, cache_db)
             except Exception:
-                log.critical("Something went wrong while saving AddOnsUpdater DB")
+                log.critical(
+                    "Something went wrong while saving AddOnsUpdater DB"
+                )
                 sys.exit(1)
         else:
             try:
                 with open(self.updater_cache_db_path, "rb") as cache_db:
                     self.cache: Dict[str, str] = load(cache_db)
             except Exception:
-                log.critical("Something went wrong while loading AddOnsUpdater DB")
+                log.critical(
+                    "Something went wrong while loading AddOnsUpdater DB"
+                )
                 sys.exit(1)
         log.info("Game folder initialized")
 
@@ -48,8 +59,12 @@ class AddOnsUpdater:
 
         Create a directory for saving backups"""
 
-        timestamp: str = datetime.now().replace(microsecond=0).isoformat().replace(":", "-")
-        self.timestamp_backup_folder: Path = Path(self.addons_backup_folder / timestamp)
+        timestamp: str = (
+            datetime.now().replace(microsecond=0).isoformat().replace(":", "-")
+        )
+        self.timestamp_backup_folder: Path = Path(
+            self.addons_backup_folder / timestamp
+        )
         self.timestamp_backup_folder.mkdir(parents=True, exist_ok=True)
 
     def _backup_end(self) -> None:
@@ -62,16 +77,22 @@ class AddOnsUpdater:
             log.info("There is nothing to backup, skipped")
         else:
             log.info("All updatable AddOns has beed saved")
-            all_backups: Path = [
-                folder for folder in sorted(self.addons_backup_folder.iterdir(), key=lambda i: i.name, reverse=True)
-            ]
+            all_backups: Path = sorted(
+                self.addons_backup_folder.iterdir(),
+                key=lambda i: i.name,
+                reverse=True,
+            )
             if len(all_backups) > 5:
-                log.debug("Removing old backup folders, keeping only last 5 backups")
+                log.debug(
+                    "Removing old backup folders, keeping only last 5 backups"
+                )
                 for folder in all_backups[5:]:
                     try:
                         rmtree(folder)
                     except Exception:
-                        log.error("Something went wrong while deleting old backups")
+                        log.error(
+                            "Something went wrong while deleting old backups"
+                        )
 
     @threaded
     def _backup(self, addon_to_backup: str) -> None:
@@ -88,9 +109,12 @@ class AddOnsUpdater:
             try:
                 move(str(addon_dir), str(self.timestamp_backup_folder))
             except Exception:
-                log.error(f"Something went wrong while saving {addon_dir.name} backup")
+                log.error(
+                    "Something went wrong while saving %s backup",
+                    addon_dir.name,
+                )
                 return
-            log.debug(f"{addon_dir.name} backup has been saved")
+            log.debug("%s backup has been saved", addon_dir.name)
 
     @threaded
     def _copy(self, addon_to_install: List[List]) -> None:
@@ -109,12 +133,12 @@ class AddOnsUpdater:
             try:
                 copytree(str(folder), str(self.addons_folder / folder.name))
             except Exception:
-                log.error(f"Something went wrong while updating {repo_name}")
+                log.error("Something went wrong while updating %s", repo_name)
                 return
             with lock:
                 self.cache[repo_name] = repo_head
         if repo_head and repo_name:
-            log.debug(f"{repo_name}@{repo_head[:7]} has been installed")
+            log.debug("%s@%s has been installed", repo_name, repo_head[:7])
 
     def install(self) -> None:
         """Backup and Install/Update AddOns
@@ -168,17 +192,27 @@ class AddOnsUpdater:
         addons_to_install: List[List] = []
         for repository in vault.repositories:
             if repository.name not in self.cache.keys():
-                log.info(f"{repository.name} will be installed")
+                log.info("%s will be installed", repository.name)
             elif repository.head != self.cache[repository.name]:
-                log.info(f"{repository.name} will be updated")
+                log.info("%s will be updated", repository.name)
             else:
                 continue
-            to_copy: List[Path] = [Path(x).parent for x in glob(str(repository.repo_path / "*.toc"))] or [
-                Path(x).parent for x in glob(str(repository.repo_path / "*" / "*.toc"))
+            to_copy: List[Path] = [
+                Path(x).parent
+                for x in glob(str(repository.repo_path / "*.toc"))
+            ] or [
+                Path(x).parent
+                for x in glob(str(repository.repo_path / "*" / "*.toc"))
             ]
-            to_backup: List[str] = [Path(x).parent.name for x in glob(str(repository.repo_path / "*.toc"))] or [
-                Path(x).parent.name for x in glob(str(repository.repo_path / "*" / "*.toc"))
+            to_backup: List[str] = [
+                Path(x).parent.name
+                for x in glob(str(repository.repo_path / "*.toc"))
+            ] or [
+                Path(x).parent.name
+                for x in glob(str(repository.repo_path / "*" / "*.toc"))
             ]
             addons_to_backup.extend(to_backup)
-            addons_to_install.append([repository.name, repository.head, to_copy])
+            addons_to_install.append(
+                [repository.name, repository.head, to_copy]
+            )
         return addons_to_backup, addons_to_install
