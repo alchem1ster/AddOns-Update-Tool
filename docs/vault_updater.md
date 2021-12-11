@@ -1,6 +1,6 @@
 # Vault Updater
 
-> Auto-generated documentation for [vault_updater](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/vault_updater.py) module.
+> Auto-generated documentation for [vault_updater](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/vault_updater.py) module.
 
 Vault update CLI
 
@@ -9,7 +9,7 @@ Vault update CLI
 
 ## main
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/vault_updater.py#L26)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/vault_updater.py#L26)
 
 ```python
 def main():

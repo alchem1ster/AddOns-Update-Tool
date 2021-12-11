@@ -1,6 +1,6 @@
 # Line Ending
 
-> Auto-generated documentation for [dulwich.line_ending](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py) module.
+> Auto-generated documentation for [dulwich.line_ending](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py) module.
 
 All line-ending related functions, from conversions to config processing
 
@@ -136,7 +136,7 @@ Sources:
 
 ## BlobNormalizer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L217)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L217)
 
 ```python
 class BlobNormalizer(object):
@@ -148,7 +148,7 @@ on configuration, gitattributes, path and operation (checkin or checkout)
 
 ### BlobNormalizer().checkin_normalize
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L244)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L244)
 
 ```python
 def checkin_normalize(blob, tree_path):
@@ -158,7 +158,7 @@ Normalize a blob during a checkin operation
 
 ### BlobNormalizer().checkout_normalize
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L253)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L253)
 
 ```python
 def checkout_normalize(blob, tree_path):
@@ -168,7 +168,7 @@ Normalize a blob during a checkout operation
 
 ## TreeBlobNormalizer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L287)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L287)
 
 ```python
 class TreeBlobNormalizer(BlobNormalizer):
@@ -181,7 +181,7 @@ class TreeBlobNormalizer(BlobNormalizer):
 
 ### TreeBlobNormalizer().checkin_normalize
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L297)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L297)
 
 ```python
 def checkin_normalize(blob, tree_path):
@@ -189,7 +189,7 @@ def checkin_normalize(blob, tree_path):
 
 ## convert_crlf_to_lf
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L146)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L146)
 
 ```python
 def convert_crlf_to_lf(text_hunk):
@@ -204,7 +204,7 @@ Convert CRLF in text hunk into LF
 
 ## convert_lf_to_crlf
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L156)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L156)
 
 ```python
 def convert_lf_to_crlf(text_hunk):
@@ -219,7 +219,7 @@ Convert LF in text hunk into CRLF
 
 ## get_checkin_filter
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L176)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L176)
 
 ```python
 def get_checkin_filter(core_eol, core_autocrlf, git_attributes):
@@ -229,7 +229,7 @@ Returns the correct checkin filter based on the passed arguments
 
 ## get_checkin_filter_autocrlf
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L200)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L200)
 
 ```python
 def get_checkin_filter_autocrlf(core_autocrlf):
@@ -246,7 +246,7 @@ Returns the correct checkin filter base on autocrlf value
 
 ## get_checkout_filter
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L168)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L168)
 
 ```python
 def get_checkout_filter(core_eol, core_autocrlf, git_attributes):
@@ -256,7 +256,7 @@ Returns the correct checkout filter based on the passed arguments
 
 ## get_checkout_filter_autocrlf
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L184)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L184)
 
 ```python
 def get_checkout_filter_autocrlf(core_autocrlf):
@@ -273,7 +273,7 @@ Returns the correct checkout filter base on autocrlf value
 
 ## normalize_blob
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/line_ending.py#L263)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/line_ending.py#L263)
 
 ```python
 def normalize_blob(blob, conversion, binary_detection):

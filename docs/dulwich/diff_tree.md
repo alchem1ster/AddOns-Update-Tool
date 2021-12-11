@@ -1,6 +1,6 @@
 # Diff Tree
 
-> Auto-generated documentation for [dulwich.diff_tree](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py) module.
+> Auto-generated documentation for [dulwich.diff_tree](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py) module.
 
 Utilities for diffing files and trees.
 
@@ -20,7 +20,7 @@ Utilities for diffing files and trees.
 
 ## RenameDetector
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L403)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L403)
 
 ```python
 class RenameDetector(object):
@@ -43,7 +43,7 @@ Object for handling rename detection between two trees.
 
 ### RenameDetector().changes_with_renames
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L620)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L620)
 
 ```python
 def changes_with_renames(
@@ -58,7 +58,7 @@ Iterate TreeChanges between two tree SHAs, with rename detection.
 
 ## TreeChange
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L56)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L56)
 
 ```python
 class TreeChange(namedtuple('TreeChange', ['type', 'old', 'new'])):
@@ -68,7 +68,7 @@ Named tuple a single change between two trees.
 
 ### TreeChange.add
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L59)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L59)
 
 ```python
 @classmethod
@@ -77,7 +77,7 @@ def add(new):
 
 ### TreeChange.delete
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L63)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L63)
 
 ```python
 @classmethod
@@ -86,7 +86,7 @@ def delete(old):
 
 ## tree_changes
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L166)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L166)
 
 ```python
 def tree_changes(
@@ -121,7 +121,7 @@ Iterator over TreeChange instances for each change between the
 
 ## tree_changes_for_merge
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L246)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L246)
 
 ```python
 def tree_changes_for_merge(
@@ -156,7 +156,7 @@ deletes, if not all of the old SHAs match.
 
 ## walk_trees
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/diff_tree.py#L124)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L124)
 
 ```python
 def walk_trees(store, tree1_id, tree2_id, prune_identical=False):

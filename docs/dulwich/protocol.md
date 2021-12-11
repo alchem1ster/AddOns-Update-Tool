@@ -1,6 +1,6 @@
 # Protocol
 
-> Auto-generated documentation for [dulwich.protocol](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py) module.
+> Auto-generated documentation for [dulwich.protocol](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py) module.
 
 Generic functions for talking the git smart server protocol.
 
@@ -51,7 +51,7 @@ Generic functions for talking the git smart server protocol.
 
 ## BufferedPktLineWriter
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L513)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L513)
 
 ```python
 class BufferedPktLineWriter(object):
@@ -66,7 +66,7 @@ it until enough lines have been written such that their total length
 
 ### BufferedPktLineWriter().flush
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L548)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L548)
 
 ```python
 def flush():
@@ -76,7 +76,7 @@ Flush all data from the buffer.
 
 ### BufferedPktLineWriter().write
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L533)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L533)
 
 ```python
 def write(data):
@@ -86,7 +86,7 @@ Write data, wrapping it in a pkt-line.
 
 ## PktLineParser
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L557)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L557)
 
 ```python
 class PktLineParser(object):
@@ -97,7 +97,7 @@ Packet line parser that hands completed packets off to a callback.
 
 ### PktLineParser().get_tail
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L583)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L583)
 
 ```python
 def get_tail():
@@ -107,7 +107,7 @@ Read back any unused data.
 
 ### PktLineParser().parse
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L564)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L564)
 
 ```python
 def parse(data):
@@ -117,7 +117,7 @@ Parse a fragment of data and call back for any completed packets.
 
 ## Protocol
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L186)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L186)
 
 ```python
 class Protocol(object):
@@ -136,7 +136,7 @@ For details on the pkt-line format, see the cgit distribution:
 
 ### Protocol().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L205)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L205)
 
 ```python
 def close():
@@ -144,7 +144,7 @@ def close():
 
 ### Protocol().eof
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L251)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L251)
 
 ```python
 def eof():
@@ -159,7 +159,7 @@ Returns: True if the stream is at EOF, False otherwise.
 
 ### Protocol().read_cmd
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L352)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L352)
 
 ```python
 def read_cmd():
@@ -173,7 +173,7 @@ Returns: A tuple of (command, [list of arguments]).
 
 ### Protocol().read_pkt_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L215)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L215)
 
 ```python
 def read_pkt_line():
@@ -188,7 +188,7 @@ Returns: The next string from the stream, without the length prefix, or
 
 ### Protocol().read_pkt_seq
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L281)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L281)
 
 ```python
 def read_pkt_seq():
@@ -201,7 +201,7 @@ Returns: Yields each line of data up to but not including the next
 
 ### Protocol().send_cmd
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L341)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L341)
 
 ```python
 def send_cmd(cmd, *args):
@@ -218,7 +218,7 @@ Only used for the TCP git protocol (git://).
 
 ### Protocol().unread_pkt_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L266)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L266)
 
 ```python
 def unread_pkt_line(data):
@@ -239,7 +239,7 @@ readahead buffer.
 
 ### Protocol().write_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L307)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L307)
 
 ```python
 def write_file():
@@ -249,7 +249,7 @@ Return a writable file-like object for this protocol.
 
 ### Protocol().write_pkt_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L292)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L292)
 
 ```python
 def write_pkt_line(line):
@@ -264,7 +264,7 @@ Sends a pkt-line to the remote git process.
 
 ### Protocol().write_sideband
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L327)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L327)
 
 ```python
 def write_sideband(channel, blob):
@@ -279,7 +279,7 @@ Write multiplexed data to the sideband.
 
 ## ProtocolFile
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L148)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L148)
 
 ```python
 class ProtocolFile(object):
@@ -290,7 +290,7 @@ A dummy file for network ops that expect file-like objects.
 
 ### ProtocolFile().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L158)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L158)
 
 ```python
 def close():
@@ -298,7 +298,7 @@ def close():
 
 ### ProtocolFile().tell
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L155)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L155)
 
 ```python
 def tell():
@@ -306,7 +306,7 @@ def tell():
 
 ## ReceivableProtocol
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L366)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L366)
 
 ```python
 class ReceivableProtocol(Protocol):
@@ -335,7 +335,7 @@ will still block until at least one byte is read.
 
 ### ReceivableProtocol().read
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L388)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L388)
 
 ```python
 def read(size):
@@ -343,7 +343,7 @@ def read(size):
 
 ### ReceivableProtocol().recv
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L449)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L449)
 
 ```python
 def recv(size):
@@ -351,7 +351,7 @@ def recv(size):
 
 ## ack_type
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L504)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L504)
 
 ```python
 def ack_type(capabilities):
@@ -361,7 +361,7 @@ Extract the ack type from a capabilities list.
 
 ## agent_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L113)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L113)
 
 ```python
 def agent_string():
@@ -369,7 +369,7 @@ def agent_string():
 
 ## capability_agent
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L117)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L117)
 
 ```python
 def capability_agent():
@@ -377,7 +377,7 @@ def capability_agent():
 
 ## capability_symref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L121)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L121)
 
 ```python
 def capability_symref(from_ref, to_ref):
@@ -385,7 +385,7 @@ def capability_symref(from_ref, to_ref):
 
 ## extract_capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L473)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L473)
 
 ```python
 def extract_capabilities(text):
@@ -400,7 +400,7 @@ Extract a capabilities list from a string, if present.
 
 ## extract_capability_names
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L125)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L125)
 
 ```python
 def extract_capability_names(capabilities):
@@ -408,7 +408,7 @@ def extract_capability_names(capabilities):
 
 ## extract_want_line_capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L486)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L486)
 
 ```python
 def extract_want_line_capabilities(text):
@@ -428,7 +428,7 @@ want obj-id cap1 cap2 ...
 
 ## format_cmd_pkt
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L162)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L162)
 
 ```python
 def format_cmd_pkt(cmd, *args):
@@ -436,7 +436,7 @@ def format_cmd_pkt(cmd, *args):
 
 ## parse_capability
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L129)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L129)
 
 ```python
 def parse_capability(capability):
@@ -444,7 +444,7 @@ def parse_capability(capability):
 
 ## parse_cmd_pkt
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L166)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L166)
 
 ```python
 def parse_cmd_pkt(line):
@@ -452,7 +452,7 @@ def parse_cmd_pkt(line):
 
 ## pkt_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L173)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L173)
 
 ```python
 def pkt_line(data):
@@ -468,7 +468,7 @@ Wrap data in a pkt-line.
 
 ## symref_capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/protocol.py#L136)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/protocol.py#L136)
 
 ```python
 def symref_capabilities(symrefs):

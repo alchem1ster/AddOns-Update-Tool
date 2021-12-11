@@ -1,6 +1,6 @@
 # Refs
 
-> Auto-generated documentation for [dulwich.refs](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py) module.
+> Auto-generated documentation for [dulwich.refs](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py) module.
 
 Ref handling.
 
@@ -64,7 +64,7 @@ Ref handling.
 
 ## DictRefsContainer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L460)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L460)
 
 ```python
 class DictRefsContainer(RefsContainer):
@@ -82,7 +82,7 @@ threadsafe.
 
 ### DictRefsContainer().add_if_new
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L541)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L541)
 
 ```python
 def add_if_new(
@@ -97,7 +97,7 @@ def add_if_new(
 
 ### DictRefsContainer().allkeys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L473)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L473)
 
 ```python
 def allkeys():
@@ -105,7 +105,7 @@ def allkeys():
 
 ### DictRefsContainer().get_packed_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L479)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L479)
 
 ```python
 def get_packed_refs():
@@ -113,7 +113,7 @@ def get_packed_refs():
 
 ### DictRefsContainer().get_peeled
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L593)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L593)
 
 ```python
 def get_peeled(name):
@@ -121,7 +121,7 @@ def get_peeled(name):
 
 ### DictRefsContainer().read_loose_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L476)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L476)
 
 ```python
 def read_loose_ref(name):
@@ -129,7 +129,7 @@ def read_loose_ref(name):
 
 ### DictRefsContainer().remove_if_equals
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L565)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L565)
 
 ```python
 def remove_if_equals(
@@ -144,7 +144,7 @@ def remove_if_equals(
 
 ### DictRefsContainer().set_if_equals
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L512)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L512)
 
 ```python
 def set_if_equals(
@@ -160,7 +160,7 @@ def set_if_equals(
 
 ### DictRefsContainer().set_symbolic_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L489)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L489)
 
 ```python
 def set_symbolic_ref(
@@ -175,7 +175,7 @@ def set_symbolic_ref(
 
 ### DictRefsContainer().watch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L486)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L486)
 
 ```python
 def watch():
@@ -183,7 +183,7 @@ def watch():
 
 ## DiskRefsContainer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L686)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L686)
 
 ```python
 class DiskRefsContainer(RefsContainer):
@@ -198,7 +198,7 @@ Refs container that reads refs from disk.
 
 ### DiskRefsContainer().add_if_new
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L957)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L957)
 
 ```python
 def add_if_new(
@@ -225,7 +225,7 @@ chain does not exist.
 
 ### DiskRefsContainer().allkeys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L724)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L724)
 
 ```python
 def allkeys():
@@ -233,7 +233,7 @@ def allkeys():
 
 ### DiskRefsContainer().get_packed_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L752)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L752)
 
 ```python
 def get_packed_refs():
@@ -248,7 +248,7 @@ Note: Will return an empty dictionary when no packed-refs file is
 
 ### DiskRefsContainer().get_peeled
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L784)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L784)
 
 ```python
 def get_peeled(name):
@@ -265,7 +265,7 @@ Return the cached peeled value of a ref, if available.
 
 ### DiskRefsContainer().read_loose_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L803)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L803)
 
 ```python
 def read_loose_ref(name):
@@ -288,7 +288,7 @@ the file. Otherwise, only read the first 40 bytes.
 
 ### DiskRefsContainer().refpath
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L741)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L741)
 
 ```python
 def refpath(name):
@@ -298,7 +298,7 @@ Return the disk path of a ref.
 
 ### DiskRefsContainer().remove_if_equals
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1008)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1008)
 
 ```python
 def remove_if_equals(
@@ -326,7 +326,7 @@ perform an atomic compare-and-delete operation.
 
 ### DiskRefsContainer().set_if_equals
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L888)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L888)
 
 ```python
 def set_if_equals(
@@ -356,7 +356,7 @@ an atomic compare-and-swap operation.
 
 ### DiskRefsContainer().set_symbolic_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L850)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L850)
 
 ```python
 def set_symbolic_ref(
@@ -379,7 +379,7 @@ Make a ref point at another ref.
 
 ### DiskRefsContainer().subkeys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L705)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L705)
 
 ```python
 def subkeys(base):
@@ -387,7 +387,7 @@ def subkeys(base):
 
 ### DiskRefsContainer().watch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1085)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1085)
 
 ```python
 def watch():
@@ -395,7 +395,7 @@ def watch():
 
 ## InfoRefsContainer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L608)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L608)
 
 ```python
 class InfoRefsContainer(RefsContainer):
@@ -410,7 +410,7 @@ Refs container that reads refs from a info/refs file.
 
 ### InfoRefsContainer().allkeys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L626)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L626)
 
 ```python
 def allkeys():
@@ -418,7 +418,7 @@ def allkeys():
 
 ### InfoRefsContainer().get_packed_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L632)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L632)
 
 ```python
 def get_packed_refs():
@@ -426,7 +426,7 @@ def get_packed_refs():
 
 ### InfoRefsContainer().get_peeled
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L635)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L635)
 
 ```python
 def get_peeled(name):
@@ -434,7 +434,7 @@ def get_peeled(name):
 
 ### InfoRefsContainer().read_loose_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L629)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L629)
 
 ```python
 def read_loose_ref(name):
@@ -442,7 +442,7 @@ def read_loose_ref(name):
 
 ## RefsContainer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L95)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L95)
 
 ```python
 class RefsContainer(object):
@@ -453,7 +453,7 @@ A container for refs.
 
 ### RefsContainer().\_\_delitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L400)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L400)
 
 ```python
 def __delitem__(name):
@@ -474,7 +474,7 @@ Note: This method unconditionally deletes the contents of a reference.
 
 ### RefsContainer().\_\_getitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L314)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L314)
 
 ```python
 def __getitem__(name):
@@ -486,7 +486,7 @@ This method follows all symbolic references.
 
 ### RefsContainer().\_\_setitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L360)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L360)
 
 ```python
 def __setitem__(name, ref):
@@ -508,7 +508,7 @@ Note: This method unconditionally overwrites the contents of a
 
 ### RefsContainer().add_if_new
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L350)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L350)
 
 ```python
 def add_if_new(name, ref):
@@ -524,7 +524,7 @@ Add a new reference only if it does not already exist.
 
 ### RefsContainer().allkeys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L185)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L185)
 
 ```python
 def allkeys():
@@ -534,7 +534,7 @@ All refs present in this container.
 
 ### RefsContainer().as_dict
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L220)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L220)
 
 ```python
 def as_dict(base=None):
@@ -544,7 +544,7 @@ Return the contents of this container as a dictionary.
 
 ### RefsContainer().follow
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L277)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L277)
 
 ```python
 def follow(name):
@@ -557,7 +557,7 @@ Returns: a tuple of (refnames, sha), wheres refnames are the names of
 
 ### RefsContainer().get_packed_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L135)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L135)
 
 ```python
 def get_packed_refs():
@@ -572,7 +572,7 @@ Note: Will return an empty dictionary when no packed-refs file is
 
 ### RefsContainer().get_peeled
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L145)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L145)
 
 ```python
 def get_peeled(name):
@@ -589,7 +589,7 @@ Return the cached peeled value of a ref, if available.
 
 ### RefsContainer().get_symrefs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L415)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L415)
 
 ```python
 def get_symrefs():
@@ -601,7 +601,7 @@ Returns: Dictionary mapping source ref to target ref
 
 ### RefsContainer().import_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L156)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L156)
 
 ```python
 def import_refs(
@@ -617,7 +617,7 @@ def import_refs(
 
 ### RefsContainer().keys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L192)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L192)
 
 ```python
 def keys(base=None):
@@ -633,7 +633,7 @@ Refs present in this container.
 
 ### RefsContainer().read_loose_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L267)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L267)
 
 ```python
 def read_loose_ref(name):
@@ -649,7 +649,7 @@ Read a loose reference and return its contents.
 
 ### RefsContainer().read_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L254)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L254)
 
 ```python
 def read_ref(refname):
@@ -665,7 +665,7 @@ Read a reference without following any references.
 
 ### RefsContainer().remove_if_equals
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L376)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L376)
 
 ```python
 def remove_if_equals(
@@ -694,7 +694,7 @@ operation.
 
 ### RefsContainer().set_if_equals
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L324)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L324)
 
 ```python
 def set_if_equals(
@@ -725,7 +725,7 @@ operation.
 
 ### RefsContainer().set_symbolic_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L117)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L117)
 
 ```python
 def set_symbolic_ref(
@@ -748,7 +748,7 @@ Make a ref point at another ref.
 
 ### RefsContainer().subkeys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L205)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L205)
 
 ```python
 def subkeys(base):
@@ -764,7 +764,7 @@ Refs present in this container under a base.
 
 ### RefsContainer().watch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L430)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L430)
 
 ```python
 def watch():
@@ -776,7 +776,7 @@ Returns a context manager that yields tuples with (refname, new_sha)
 
 ## check_ref_format
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L61)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L61)
 
 ```python
 def check_ref_format(refname):
@@ -796,7 +796,7 @@ http://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html
 
 ## is_local_branch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1195)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1195)
 
 ```python
 def is_local_branch(x):
@@ -804,7 +804,7 @@ def is_local_branch(x):
 
 ## parse_symref_value
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L49)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L49)
 
 ```python
 def parse_symref_value(contents):
@@ -819,7 +819,7 @@ Parse a symref value.
 
 ## read_info_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1170)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1170)
 
 ```python
 def read_info_refs(f):
@@ -827,7 +827,7 @@ def read_info_refs(f):
 
 ## read_packed_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1104)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1104)
 
 ```python
 def read_packed_refs(f):
@@ -842,7 +842,7 @@ Read a packed refs file.
 
 ## read_packed_refs_with_peeled
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1120)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1120)
 
 ```python
 def read_packed_refs_with_peeled(f):
@@ -859,7 +859,7 @@ with ref names, SHA1s, and peeled SHA1s (or None).
 
 ## strip_peeled_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1199)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1199)
 
 ```python
 def strip_peeled_refs(refs):
@@ -869,7 +869,7 @@ Remove all peeled refs
 
 ## write_info_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1178)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1178)
 
 ```python
 def write_info_refs(refs, store):
@@ -879,7 +879,7 @@ Generate info refs.
 
 ## write_packed_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/refs.py#L1152)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/refs.py#L1152)
 
 ```python
 def write_packed_refs(f, packed_refs, peeled_refs=None):

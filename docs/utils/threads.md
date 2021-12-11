@@ -1,6 +1,6 @@
 # Threads
 
-> Auto-generated documentation for [utils.threads](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/threads.py) module.
+> Auto-generated documentation for [utils.threads](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/utils/threads.py) module.
 
 Multithreading module
 
@@ -9,7 +9,7 @@ Multithreading module
 
 ## threaded
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/threads.py#L8)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/utils/threads.py#L8)
 
 ```python
 def threaded(callable_func: Callable):

@@ -1,6 +1,6 @@
 # Log
 
-> Auto-generated documentation for [utils.log](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/utils/log.py) module.
+> Auto-generated documentation for [utils.log](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/utils/log.py) module.
 
 Logging module
 

@@ -1,6 +1,6 @@
 # Hooks
 
-> Auto-generated documentation for [dulwich.hooks](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py) module.
+> Auto-generated documentation for [dulwich.hooks](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py) module.
 
 Access to hooks.
 
@@ -17,7 +17,7 @@ Access to hooks.
 
 ## CommitMsgShellHook
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L135)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L135)
 
 ```python
 class CommitMsgShellHook(ShellHook):
@@ -40,7 +40,7 @@ new commit message or None
 
 ## Hook
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L31)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L31)
 
 ```python
 class Hook(object):
@@ -50,7 +50,7 @@ Generic hook object.
 
 ### Hook().execute
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L34)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L34)
 
 ```python
 def execute(*args):
@@ -72,7 +72,7 @@ a hook may return a useful value
 
 ## PostCommitShellHook
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L126)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L126)
 
 ```python
 class PostCommitShellHook(ShellHook):
@@ -87,7 +87,7 @@ post-commit shell hook
 
 ## PostReceiveShellHook
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L170)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L170)
 
 ```python
 class PostReceiveShellHook(ShellHook):
@@ -102,7 +102,7 @@ post-receive shell hook
 
 ### PostReceiveShellHook().execute
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L178)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L178)
 
 ```python
 def execute(client_refs):
@@ -110,7 +110,7 @@ def execute(client_refs):
 
 ## PreCommitShellHook
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L117)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L117)
 
 ```python
 class PreCommitShellHook(ShellHook):
@@ -125,7 +125,7 @@ pre-commit shell hook
 
 ## ShellHook
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L47)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L47)
 
 ```python
 class ShellHook(Hook):
@@ -151,7 +151,7 @@ Implements standard githooks(5) [0]:
 
 ### ShellHook().execute
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/hooks.py#L89)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/hooks.py#L89)
 
 ```python
 def execute(*args):

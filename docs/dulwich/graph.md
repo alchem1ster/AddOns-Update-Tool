@@ -1,6 +1,6 @@
 # Graph
 
-> Auto-generated documentation for [dulwich.graph](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/graph.py) module.
+> Auto-generated documentation for [dulwich.graph](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/graph.py) module.
 
 Implementation of merge-base following the approach of git
 
@@ -11,7 +11,7 @@ Implementation of merge-base following the approach of git
 
 ## can_fast_forward
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/graph.py#L132)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/graph.py#L132)
 
 ```python
 def can_fast_forward(repo, c1, c2):
@@ -27,7 +27,7 @@ Is it possible to fast-forward from c1 to c2?
 
 ## find_merge_base
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/graph.py#L85)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/graph.py#L85)
 
 ```python
 def find_merge_base(repo, commit_ids):
@@ -46,7 +46,7 @@ list of lowest common ancestor commit_ids
 
 ## find_octopus_base
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/graph.py#L106)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/graph.py#L106)
 
 ```python
 def find_octopus_base(repo, commit_ids):

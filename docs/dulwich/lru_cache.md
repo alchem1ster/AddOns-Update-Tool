@@ -1,6 +1,6 @@
 # LRUCache
 
-> Auto-generated documentation for [dulwich.lru_cache](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py) module.
+> Auto-generated documentation for [dulwich.lru_cache](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py) module.
 
 A simple least-recently-used (LRU) cache.
 
@@ -22,7 +22,7 @@ A simple least-recently-used (LRU) cache.
 
 ## LRUCache
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L62)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L62)
 
 ```python
 class LRUCache(object):
@@ -33,7 +33,7 @@ A class which manages a cache of entries, removing unused ones.
 
 ### LRUCache().\_\_setitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L211)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L211)
 
 ```python
 def __setitem__(key, value):
@@ -43,7 +43,7 @@ Add a value to the cache, there will be no cleanup function.
 
 ### LRUCache().add
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L147)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L147)
 
 ```python
 def add(key, value, cleanup=None):
@@ -63,7 +63,7 @@ cleanup(key, value).
 
 ### LRUCache().cache_size
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L175)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L175)
 
 ```python
 def cache_size():
@@ -73,7 +73,7 @@ Get the number of entries we will cache.
 
 ### LRUCache().cleanup
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L201)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L201)
 
 ```python
 def cleanup():
@@ -86,7 +86,7 @@ the after_cleanup_count.
 
 ### LRUCache().clear
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L267)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L267)
 
 ```python
 def clear():
@@ -96,7 +96,7 @@ Clear out all of the cache.
 
 ### LRUCache().get
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L179)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L179)
 
 ```python
 def get(key, default=None):
@@ -104,7 +104,7 @@ def get(key, default=None):
 
 ### LRUCache().items
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L197)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L197)
 
 ```python
 def items():
@@ -114,7 +114,7 @@ Get the key:value pairs as a dict.
 
 ### LRUCache().keys
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L186)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L186)
 
 ```python
 def keys():
@@ -130,7 +130,7 @@ Returns: An unordered list of keys that are currently cached.
 
 ### LRUCache().resize
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L273)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L273)
 
 ```python
 def resize(max_cache, after_cleanup_count=None):
@@ -140,7 +140,7 @@ Change the number of entries that will be cached.
 
 ## LRUSizeCache
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L286)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L286)
 
 ```python
 class LRUSizeCache(LRUCache):
@@ -165,7 +165,7 @@ defaults to len() if not supplied.
 
 ### LRUSizeCache().add
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L320)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L320)
 
 ```python
 def add(key, value, cleanup=None):
@@ -185,7 +185,7 @@ cleanup(key, value).
 
 ### LRUSizeCache().cleanup
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L358)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L358)
 
 ```python
 def cleanup():
@@ -198,7 +198,7 @@ the after_cleanup_size.
 
 ### LRUSizeCache().resize
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/lru_cache.py#L372)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lru_cache.py#L372)
 
 ```python
 def resize(max_size, after_cleanup_size=None):

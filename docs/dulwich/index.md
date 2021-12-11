@@ -1,6 +1,6 @@
 # Index
 
-> Auto-generated documentation for [dulwich.index](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py) module.
+> Auto-generated documentation for [dulwich.index](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py) module.
 
 Parser for the git index file format.
 
@@ -62,7 +62,7 @@ Parser for the git index file format.
 
 ## Index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L308)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L308)
 
 ```python
 class Index(object):
@@ -73,7 +73,7 @@ A Git Index file.
 
 ### Index().\_\_getitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L358)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L358)
 
 ```python
 def __getitem__(name: bytes) -> IndexEntry:
@@ -90,7 +90,7 @@ Returns: tuple with (ctime, mtime, dev, ino, mode, uid, gid, size, sha,
 
 ### Index().\_\_iter\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L366)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L366)
 
 ```python
 def __iter__() -> Iterator[bytes]:
@@ -100,7 +100,7 @@ Iterate over the paths in this index.
 
 ### Index().\_\_len\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L354)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L354)
 
 ```python
 def __len__() -> int:
@@ -110,7 +110,7 @@ Number of entries in this index file.
 
 ### Index().changes_from_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L414)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L414)
 
 ```python
 def changes_from_tree(object_store, tree, want_unchanged=False):
@@ -128,7 +128,7 @@ Find the differences between the contents of this index and a tree.
 
 ### Index().clear
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L390)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L390)
 
 ```python
 def clear():
@@ -138,7 +138,7 @@ Remove all contents from this index.
 
 ### Index().commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L438)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L438)
 
 ```python
 def commit(object_store):
@@ -156,7 +156,7 @@ Root tree SHA
 
 ### Index().get_mode
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L374)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L374)
 
 ```python
 def get_mode(path: bytes) -> int:
@@ -166,7 +166,7 @@ Return the POSIX file mode for the object at a path.
 
 ### Index().get_sha1
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L370)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L370)
 
 ```python
 def get_sha1(path: bytes) -> bytes:
@@ -176,7 +176,7 @@ Return the (git object) SHA1 for the object at a path.
 
 ### Index().items
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L407)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L407)
 
 ```python
 def items():
@@ -184,7 +184,7 @@ def items():
 
 ### Index().iterblobs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L384)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L384)
 
 ```python
 def iterblobs():
@@ -192,7 +192,7 @@ def iterblobs():
 
 ### Index().iteritems
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L404)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L404)
 
 ```python
 def iteritems():
@@ -200,7 +200,7 @@ def iteritems():
 
 ### Index().iterobjects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L378)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L378)
 
 ```python
 def iterobjects() -> Iterable[Tuple[bytes, bytes, int]]:
@@ -210,7 +210,7 @@ Iterate over path, sha, mode tuples for use with commit_tree.
 
 ### Index().path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L323)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L323)
 
 ```python
 @property
@@ -219,7 +219,7 @@ def path():
 
 ### Index().read
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L339)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L339)
 
 ```python
 def read():
@@ -229,7 +229,7 @@ Read current contents of index from disk.
 
 ### Index().update
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L410)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L410)
 
 ```python
 def update(entries):
@@ -237,7 +237,7 @@ def update(entries):
 
 ### Index().write
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L330)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L330)
 
 ```python
 def write() -> None:
@@ -247,7 +247,7 @@ Write current contents of index to disk.
 
 ## blob_from_path_and_mode
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L727)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L727)
 
 ```python
 def blob_from_path_and_mode(fs_path, mode, tree_encoding='utf-8'):
@@ -263,7 +263,7 @@ Create a blob from a path and a stat object.
 
 ## blob_from_path_and_stat
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L750)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L750)
 
 ```python
 def blob_from_path_and_stat(fs_path, st, tree_encoding='utf-8'):
@@ -279,7 +279,7 @@ Create a blob from a path and a stat object.
 
 ## build_file_from_blob
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L587)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L587)
 
 ```python
 def build_file_from_blob(
@@ -304,7 +304,7 @@ Build a file or symlink on disk based on a Git object.
 
 ## build_index_from_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L656)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L656)
 
 ```python
 def build_index_from_tree(
@@ -339,7 +339,7 @@ Generate and materialize index from a tree
 
 ## changes_from_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L505)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L505)
 
 ```python
 def changes_from_tree(
@@ -370,7 +370,7 @@ a working copy.
 
 ## cleanup_mode
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L286)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L286)
 
 ```python
 def cleanup_mode(mode: int) -> int:
@@ -390,7 +390,7 @@ mode
 
 ## commit_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L493)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L493)
 
 ```python
 def commit_index(object_store: 'BaseObjectStore', index: Index) -> bytes:
@@ -411,7 +411,7 @@ Create a new tree from an index.
 
 ## commit_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L449)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L449)
 
 ```python
 def commit_tree(
@@ -433,7 +433,7 @@ SHA1 of the created tree.
 
 ## get_unstaged_changes
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L810)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L810)
 
 ```python
 def get_unstaged_changes(index: Index, root_path, filter_blob_callback=None):
@@ -453,7 +453,7 @@ Walk through an index and check for differences against working tree.
 
 ## index_entry_from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L886)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L886)
 
 ```python
 def index_entry_from_path(path, object_store=None):
@@ -474,7 +474,7 @@ non-existant files it returns None
 
 ## index_entry_from_stat
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L555)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L555)
 
 ```python
 def index_entry_from_stat(
@@ -496,7 +496,7 @@ Create a new index entry from a stat value.
 
 ## iter_fresh_blobs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L938)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L938)
 
 ```python
 def iter_fresh_blobs(index, root_path):
@@ -516,7 +516,7 @@ Don't use this function; it removes missing entries from index.
 
 ## iter_fresh_entries
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L918)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L918)
 
 ```python
 def iter_fresh_entries(
@@ -537,7 +537,7 @@ Iterate over current versions of index entries on disk.
 
 ## iter_fresh_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L960)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L960)
 
 ```python
 def iter_fresh_objects(
@@ -560,7 +560,7 @@ Iterate over versions of objecs on disk referenced by index.
 
 ## pathjoin
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L114)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L114)
 
 ```python
 def pathjoin(*args):
@@ -570,7 +570,7 @@ Join a /-delimited path.
 
 ## pathsplit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L98)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L98)
 
 ```python
 def pathsplit(path):
@@ -588,7 +588,7 @@ Tuple with directory name and basename
 
 ## read_cache_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L147)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L147)
 
 ```python
 def read_cache_entry(f, version: int) -> Tuple[str, IndexEntry]:
@@ -606,7 +606,7 @@ Read an entry from a cache file.
 
 ## read_cache_time
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L119)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L119)
 
 ```python
 def read_cache_time(f):
@@ -624,7 +624,7 @@ Tuple with seconds and nanoseconds
 
 ## read_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L233)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L233)
 
 ```python
 def read_index(f: BinaryIO):
@@ -634,7 +634,7 @@ Read an index file, yielding the individual entries.
 
 ## read_index_dict
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L244)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L244)
 
 ```python
 def read_index_dict(f):
@@ -648,7 +648,7 @@ Read an index file and return it as a dictionary.
 
 ## read_submodule_head
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L761)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L761)
 
 ```python
 def read_submodule_head(path):
@@ -663,7 +663,7 @@ Read the head commit of a submodule.
 
 ## refresh_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L979)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L979)
 
 ```python
 def refresh_index(index, root_path):
@@ -680,7 +680,7 @@ This is the equivalent to running 'git commit -a'.
 
 ## validate_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L646)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L646)
 
 ```python
 def validate_path(path, element_validator=validate_path_element_default):
@@ -694,7 +694,7 @@ Default path validator that just checks for .git/.
 
 ## validate_path_element_default
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L633)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L633)
 
 ```python
 def validate_path_element_default(element):
@@ -702,7 +702,7 @@ def validate_path_element_default(element):
 
 ## validate_path_element_ntfs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L637)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L637)
 
 ```python
 def validate_path_element_ntfs(element):
@@ -710,7 +710,7 @@ def validate_path_element_ntfs(element):
 
 ## write_cache_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L197)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L197)
 
 ```python
 def write_cache_entry(f, name, entry, version):
@@ -725,7 +725,7 @@ Write an index entry to a file.
 
 ## write_cache_time
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L130)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L130)
 
 ```python
 def write_cache_time(f, t):
@@ -740,7 +740,7 @@ Write a cache time.
 
 ## write_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L256)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L256)
 
 ```python
 def write_index(
@@ -760,7 +760,7 @@ Write an index file.
 
 ## write_index_dict
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/index.py#L274)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/index.py#L274)
 
 ```python
 def write_index_dict(

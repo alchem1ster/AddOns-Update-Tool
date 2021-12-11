@@ -1,6 +1,6 @@
 # Objectspec
 
-> Auto-generated documentation for [dulwich.objectspec](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py) module.
+> Auto-generated documentation for [dulwich.objectspec](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py) module.
 
 Object specification.
 
@@ -19,7 +19,7 @@ Object specification.
 
 ## AmbiguousShortId
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L188)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L188)
 
 ```python
 class AmbiguousShortId(Exception):
@@ -30,7 +30,7 @@ The short id is ambiguous.
 
 ## parse_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L211)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L211)
 
 ```python
 def parse_commit(repo, committish):
@@ -51,7 +51,7 @@ Parse a string referring to a single commit.
 
 ## parse_commit_range
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L172)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L172)
 
 ```python
 def parse_commit_range(repo, committishs):
@@ -72,7 +72,7 @@ Parse a string referring to a range of commits.
 
 ## parse_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L32)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L32)
 
 ```python
 def parse_object(repo, objectish):
@@ -92,7 +92,7 @@ Parse a string referring to an object.
 
 ## parse_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L67)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L67)
 
 ```python
 def parse_ref(container, refspec):
@@ -112,7 +112,7 @@ Parse a string referring to a reference.
 
 ## parse_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L153)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L153)
 
 ```python
 def parse_refs(container, refspecs):
@@ -132,7 +132,7 @@ Parse a list of refspecs to a list of refs.
 
 ## parse_reftuple
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L92)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L92)
 
 ```python
 def parse_reftuple(lh_container, rh_container, refspec, force=False):
@@ -153,7 +153,7 @@ Parse a reftuple spec.
 
 ## parse_reftuples
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L127)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L127)
 
 ```python
 def parse_reftuples(
@@ -180,7 +180,7 @@ Parse a list of reftuple specs to a list of reftuples.
 
 ## parse_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L46)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L46)
 
 ```python
 def parse_tree(repo, treeish):
@@ -200,7 +200,7 @@ Parse a string referring to a tree.
 
 ## scan_for_short_id
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L196)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L196)
 
 ```python
 def scan_for_short_id(object_store, prefix):
@@ -210,7 +210,7 @@ Scan an object store for a short id.
 
 ## to_bytes
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/master/dulwich/objectspec.py#L26)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L26)
 
 ```python
 def to_bytes(text):
