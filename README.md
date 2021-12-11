@@ -87,7 +87,7 @@ When you run the script from the release version or the source code with the `-h
 `    .\AddOnsUpdateTool.exe -v github -w ..\wow\Wow.exe -c .\config.json -s --verbose`  
 or the next one if you put `AddOnsUpdateTool.exe` and Config file in the game folder:  
 `    .\AddOnsUpdateTool.exe -v github -w -c -s --verbose`  
-or even just start `AddOnsUpdateTool.exe` inside game folder
+or even just start `AddOnsUpdateTool.exe` inside game folder (but in this case the game will not start after update, 'cause not provided `-s` argument) 
 6. If you want, you can create a shortcut to start with the necessary arguments and place it on the desktop or start menu
 
 ### Launching from SOURCE code
