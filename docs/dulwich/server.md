@@ -1,0 +1,673 @@
+# Server
+
+> Auto-generated documentation for [dulwich.server](blob/master/dulwich/server.py) module.
+
+Git smart network protocol server implementation.
+
+- [Addons-update-tool](..\README.md#addons-update-tool) / [Modules](..\MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Server
+    - [Backend](#backend)
+        - [Backend().open_repository](#backendopen_repository)
+    - [BackendRepo](#backendrepo)
+        - [BackendRepo().fetch_objects](#backendrepofetch_objects)
+        - [BackendRepo().get_peeled](#backendrepoget_peeled)
+        - [BackendRepo().get_refs](#backendrepoget_refs)
+    - [DictBackend](#dictbackend)
+        - [DictBackend().open_repository](#dictbackendopen_repository)
+    - [FileSystemBackend](#filesystembackend)
+        - [FileSystemBackend().open_repository](#filesystembackendopen_repository)
+    - [Handler](#handler)
+        - [Handler().handle](#handlerhandle)
+    - [MultiAckDetailedGraphWalkerImpl](#multiackdetailedgraphwalkerimpl)
+        - [MultiAckDetailedGraphWalkerImpl().ack](#multiackdetailedgraphwalkerimplack)
+        - [MultiAckDetailedGraphWalkerImpl().handle_done](#multiackdetailedgraphwalkerimplhandle_done)
+        - [MultiAckDetailedGraphWalkerImpl().next](#multiackdetailedgraphwalkerimplnext)
+    - [MultiAckGraphWalkerImpl](#multiackgraphwalkerimpl)
+        - [MultiAckGraphWalkerImpl().ack](#multiackgraphwalkerimplack)
+        - [MultiAckGraphWalkerImpl().handle_done](#multiackgraphwalkerimplhandle_done)
+        - [MultiAckGraphWalkerImpl().next](#multiackgraphwalkerimplnext)
+    - [PackHandler](#packhandler)
+        - [PackHandler.capabilities](#packhandlercapabilities)
+        - [PackHandler.capability_line](#packhandlercapability_line)
+        - [PackHandler().has_capability](#packhandlerhas_capability)
+        - [PackHandler.innocuous_capabilities](#packhandlerinnocuous_capabilities)
+        - [PackHandler().notify_done](#packhandlernotify_done)
+        - [PackHandler.required_capabilities](#packhandlerrequired_capabilities)
+        - [PackHandler().set_client_capabilities](#packhandlerset_client_capabilities)
+    - [ReceivePackHandler](#receivepackhandler)
+        - [ReceivePackHandler.capabilities](#receivepackhandlercapabilities)
+        - [ReceivePackHandler().handle](#receivepackhandlerhandle)
+    - [SingleAckGraphWalkerImpl](#singleackgraphwalkerimpl)
+        - [SingleAckGraphWalkerImpl().ack](#singleackgraphwalkerimplack)
+        - [SingleAckGraphWalkerImpl().handle_done](#singleackgraphwalkerimplhandle_done)
+        - [SingleAckGraphWalkerImpl().next](#singleackgraphwalkerimplnext)
+    - [TCPGitRequestHandler](#tcpgitrequesthandler)
+        - [TCPGitRequestHandler().handle](#tcpgitrequesthandlerhandle)
+    - [TCPGitServer](#tcpgitserver)
+        - [TCPGitServer().handle_error](#tcpgitserverhandle_error)
+        - [TCPGitServer().verify_request](#tcpgitserververify_request)
+    - [UploadArchiveHandler](#uploadarchivehandler)
+        - [UploadArchiveHandler().handle](#uploadarchivehandlerhandle)
+    - [UploadPackHandler](#uploadpackhandler)
+        - [UploadPackHandler.capabilities](#uploadpackhandlercapabilities)
+        - [UploadPackHandler().get_tagged](#uploadpackhandlerget_tagged)
+        - [UploadPackHandler().handle](#uploadpackhandlerhandle)
+        - [UploadPackHandler().progress](#uploadpackhandlerprogress)
+        - [UploadPackHandler.required_capabilities](#uploadpackhandlerrequired_capabilities)
+    - [generate_info_refs](#generate_info_refs)
+    - [generate_objects_info_packs](#generate_objects_info_packs)
+    - [main](#main)
+    - [serve_command](#serve_command)
+    - [update_server_info](#update_server_info)
+
+For more detailed implementation on the network protocol, see the
+Documentation/technical directory in the cgit distribution, and in particular:
+
+* Documentation/technical/protocol-capabilities.txt
+* Documentation/technical/pack-protocol.txt
+
+Currently supported capabilities:
+
+* include-tag
+* thin-pack
+* multi_ack_detailed
+* multi_ack
+* side-band-64k
+* ofs-delta
+* no-progress
+* report-status
+* delete-refs
+* shallow
+* symref
+
+#### Attributes
+
+- `DEFAULT_HANDLERS` - Default handler classes for git services.: `{b'git-upload-pack': UploadPackHandler, b'git-r...`
+
+## Backend
+
+[[find in source code]](blob/master/dulwich/server.py#L125)
+
+```python
+class Backend(object):
+```
+
+A backend for the Git smart server implementation.
+
+### Backend().open_repository
+
+[[find in source code]](blob/master/dulwich/server.py#L128)
+
+```python
+def open_repository(path):
+```
+
+Open the repository at a path.
+
+#### Arguments
+
+- `path` - Path to the repository
+
+#### Raises
+
+  - `NotGitRepository` - no git repository was found at path
+- `Returns` - Instance of BackendRepo
+
+## BackendRepo
+
+[[find in source code]](blob/master/dulwich/server.py#L140)
+
+```python
+class BackendRepo(object):
+```
+
+Repository abstraction used by the Git server.
+
+The methods required here are a subset of those provided by
+dulwich.repo.Repo.
+
+### BackendRepo().fetch_objects
+
+[[find in source code]](blob/master/dulwich/server.py#L170)
+
+```python
+def fetch_objects(determine_wants, graph_walker, progress, get_tagged=None):
+```
+
+Yield the objects required for a list of commits.
+
+#### Arguments
+
+- `progress` - is a callback to send progress messages to the client
+- `get_tagged` - Function that returns a dict of pointed-to sha ->
+  tag sha for including tags.
+
+### BackendRepo().get_peeled
+
+[[find in source code]](blob/master/dulwich/server.py#L158)
+
+```python
+def get_peeled(name: bytes) -> Optional[bytes]:
+```
+
+Return the cached peeled value of a ref, if available.
+
+#### Arguments
+
+  - `name` - Name of the ref to peel
+- `Returns` - The peeled value of the ref. If the ref is known not point to
+    a tag, this will be the SHA the ref refers to. If no cached
+    information about a tag is available, this method may return None,
+    but it should attempt to peel the tag if possible.
+
+### BackendRepo().get_refs
+
+[[find in source code]](blob/master/dulwich/server.py#L150)
+
+```python
+def get_refs() -> Dict[bytes, bytes]:
+```
+
+Get all the refs in the repository
+
+Returns: dict of name -> sha
+
+## DictBackend
+
+[[find in source code]](blob/master/dulwich/server.py#L182)
+
+```python
+class DictBackend(Backend):
+    def __init__(repos):
+```
+
+Trivial backend that looks up Git repositories in a dictionary.
+
+#### See also
+
+- [Backend](#backend)
+
+### DictBackend().open_repository
+
+[[find in source code]](blob/master/dulwich/server.py#L188)
+
+```python
+def open_repository(path: str) -> BaseRepo:
+```
+
+#### See also
+
+- [BaseRepo](repo.md#baserepo)
+
+## FileSystemBackend
+
+[[find in source code]](blob/master/dulwich/server.py#L198)
+
+```python
+class FileSystemBackend(Backend):
+    def __init__(root=os.sep):
+```
+
+Simple backend looking up Git repositories in the local file system.
+
+#### See also
+
+- [Backend](#backend)
+
+### FileSystemBackend().open_repository
+
+[[find in source code]](blob/master/dulwich/server.py#L205)
+
+```python
+def open_repository(path):
+```
+
+## Handler
+
+[[find in source code]](blob/master/dulwich/server.py#L215)
+
+```python
+class Handler(object):
+    def __init__(backend, proto, stateless_rpc=None):
+```
+
+Smart protocol command handler base class.
+
+### Handler().handle
+
+[[find in source code]](blob/master/dulwich/server.py#L223)
+
+```python
+def handle():
+```
+
+## MultiAckDetailedGraphWalkerImpl
+
+[[find in source code]](blob/master/dulwich/server.py#L859)
+
+```python
+class MultiAckDetailedGraphWalkerImpl(object):
+    def __init__(walker):
+```
+
+Graph walker implementation speaking the multi-ack-detailed protocol.
+
+### MultiAckDetailedGraphWalkerImpl().ack
+
+[[find in source code]](blob/master/dulwich/server.py#L866)
+
+```python
+def ack(have_ref):
+```
+
+### MultiAckDetailedGraphWalkerImpl().handle_done
+
+[[find in source code]](blob/master/dulwich/server.py#L900)
+
+```python
+def handle_done(done_required, done_received):
+```
+
+### MultiAckDetailedGraphWalkerImpl().next
+
+[[find in source code]](blob/master/dulwich/server.py#L871)
+
+```python
+def next():
+```
+
+## MultiAckGraphWalkerImpl
+
+[[find in source code]](blob/master/dulwich/server.py#L800)
+
+```python
+class MultiAckGraphWalkerImpl(object):
+    def __init__(walker):
+```
+
+Graph walker implementation that speaks the multi-ack protocol.
+
+### MultiAckGraphWalkerImpl().ack
+
+[[find in source code]](blob/master/dulwich/server.py#L808)
+
+```python
+def ack(have_ref):
+```
+
+### MultiAckGraphWalkerImpl().handle_done
+
+[[find in source code]](blob/master/dulwich/server.py#L835)
+
+```python
+def handle_done(done_required, done_received):
+```
+
+### MultiAckGraphWalkerImpl().next
+
+[[find in source code]](blob/master/dulwich/server.py#L816)
+
+```python
+def next():
+```
+
+## PackHandler
+
+[[find in source code]](blob/master/dulwich/server.py#L227)
+
+```python
+class PackHandler(Handler):
+    def __init__(backend, proto, stateless_rpc=None):
+```
+
+Protocol handler for packs.
+
+#### See also
+
+- [Handler](#handler)
+
+### PackHandler.capabilities
+
+[[find in source code]](blob/master/dulwich/server.py#L241)
+
+```python
+@classmethod
+def capabilities() -> Iterable[bytes]:
+```
+
+### PackHandler.capability_line
+
+[[find in source code]](blob/master/dulwich/server.py#L236)
+
+```python
+@classmethod
+def capability_line(capabilities):
+```
+
+### PackHandler().has_capability
+
+[[find in source code]](blob/master/dulwich/server.py#L278)
+
+```python
+def has_capability(cap: bytes) -> bool:
+```
+
+### PackHandler.innocuous_capabilities
+
+[[find in source code]](blob/master/dulwich/server.py#L245)
+
+```python
+@classmethod
+def innocuous_capabilities() -> Iterable[bytes]:
+```
+
+### PackHandler().notify_done
+
+[[find in source code]](blob/master/dulwich/server.py#L285)
+
+```python
+def notify_done() -> None:
+```
+
+### PackHandler.required_capabilities
+
+[[find in source code]](blob/master/dulwich/server.py#L255)
+
+```python
+@classmethod
+def required_capabilities() -> Iterable[bytes]:
+```
+
+Return a list of capabilities that we require the client to have.
+
+### PackHandler().set_client_capabilities
+
+[[find in source code]](blob/master/dulwich/server.py#L260)
+
+```python
+def set_client_capabilities(caps: Iterable[bytes]) -> None:
+```
+
+## ReceivePackHandler
+
+[[find in source code]](blob/master/dulwich/server.py#L924)
+
+```python
+class ReceivePackHandler(PackHandler):
+    def __init__(
+        backend,
+        args,
+        proto,
+        stateless_rpc=None,
+        advertise_refs=False,
+    ):
+```
+
+Protocol handler for downloading a pack from the client.
+
+#### See also
+
+- [PackHandler](#packhandler)
+
+### ReceivePackHandler.capabilities
+
+[[find in source code]](blob/master/dulwich/server.py#L934)
+
+```python
+@classmethod
+def capabilities() -> Iterable[bytes]:
+```
+
+### ReceivePackHandler().handle
+
+[[find in source code]](blob/master/dulwich/server.py#L1043)
+
+```python
+def handle() -> None:
+```
+
+## SingleAckGraphWalkerImpl
+
+[[find in source code]](blob/master/dulwich/server.py#L756)
+
+```python
+class SingleAckGraphWalkerImpl(object):
+    def __init__(walker):
+```
+
+Graph walker implementation that speaks the single-ack protocol.
+
+### SingleAckGraphWalkerImpl().ack
+
+[[find in source code]](blob/master/dulwich/server.py#L763)
+
+```python
+def ack(have_ref):
+```
+
+### SingleAckGraphWalkerImpl().handle_done
+
+[[find in source code]](blob/master/dulwich/server.py#L779)
+
+```python
+def handle_done(done_required, done_received):
+```
+
+### SingleAckGraphWalkerImpl().next
+
+[[find in source code]](blob/master/dulwich/server.py#L768)
+
+```python
+def next():
+```
+
+## TCPGitRequestHandler
+
+[[find in source code]](blob/master/dulwich/server.py#L1142)
+
+```python
+class TCPGitRequestHandler(socketserver.StreamRequestHandler):
+    def __init__(handlers, *args, **kwargs):
+```
+
+### TCPGitRequestHandler().handle
+
+[[find in source code]](blob/master/dulwich/server.py#L1147)
+
+```python
+def handle():
+```
+
+## TCPGitServer
+
+[[find in source code]](blob/master/dulwich/server.py#L1159)
+
+```python
+class TCPGitServer(socketserver.TCPServer):
+    def __init__(backend, listen_addr, port=TCP_GIT_PORT, handlers=None):
+```
+
+#### See also
+
+- [TCP_GIT_PORT](protocol.md#tcp_git_port)
+
+### TCPGitServer().handle_error
+
+[[find in source code]](blob/master/dulwich/server.py#L1179)
+
+```python
+def handle_error(request, client_address):
+```
+
+### TCPGitServer().verify_request
+
+[[find in source code]](blob/master/dulwich/server.py#L1175)
+
+```python
+def verify_request(request, client_address):
+```
+
+## UploadArchiveHandler
+
+[[find in source code]](blob/master/dulwich/server.py#L1094)
+
+```python
+class UploadArchiveHandler(Handler):
+    def __init__(backend, args, proto, stateless_rpc=None):
+```
+
+#### See also
+
+- [Handler](#handler)
+
+### UploadArchiveHandler().handle
+
+[[find in source code]](blob/master/dulwich/server.py#L1099)
+
+```python
+def handle():
+```
+
+## UploadPackHandler
+
+[[find in source code]](blob/master/dulwich/server.py#L289)
+
+```python
+class UploadPackHandler(PackHandler):
+    def __init__(
+        backend,
+        args,
+        proto,
+        stateless_rpc=None,
+        advertise_refs=False,
+    ):
+```
+
+Protocol handler for uploading a pack to the client.
+
+#### See also
+
+- [PackHandler](#packhandler)
+
+### UploadPackHandler.capabilities
+
+[[find in source code]](blob/master/dulwich/server.py#L304)
+
+```python
+@classmethod
+def capabilities():
+```
+
+### UploadPackHandler().get_tagged
+
+[[find in source code]](blob/master/dulwich/server.py#L331)
+
+```python
+def get_tagged(refs=None, repo=None):
+```
+
+Get a dict of peeled values of tags to their original tag shas.
+
+#### Arguments
+
+  - `refs` - dict of refname -> sha of possible tags; defaults to all
+    of the backend's refs.
+  - `repo` - optional Repo instance for getting peeled refs; defaults
+    to the backend's repo, if available
+- `Returns` - dict of peeled_sha -> tag_sha, where tag_sha is the sha of a
+    tag whose peeled value is peeled_sha.
+
+### UploadPackHandler().handle
+
+[[find in source code]](blob/master/dulwich/server.py#L363)
+
+```python
+def handle():
+```
+
+### UploadPackHandler().progress
+
+[[find in source code]](blob/master/dulwich/server.py#L326)
+
+```python
+def progress(message):
+```
+
+### UploadPackHandler.required_capabilities
+
+[[find in source code]](blob/master/dulwich/server.py#L318)
+
+```python
+@classmethod
+def required_capabilities():
+```
+
+## generate_info_refs
+
+[[find in source code]](blob/master/dulwich/server.py#L1249)
+
+```python
+def generate_info_refs(repo):
+```
+
+Generate an info refs file.
+
+## generate_objects_info_packs
+
+[[find in source code]](blob/master/dulwich/server.py#L1255)
+
+```python
+def generate_objects_info_packs(repo):
+```
+
+Generate an index for for packs.
+
+## main
+
+[[find in source code]](blob/master/dulwich/server.py#L1186)
+
+```python
+def main(argv=sys.argv):
+```
+
+Entry point for starting a TCP git server.
+
+## serve_command
+
+[[find in source code]](blob/master/dulwich/server.py#L1219)
+
+```python
+def serve_command(
+    handler_cls,
+    argv=sys.argv,
+    backend=None,
+    inf=sys.stdin,
+    outf=sys.stdout,
+):
+```
+
+Serve a single command.
+
+This is mostly useful for the implementation of commands used by e.g.
+git+ssh.
+
+#### Arguments
+
+  - `handler_cls` - [Handler](#handler) class to use for the request
+  - `argv` - execv-style command-line arguments. Defaults to sys.argv.
+  - `backend` - [Backend](#backend) to use
+  - `inf` - File-like object to read from, defaults to standard input.
+  - `outf` - File-like object to write to, defaults to standard output.
+- `Returns` - Exit code for use with sys.exit. 0 on success, 1 on failure.
+
+## update_server_info
+
+[[find in source code]](blob/master/dulwich/server.py#L1261)
+
+```python
+def update_server_info(repo):
+```
+
+Generate server info for dumb file access.
+
+This generates info/refs and objects/info/packs,
+similar to "git update-server-info".
