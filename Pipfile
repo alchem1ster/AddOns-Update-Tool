@@ -10,7 +10,6 @@ pyyaml = "*"
 
 [dev-packages]
 pyinstaller = "*"
-black = "*"
 
 [requires]
 python_version = "3.8"
