@@ -1,7 +1,18 @@
 # AddOns Update Tool
  Tool to update World of Warcraft AddOns hosted on GitHub
 
-![](https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/stars/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/forks/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/v/release/alchem1ster/AddOns-Update-Tool?style=flat-square) ![](https://img.shields.io/github/downloads/alchem1ster/AddOns-Update-Tool/total?style=flat-square) ![](https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool?style=flat-square)
+<a href="https://github.com/alchem1ster/AddOns-Update-Tool/issues" alt="Issues">
+<img src="https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
+<a href="https://github.com/alchem1ster/AddOns-Update-Tool/stargazers" alt="Stars">
+<img src="https://img.shields.io/github/stars/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
+<a href="https://github.com/alchem1ster/AddOns-Update-Tool/network/members" alt="Forks">
+<img src="https://img.shields.io/github/forks/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
+<a href="https://github.com/alchem1ster/AddOns-Update-Tool/releases/latest" alt="Last release">
+<img src="https://img.shields.io/github/v/release/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
+<a href="https://github.com/alchem1ster/AddOns-Update-Tool/releases" alt="Downloads">
+<img src="https://img.shields.io/github/downloads/alchem1ster/AddOns-Update-Tool/total?style=flat-square" /></a>
+<a href="https://www.codefactor.io/repository/github/alchem1ster/addons-update-tool" alt="Codefactor">
+<img src="https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
 
 ### Features
 - [x] Pure Python: only [Dulwich](https://github.com/dulwich/dulwich "Dulwich"), [Colorlog](https://github.com/borntyping/python-colorlog "Colorlog") and [PyYAML](https://github.com/yaml/pyyaml/)
