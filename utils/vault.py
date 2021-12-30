@@ -81,7 +81,7 @@ class Repository:
                     f"refs/heads/{self.branch}".encode()
                 ]
                 pull(
-                    self.repo_path,
+                    repo,
                     refspecs=f"refs/heads/{self.branch}".encode(),
                 )
             except Exception:
