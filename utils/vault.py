@@ -9,7 +9,7 @@ from shutil import rmtree
 from threading import Thread
 from typing import List
 
-from dulwich.porcelain import clean, clone, ls_remote, pull, reset
+from dulwich.porcelain import clean, clone, fetch, ls_remote, pull, reset
 from dulwich.repo import Repo
 from utils.log import log
 from utils.threads import threaded
@@ -71,6 +71,15 @@ class Repository:
 
         if self._reset():
             try:
+                repo = Repo(self.repo_path)
+                remote = fetch(
+                    repo,
+                    errstream=custom_errstream,
+                    outstream=custom_outstream,
+                )
+                repo[b"HEAD"] = remote.refs[
+                    f"refs/heads/{self.branch}".encode()
+                ]
                 pull(
                     self.repo_path,
                     refspecs=f"refs/heads/{self.branch}".encode(),
