@@ -134,11 +134,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:5ec2bbb534ed160b261acbbdd1b463eb3cf52a8d223d96a8ab9981f63798e85c",
-                "sha256:75fd345a47ce3d79595b27bf57e6f49c2ca7904f3c7ce75f8a87012046c86b0b"
+                "sha256:5c89b1a14a67ac5f0956f1cb0aeb7d1d3f4c8ba4e4e1ab7bf1af4933f9a2f0fe",
+                "sha256:675fcebecb43c32eb930481abf907619137547f4336206e4d673180242e1a278"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==60.0.0"
+            "version": "==60.2.0"
         }
     }
 }
