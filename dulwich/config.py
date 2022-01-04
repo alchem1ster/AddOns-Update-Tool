@@ -203,7 +203,9 @@ class ConfigDict(Config, MutableMapping):
         return "%s(%r)" % (self.__class__.__name__, self._values)
 
     def __eq__(self, other):
-        return isinstance(other, self.__class__) and other._values == self._values
+        return (
+            isinstance(other, self.__class__) and other._values == self._values
+        )
 
     def __getitem__(self, key):
         return self._values.__getitem__(key)
@@ -310,7 +312,8 @@ def _parse_string(value):
                 v = _ESCAPE_TABLE[value[i]]
             except IndexError:
                 raise ValueError(
-                    "escape character in %r at %d before end of string" % (value, i)
+                    "escape character in %r at %d before end of string"
+                    % (value, i)
                 )
             except KeyError:
                 raise ValueError(
@@ -414,11 +417,15 @@ class ConfigFile(ConfigDict):
                         else:
                             pts[1] = pts[1][1:-1]
                         if not _check_section_name(pts[0]):
-                            raise ValueError("invalid section name %r" % pts[0])
+                            raise ValueError(
+                                "invalid section name %r" % pts[0]
+                            )
                         section = (pts[0], pts[1])
                     else:
                         if not _check_section_name(pts[0]):
-                            raise ValueError("invalid section name %r" % pts[0])
+                            raise ValueError(
+                                "invalid section name %r" % pts[0]
+                            )
                         pts = pts[0].split(b".", 1)
                         if len(pts) == 2:
                             section = (pts[0], pts[1])
@@ -481,7 +488,9 @@ class ConfigFile(ConfigDict):
             if subsection_name is None:
                 f.write(b"[" + section_name + b"]\n")
             else:
-                f.write(b"[" + section_name + b' "' + subsection_name + b'"]\n')
+                f.write(
+                    b"[" + section_name + b' "' + subsection_name + b'"]\n'
+                )
             for key, value in values.items():
                 if value is True:
                     value = b"true"
@@ -520,7 +529,9 @@ def _find_git_in_win_reg():
             "CurrentVersion\\Uninstall\\Git_is1"
         )
     else:
-        subkey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\" "Uninstall\\Git_is1"
+        subkey = (
+            "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Git_is1"
+        )
 
     for key in (winreg.HKEY_CURRENT_USER, winreg.HKEY_LOCAL_MACHINE):
         try:

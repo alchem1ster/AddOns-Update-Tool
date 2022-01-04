@@ -167,7 +167,9 @@ class BackendRepo(object):
         """
         return None
 
-    def fetch_objects(self, determine_wants, graph_walker, progress, get_tagged=None):
+    def fetch_objects(
+        self, determine_wants, graph_walker, progress, get_tagged=None
+    ):
         """
         Yield the objects required for a list of commits.
 
@@ -200,7 +202,9 @@ class FileSystemBackend(Backend):
 
     def __init__(self, root=os.sep):
         super(FileSystemBackend, self).__init__()
-        self.root = (os.path.abspath(root) + os.sep).replace(os.sep * 2, os.sep)
+        self.root = (os.path.abspath(root) + os.sep).replace(
+            os.sep * 2, os.sep
+        )
 
     def open_repository(self, path):
         logger.debug("opening repository at %s", path)
@@ -208,7 +212,9 @@ class FileSystemBackend(Backend):
         normcase_abspath = os.path.normcase(abspath)
         normcase_root = os.path.normcase(self.root)
         if not normcase_abspath.startswith(normcase_root):
-            raise NotGitRepository("Path %r not inside root %r" % (path, self.root))
+            raise NotGitRepository(
+                "Path %r not inside root %r" % (path, self.root)
+            )
         return Repo(abspath)
 
 
@@ -265,12 +271,13 @@ class PackHandler(Handler):
                 continue
             if cap not in allowable_caps:
                 raise GitProtocolError(
-                    "Client asked for capability %r that " "was not advertised." % cap
+                    "Client asked for capability %r that was not advertised."
+                    % cap
                 )
         for cap in self.required_capabilities():
             if cap not in caps:
                 raise GitProtocolError(
-                    "Client does not support required " "capability %r." % cap
+                    "Client does not support required capability %r." % cap
                 )
         self._client_capabilities = set(caps)
         logger.info("Client capabilities: %s", caps)
@@ -278,7 +285,8 @@ class PackHandler(Handler):
     def has_capability(self, cap: bytes) -> bool:
         if self._client_capabilities is None:
             raise GitProtocolError(
-                "Server attempted to access capability %r " "before asking client" % cap
+                "Server attempted to access capability %r before asking client"
+                % cap
             )
         return cap in self._client_capabilities
 
@@ -289,7 +297,9 @@ class PackHandler(Handler):
 class UploadPackHandler(PackHandler):
     """Protocol handler for uploading a pack to the client."""
 
-    def __init__(self, backend, args, proto, stateless_rpc=None, advertise_refs=False):
+    def __init__(
+        self, backend, args, proto, stateless_rpc=None, advertise_refs=False
+    ):
         super(UploadPackHandler, self).__init__(
             backend, proto, stateless_rpc=stateless_rpc
         )
@@ -324,7 +334,10 @@ class UploadPackHandler(PackHandler):
         )
 
     def progress(self, message):
-        if self.has_capability(CAPABILITY_NO_PROGRESS) or self._processing_have_lines:
+        if (
+            self.has_capability(CAPABILITY_NO_PROGRESS)
+            or self._processing_have_lines
+        ):
             return
         self.proto.write_sideband(SIDE_BAND_CHANNEL_PROGRESS, message)
 
@@ -407,7 +420,9 @@ class UploadPackHandler(PackHandler):
             return
 
         self.progress(
-            ("counting objects: %d, done.\n" % len(objects_iter)).encode("ascii")
+            ("counting objects: %d, done.\n" % len(objects_iter)).encode(
+                "ascii"
+            )
         )
         write_pack_objects(ProtocolFile(None, write), objects_iter)
         # we are done
@@ -690,7 +705,9 @@ class _ProtocolGraphWalker(object):
 
     def _handle_shallow_request(self, wants):
         while True:
-            command, val = self.read_proto_line((COMMAND_DEEPEN, COMMAND_SHALLOW))
+            command, val = self.read_proto_line(
+                (COMMAND_DEEPEN, COMMAND_SHALLOW)
+            )
             if command == COMMAND_DEEPEN:
                 depth = val
                 break
@@ -924,7 +941,9 @@ class MultiAckDetailedGraphWalkerImpl(object):
 class ReceivePackHandler(PackHandler):
     """Protocol handler for downloading a pack from the client."""
 
-    def __init__(self, backend, args, proto, stateless_rpc=None, advertise_refs=False):
+    def __init__(
+        self, backend, args, proto, stateless_rpc=None, advertise_refs=False
+    ):
         super(ReceivePackHandler, self).__init__(
             backend, proto, stateless_rpc=stateless_rpc
         )
@@ -970,7 +989,9 @@ class ReceivePackHandler(PackHandler):
                 self.repo.object_store.add_thin_pack(self.proto.read, recv)
                 status.append((b"unpack", b"ok"))
             except all_exceptions as e:
-                status.append((b"unpack", str(e).replace("\n", "").encode("utf-8")))
+                status.append(
+                    (b"unpack", str(e).replace("\n", "").encode("utf-8"))
+                )
                 # The pack may still have been moved in, but it may contain
                 # broken objects. We trust a later GC to clean it up.
         else:
@@ -1038,7 +1059,9 @@ class ReceivePackHandler(PackHandler):
             if output:
                 self.proto.write_sideband(SIDE_BAND_CHANNEL_PROGRESS, output)
         except HookError as err:
-            self.proto.write_sideband(SIDE_BAND_CHANNEL_FATAL, str(err).encode("utf-8"))
+            self.proto.write_sideband(
+                SIDE_BAND_CHANNEL_FATAL, str(err).encode("utf-8")
+            )
 
     def handle(self) -> None:
         if self.advertise_refs or not self.stateless_rpc:
@@ -1093,7 +1116,9 @@ class ReceivePackHandler(PackHandler):
 
 class UploadArchiveHandler(Handler):
     def __init__(self, backend, args, proto, stateless_rpc=None):
-        super(UploadArchiveHandler, self).__init__(backend, proto, stateless_rpc)
+        super(UploadArchiveHandler, self).__init__(
+            backend, proto, stateless_rpc
+        )
         self.repo = backend.open_repository(args[0])
 
     def handle(self):
@@ -1169,8 +1194,12 @@ class TCPGitServer(socketserver.TCPServer):
         if handlers is not None:
             self.handlers.update(handlers)
         self.backend = backend
-        logger.info("Listening for TCP connections on %s:%d", listen_addr, port)
-        socketserver.TCPServer.__init__(self, (listen_addr, port), self._make_handler)
+        logger.info(
+            "Listening for TCP connections on %s:%d", listen_addr, port
+        )
+        socketserver.TCPServer.__init__(
+            self, (listen_addr, port), self._make_handler
+        )
 
     def verify_request(self, request, client_address):
         logger.info("Handling request from %s", client_address)
@@ -1178,7 +1207,7 @@ class TCPGitServer(socketserver.TCPServer):
 
     def handle_error(self, request, client_address):
         logger.exception(
-            "Exception happened during processing of request " "from %s",
+            "Exception happened during processing of request from %s",
             client_address,
         )
 

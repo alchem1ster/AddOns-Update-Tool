@@ -53,6 +53,10 @@ Currently implemented:
 These functions are meant to behave similarly to the git subcommands.
 Differences in behaviour are considered bugs.
 
+Note: one of the consequences of this is that paths tend to be
+interpreted relative to the current working directory rather than relative
+to the repository root.
+
 Functions should generally accept both unicode strings and bytestrings
 """
 
@@ -66,7 +70,6 @@ import datetime
 import os
 from pathlib import Path
 import posixpath
-import shutil
 import stat
 import sys
 import time
@@ -224,52 +227,36 @@ def path_to_tree_path(repopath, path, tree_encoding=DEFAULT_ENCODING):
       path: A path, absolute or relative to the cwd
     Returns: A path formatted for use in e.g. an index
     """
-    # Pathlib resolve before Python 3.6 could raises FileNotFoundError in case
-    # there is no file matching the path so we reuse the old implementation for
-    # Python 3.5
-    if sys.version_info < (3, 6):
-        if not isinstance(path, bytes):
-            path = os.fsencode(path)
-        if not isinstance(repopath, bytes):
-            repopath = os.fsencode(repopath)
-        treepath = os.path.relpath(path, repopath)
-        if treepath.startswith(b".."):
-            err_msg = "Path %r not in repo path (%r)" % (path, repopath)
-            raise ValueError(err_msg)
-        if os.path.sep != "/":
-            treepath = treepath.replace(os.path.sep.encode("ascii"), b"/")
-        return treepath
-    else:
-        # Resolve might returns a relative path on Windows
-        # https://bugs.python.org/issue38671
-        if sys.platform == "win32":
-            path = os.path.abspath(path)
+    # Resolve might returns a relative path on Windows
+    # https://bugs.python.org/issue38671
+    if sys.platform == "win32":
+        path = os.path.abspath(path)
 
-        path = Path(path)
-        resolved_path = path.resolve()
+    path = Path(path)
+    resolved_path = path.resolve()
 
-        # Resolve and abspath seems to behave differently regarding symlinks,
-        # as we are doing abspath on the file path, we need to do the same on
-        # the repo path or they might not match
-        if sys.platform == "win32":
-            repopath = os.path.abspath(repopath)
+    # Resolve and abspath seems to behave differently regarding symlinks,
+    # as we are doing abspath on the file path, we need to do the same on
+    # the repo path or they might not match
+    if sys.platform == "win32":
+        repopath = os.path.abspath(repopath)
 
-        repopath = Path(repopath).resolve()
+    repopath = Path(repopath).resolve()
 
-        try:
-            relpath = resolved_path.relative_to(repopath)
-        except ValueError:
-            # If path is a symlink that points to a file outside the repo, we
-            # want the relpath for the link itself, not the resolved target
-            if path.is_symlink():
-                parent = path.parent.resolve()
-                relpath = (parent / path.name).relative_to(repopath)
-            else:
-                raise
-        if sys.platform == "win32":
-            return str(relpath).replace(os.path.sep, "/").encode(tree_encoding)
+    try:
+        relpath = resolved_path.relative_to(repopath)
+    except ValueError:
+        # If path is a symlink that points to a file outside the repo, we
+        # want the relpath for the link itself, not the resolved target
+        if path.is_symlink():
+            parent = path.parent.resolve()
+            relpath = (parent / path.name).relative_to(repopath)
         else:
-            return bytes(relpath)
+            raise
+    if sys.platform == "win32":
+        return str(relpath).replace(os.path.sep, "/").encode(tree_encoding)
+    else:
+        return bytes(relpath)
 
 
 class DivergedBranches(Error):
@@ -420,7 +407,7 @@ def clone(
     origin=b"origin",
     depth=None,
     branch=None,
-    **kwargs
+    **kwargs,
 ):
     """Clone a local or remote git repository.
 
@@ -455,8 +442,7 @@ def clone(
     if target is None:
         target = source.split("/")[-1]
 
-    if not os.path.exists(target):
-        os.mkdir(target)
+    mkdir = not os.path.exists(target)
 
     if not isinstance(source, bytes):
         source = source.encode(DEFAULT_ENCODING)
@@ -468,7 +454,7 @@ def clone(
             errstream=errstream,
             message=ref_message,
             depth=depth,
-            **kwargs
+            **kwargs,
         )
         head_ref = fetch_result.symrefs.get(b"HEAD", None)
         try:
@@ -477,22 +463,17 @@ def clone(
             head_sha = None
         return head_ref, head_sha
 
-    try:
-        return do_clone(
-            source,
-            target,
-            clone_refs=clone_refs,
-            mkdir=False,
-            bare=bare,
-            origin=origin,
-            checkout=checkout,
-            errstream=errstream,
-            branch=branch,
-        )
-    except Exception as e:
-        if type(e) != FileExistsError:
-            shutil.rmtree(target)
-        raise
+    return do_clone(
+        source,
+        target,
+        clone_refs=clone_refs,
+        mkdir=mkdir,
+        bare=bare,
+        origin=origin,
+        checkout=checkout,
+        errstream=errstream,
+        branch=branch,
+    )
 
 
 def add(repo=".", paths=None):
@@ -565,9 +546,9 @@ def clean(repo=".", target_dir=None):
             raise Error("target_dir must be in the repo's working dir")
 
         config = r.get_config_stack()
-        require_force = config.get_boolean(
+        require_force = config.get_boolean(  # noqa: F841
             (b"clean",), b"requireForce", True
-        )  # noqa: F841
+        )
 
         # TODO(jelmer): if require_force is set, then make sure that -f, -i or
         # -n is specified.
@@ -825,7 +806,9 @@ def log(
       max_entries: Optional maximum number of entries to display
     """
     with open_repo_closing(repo) as r:
-        walker = r.get_walker(max_entries=max_entries, paths=paths, reverse=reverse)
+        walker = r.get_walker(
+            max_entries=max_entries, paths=paths, reverse=reverse
+        )
         for entry in walker:
 
             def decode(x):
@@ -834,7 +817,10 @@ def log(
             print_commit(entry.commit, decode, outstream)
             if name_status:
                 outstream.writelines(
-                    [line + "\n" for line in print_name_status(entry.changes())]
+                    [
+                        line + "\n"
+                        for line in print_name_status(entry.changes())
+                    ]
                 )
 
 
@@ -1058,7 +1044,7 @@ def push(
     outstream=default_bytes_out_stream,
     errstream=default_bytes_err_stream,
     force=False,
-    **kwargs
+    **kwargs,
 ):
     """Remote push with dulwich via dulwich.client
 
@@ -1086,7 +1072,9 @@ def push(
         remote_changed_refs = {}
 
         def update_refs(refs):
-            selected_refs.extend(parse_reftuples(r.refs, refs, refspecs, force=force))
+            selected_refs.extend(
+                parse_reftuples(r.refs, refs, refspecs, force=force)
+            )
             new_refs = {}
             # TODO: Handle selected_refs == {None: None}
             for (lh, rh, force_ref) in selected_refs:
@@ -1115,18 +1103,24 @@ def push(
             )
         except SendPackError as e:
             raise Error(
-                "Push to " + remote_location + " failed -> " + e.args[0].decode(),
+                "Push to "
+                + remote_location
+                + " failed -> "
+                + e.args[0].decode(),
                 inner=e,
             )
         else:
             errstream.write(
-                b"Push to " + remote_location.encode(err_encoding) + b" successful.\n"
+                b"Push to "
+                + remote_location.encode(err_encoding)
+                + b" successful.\n"
             )
 
         for ref, error in (result.ref_status or {}).items():
             if error is not None:
                 errstream.write(
-                    b"Push of ref %s failed: %s\n" % (ref, error.encode(err_encoding))
+                    b"Push of ref %s failed: %s\n"
+                    % (ref, error.encode(err_encoding))
                 )
             else:
                 errstream.write(b"Ref %s updated\n" % ref)
@@ -1143,7 +1137,7 @@ def pull(
     errstream=default_bytes_err_stream,
     fast_forward=True,
     force=False,
-    **kwargs
+    **kwargs,
 ):
     """Pull from remote via dulwich.client
 
@@ -1215,7 +1209,9 @@ def status(repo=".", ignored=False):
         index = r.open_index()
         normalizer = r.get_blob_normalizer()
         filter_callback = normalizer.checkin_normalize
-        unstaged_changes = list(get_unstaged_changes(index, r.path, filter_callback))
+        unstaged_changes = list(
+            get_unstaged_changes(index, r.path, filter_callback)
+        )
 
         untracked_paths = get_untracked_paths(
             r.path, r.path, index, exclude_ignored=not ignored
@@ -1552,7 +1548,9 @@ def _import_remote_refs(
         for (n, v) in stripped_refs.items()
         if n.startswith(b"refs/tags/") and not n.endswith(ANNOTATED_TAG_SUFFIX)
     }
-    refs_container.import_refs(b"refs/tags", tags, message=message, prune=prune_tags)
+    refs_container.import_refs(
+        b"refs/tags", tags, message=message, prune=prune_tags
+    )
 
 
 def fetch(
@@ -1565,7 +1563,7 @@ def fetch(
     prune=False,
     prune_tags=False,
     force=False,
-    **kwargs
+    **kwargs,
 ):
     """Fetch objects from a remote server.
 
@@ -1588,7 +1586,9 @@ def fetch(
         client, path = get_transport_and_path(
             remote_location, config=r.get_config_stack(), **kwargs
         )
-        fetch_result = client.fetch(path, r, progress=errstream.write, depth=depth)
+        fetch_result = client.fetch(
+            path, r, progress=errstream.write, depth=depth
+        )
         if remote_name is not None:
             _import_remote_refs(
                 r.refs,
@@ -1865,10 +1865,10 @@ def describe(repo):
         for key, value in refs.items():
             key = key.decode()
             obj = r.get_object(value)
-            if u"tags" not in key:
+            if "tags" not in key:
                 continue
 
-            _, tag = key.rsplit(u"/", 1)
+            _, tag = key.rsplit("/", 1)
 
             try:
                 commit = obj.object
@@ -1881,7 +1881,9 @@ def describe(repo):
                 commit.id.decode("ascii"),
             ]
 
-        sorted_tags = sorted(tags.items(), key=lambda tag: tag[1][0], reverse=True)
+        sorted_tags = sorted(
+            tags.items(), key=lambda tag: tag[1][0], reverse=True
+        )
 
         # If there are no tags, return the current commit
         if len(sorted_tags) == 0:
@@ -1934,7 +1936,9 @@ def get_object_by_path(repo, path, committish=None):
         base_tree = commit.tree
         if not isinstance(path, bytes):
             path = commit_encode(commit, path)
-        (mode, sha) = tree_lookup_path(r.object_store.__getitem__, base_tree, path)
+        (mode, sha) = tree_lookup_path(
+            r.object_store.__getitem__, base_tree, path
+        )
         return r[sha]
 
 

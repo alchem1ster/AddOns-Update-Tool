@@ -149,7 +149,10 @@ class _GitFile(object):
         try:
             fd = os.open(
                 self._lockfilename,
-                os.O_RDWR | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0),
+                os.O_RDWR
+                | os.O_CREAT
+                | os.O_EXCL
+                | getattr(os, "O_BINARY", 0),
                 mask,
             )
         except FileExistsError:

@@ -48,7 +48,8 @@ class ChecksumMismatch(Exception):
         else:
             Exception.__init__(
                 self,
-                "Checksum mismatch: Expected %s, got %s; %s" % (expected, got, extra),
+                "Checksum mismatch: Expected %s, got %s; %s"
+                % (expected, got, extra),
             )
 
 
@@ -150,7 +151,10 @@ class HangupException(GitProtocolError):
         if stderr_lines:
             super(HangupException, self).__init__(
                 "\n".join(
-                    [line.decode("utf-8", "surrogateescape") for line in stderr_lines]
+                    [
+                        line.decode("utf-8", "surrogateescape")
+                        for line in stderr_lines
+                    ]
                 )
             )
         else:
@@ -160,7 +164,10 @@ class HangupException(GitProtocolError):
         self.stderr_lines = stderr_lines
 
     def __eq__(self, other):
-        return isinstance(self, type(other)) and self.stderr_lines == other.stderr_lines
+        return (
+            isinstance(self, type(other))
+            and self.stderr_lines == other.stderr_lines
+        )
 
 
 class UnexpectedCommandError(GitProtocolError):

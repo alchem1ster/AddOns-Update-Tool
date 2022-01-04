@@ -37,7 +37,9 @@ from dulwich.objects import (
 FIRST_FEW_BYTES = 8000
 
 
-def write_commit_patch(f, commit, contents, progress, version=None, encoding=None):
+def write_commit_patch(
+    f, commit, contents, progress, version=None, encoding=None
+):
     """Write a individual file patch.
 
     Args:
@@ -59,7 +61,9 @@ def write_commit_patch(f, commit, contents, progress, version=None, encoding=Non
     )
     f.write(b"From: " + commit.author + b"\n")
     f.write(
-        b"Date: " + time.strftime("%a, %d %b %Y %H:%M:%S %Z").encode(encoding) + b"\n"
+        b"Date: "
+        + time.strftime("%a, %d %b %Y %H:%M:%S %Z").encode(encoding)
+        + b"\n"
     )
     f.write(
         ("Subject: [PATCH %d/%d] " % (num, total)).encode(encoding)
@@ -147,9 +151,9 @@ def unified_diff(
         first, last = group[0], group[-1]
         file1_range = _format_range_unified(first[1], last[2])
         file2_range = _format_range_unified(first[3], last[4])
-        yield "@@ -{} +{} @@{}".format(file1_range, file2_range, lineterm).encode(
-            output_encoding
-        )
+        yield "@@ -{} +{} @@{}".format(
+            file1_range, file2_range, lineterm
+        ).encode(output_encoding)
 
         for tag, i1, i2, j1, j2 in group:
             if tag == "equal":
@@ -224,11 +228,15 @@ def write_object_diff(f, store, old_file, new_file, diff_binary=False):
             return content.splitlines()
 
     f.writelines(
-        gen_diff_header((old_path, new_path), (old_mode, new_mode), (old_id, new_id))
+        gen_diff_header(
+            (old_path, new_path), (old_mode, new_mode), (old_id, new_id)
+        )
     )
     old_content = content(old_mode, old_id)
     new_content = content(new_mode, new_id)
-    if not diff_binary and (is_binary(old_content.data) or is_binary(new_content.data)):
+    if not diff_binary and (
+        is_binary(old_content.data) or is_binary(new_content.data)
+    ):
         binary_diff = (
             b"Binary files "
             + patched_old_path
@@ -313,7 +321,9 @@ def write_blob_diff(f, old_file, new_file):
     old_contents = lines(old_blob)
     new_contents = lines(new_blob)
     f.writelines(
-        unified_diff(old_contents, new_contents, patched_old_path, patched_new_path)
+        unified_diff(
+            old_contents, new_contents, patched_old_path, patched_new_path
+        )
     )
 
 
@@ -349,7 +359,9 @@ def git_am_patch_split(f, encoding=None):
     encoding = encoding or getattr(f, "encoding", "ascii")
     encoding = encoding or "ascii"
     contents = f.read()
-    if isinstance(contents, bytes) and getattr(email.parser, "BytesParser", None):
+    if isinstance(contents, bytes) and getattr(
+        email.parser, "BytesParser", None
+    ):
         parser = email.parser.BytesParser()
         msg = parser.parsebytes(contents)
     else:

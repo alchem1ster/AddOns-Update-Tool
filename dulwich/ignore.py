@@ -103,7 +103,9 @@ def translate(pat: bytes) -> bytes:
             res += b"(/.*)?"
             continue
         else:
-            res += (re.escape(b"/") if i > 0 else b"") + _translate_segment(segment)
+            res += (re.escape(b"/") if i > 0 else b"") + _translate_segment(
+                segment
+            )
 
     if not pat.endswith(b"/"):
         res += b"/?"
@@ -138,7 +140,9 @@ def read_ignore_patterns(f: BinaryIO) -> Iterable[bytes]:
         yield line
 
 
-def match_pattern(path: bytes, pattern: bytes, ignorecase: bool = False) -> bool:
+def match_pattern(
+    path: bytes, pattern: bytes, ignorecase: bool = False
+) -> bool:
     """Match a gitignore-style pattern against a path.
 
     Args:
@@ -200,7 +204,9 @@ class Pattern(object):
 
 
 class IgnoreFilter(object):
-    def __init__(self, patterns: Iterable[bytes], ignorecase: bool = False, path=None):
+    def __init__(
+        self, patterns: Iterable[bytes], ignorecase: bool = False, path=None
+    ):
         self._patterns = []  # type: List[Pattern]
         self._ignorecase = ignorecase
         self._path = path
@@ -320,7 +326,9 @@ class IgnoreFilterManager(object):
 
         p = os.path.join(self._top_path, path, ".gitignore")
         try:
-            self._path_filters[path] = IgnoreFilter.from_path(p, self._ignorecase)
+            self._path_filters[path] = IgnoreFilter.from_path(
+                p, self._ignorecase
+            )
         except IOError:
             self._path_filters[path] = None
         return self._path_filters[path]
@@ -383,9 +391,11 @@ class IgnoreFilterManager(object):
             default_user_ignore_filter_path(repo.get_config_stack()),
         ]:
             try:
-                global_filters.append(IgnoreFilter.from_path(os.path.expanduser(p)))
+                global_filters.append(
+                    IgnoreFilter.from_path(os.path.expanduser(p))
+                )
             except IOError:
                 pass
         config = repo.get_config_stack()
-        ignorecase = config.get_boolean((b"core"), (b"ignorecase"), False)
+        ignorecase = config.get_boolean(b"core", b"ignorecase", False)
         return cls(repo.path, global_filters, ignorecase)

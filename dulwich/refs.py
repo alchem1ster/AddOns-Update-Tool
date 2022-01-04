@@ -112,7 +112,9 @@ class RefsContainer(object):
             return
         if message is None:
             return
-        self._logger(ref, old_sha, new_sha, committer, timestamp, timezone, message)
+        self._logger(
+            ref, old_sha, new_sha, committer, timestamp, timezone, message
+        )
 
     def set_symbolic_ref(
         self,
@@ -180,7 +182,9 @@ class RefsContainer(object):
                 except KeyError:
                     pass
         for ref in to_delete:
-            self.remove_if_equals(b"/".join((base, ref)), None, message=message)
+            self.remove_if_equals(
+                b"/".join((base, ref)), None, message=message
+            )
 
     def allkeys(self):
         """All refs present in this container."""
@@ -298,7 +302,8 @@ class RefsContainer(object):
         import warnings
 
         warnings.warn(
-            "RefsContainer._follow is deprecated. Use RefsContainer.follow " "instead.",
+            "RefsContainer._follow is deprecated. Use RefsContainer.follow "
+            "instead.",
             DeprecationWarning,
         )
         refnames, contents = self.follow(name)
@@ -648,7 +653,9 @@ class _InotifyRefsWatcher(object):
         self.manager = pyinotify.WatchManager()
         self.manager.add_watch(
             self.path,
-            pyinotify.IN_DELETE | pyinotify.IN_CLOSE_WRITE | pyinotify.IN_MOVED_TO,
+            pyinotify.IN_DELETE
+            | pyinotify.IN_CLOSE_WRITE
+            | pyinotify.IN_MOVED_TO,
             rec=True,
             auto_add=True,
         )
@@ -770,7 +777,10 @@ class DiskRefsContainer(RefsContainer):
                 return {}
             with f:
                 first_line = next(iter(f)).rstrip()
-                if first_line.startswith(b"# pack-refs") and b" peeled" in first_line:
+                if (
+                    first_line.startswith(b"# pack-refs")
+                    and b" peeled" in first_line
+                ):
                     for sha, name, peeled in read_packed_refs_with_peeled(f):
                         self._packed_refs[name] = sha
                         if peeled:
@@ -931,7 +941,9 @@ class DiskRefsContainer(RefsContainer):
                     # read again while holding the lock
                     orig_ref = self.read_loose_ref(realname)
                     if orig_ref is None:
-                        orig_ref = self.get_packed_refs().get(realname, ZERO_SHA)
+                        orig_ref = self.get_packed_refs().get(
+                            realname, ZERO_SHA
+                        )
                     if orig_ref != old_ref:
                         f.abort()
                         return False
@@ -1113,7 +1125,9 @@ def read_packed_refs(f):
             # Comment
             continue
         if line.startswith(b"^"):
-            raise PackedRefsException("found peeled ref in packed-refs without peeled")
+            raise PackedRefsException(
+                "found peeled ref in packed-refs without peeled"
+            )
         yield _split_ref_line(line)
 
 

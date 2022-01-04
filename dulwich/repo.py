@@ -160,7 +160,9 @@ def _get_default_identity() -> Tuple[str, str]:
     return (fullname, email)
 
 
-def get_user_identity(config: "StackedConfig", kind: Optional[str] = None) -> bytes:
+def get_user_identity(
+    config: "StackedConfig", kind: Optional[str] = None
+) -> bytes:
     """Determine the identity to use for new commits.
 
     If kind is set, this first checks
@@ -529,7 +531,9 @@ class BaseRepo(object):
             # commits aren't missing.
             haves = []
 
-        parents_provider = ParentsProvider(self.object_store, shallows=shallows)
+        parents_provider = ParentsProvider(
+            self.object_store, shallows=shallows
+        )
 
         def get_parents(commit):
             return parents_provider.get_parents(commit.id, commit)
@@ -704,7 +708,9 @@ class BaseRepo(object):
         if new_unshallow:
             shallow.difference_update(new_unshallow)
         if shallow:
-            self._put_named_file("shallow", b"".join([sha + b"\n" for sha in shallow]))
+            self._put_named_file(
+                "shallow", b"".join([sha + b"\n" for sha in shallow])
+            )
         else:
             self._del_named_file("shallow")
 
@@ -755,7 +761,9 @@ class BaseRepo(object):
         if isinstance(include, str):
             include = [include]
 
-        kwargs["get_parents"] = lambda commit: self.get_parents(commit.id, commit)
+        kwargs["get_parents"] = lambda commit: self.get_parents(
+            commit.id, commit
+        )
 
         return Walker(self.object_store, include, *args, **kwargs)
 
@@ -821,7 +829,9 @@ class BaseRepo(object):
         else:
             raise ValueError(name)
 
-    def _get_user_identity(self, config: "StackedConfig", kind: str = None) -> bytes:
+    def _get_user_identity(
+        self, config: "StackedConfig", kind: str = None
+    ) -> bytes:
         """Determine the identity to use for new commits."""
         # TODO(jelmer): Deprecate this function in favor of get_user_identity
         return get_user_identity(config)
@@ -898,6 +908,14 @@ class BaseRepo(object):
           New commit SHA1
         """
 
+        try:
+            if not no_verify:
+                self.hooks["pre-commit"].execute()
+        except HookError as e:
+            raise CommitError(e)
+        except KeyError:  # no hook defined, silent fallthrough
+            pass
+
         c = Commit()
         if tree is None:
             index = self.open_index()
@@ -906,14 +924,6 @@ class BaseRepo(object):
             if len(tree) != 40:
                 raise ValueError("tree must be a 40-byte hex sha string")
             c.tree = tree
-
-        try:
-            if not no_verify:
-                self.hooks["pre-commit"].execute()
-        except HookError as e:
-            raise CommitError(e)
-        except KeyError:  # no hook defined, silent fallthrough
-            pass
 
         config = self.get_config_stack()
         if merge_heads is None:
@@ -1048,19 +1058,20 @@ class Repo(BaseRepo):
                 os.path.join(hidden_path, OBJECTDIR)
             ):
                 bare = False
-            elif os.path.isdir(os.path.join(root, OBJECTDIR)) and os.path.isdir(
-                os.path.join(root, REFSDIR)
-            ):
+            elif os.path.isdir(
+                os.path.join(root, OBJECTDIR)
+            ) and os.path.isdir(os.path.join(root, REFSDIR)):
                 bare = True
             else:
-                raise NotGitRepository("sys.exit( %(path)s" % dict(path=root))
+                raise NotGitRepository(
+                    "No git repository was found at %(path)s" % dict(path=root)
+                )
 
         self.bare = bare
         if bare is False:
             if os.path.isfile(hidden_path):
                 with open(hidden_path, "r") as f:
                     path = read_gitfile(f)
-                self.bare = False
                 self._controldir = os.path.join(root, path)
             else:
                 self._controldir = hidden_path
@@ -1104,7 +1115,9 @@ class Repo(BaseRepo):
             with graft_file:
                 self._graftpoints.update(parse_graftpoints(graft_file))
 
-        self.hooks["pre-commit"] = PreCommitShellHook(self.controldir())
+        self.hooks["pre-commit"] = PreCommitShellHook(
+            self.path, self.controldir()
+        )
         self.hooks["commit-msg"] = CommitMsgShellHook(self.controldir())
         self.hooks["post-commit"] = PostCommitShellHook(self.controldir())
         self.hooks["post-receive"] = PostReceiveShellHook(self.controldir())
@@ -1152,7 +1165,9 @@ class Repo(BaseRepo):
                 return cls(path)
             except NotGitRepository:
                 path, remaining = os.path.split(path)
-        raise NotGitRepository("sys.exit( %(path)s" % dict(path=start))
+        raise NotGitRepository(
+            "No git repository was found at %(path)s" % dict(path=start)
+        )
 
     def controldir(self):
         """Return the path of the control directory."""
@@ -1254,7 +1269,12 @@ class Repo(BaseRepo):
         # missing index file, which is treated as empty.
         return not self.bare
 
-    def stage(self, fs_paths):
+    def stage(
+        self,
+        fs_paths: Union[
+            str, bytes, os.PathLike, Iterable[Union[str, bytes, os.PathLike]]
+        ],
+    ) -> None:
         """Stage a set of paths.
 
         Args:
@@ -1263,7 +1283,7 @@ class Repo(BaseRepo):
 
         root_path_bytes = os.fsencode(self.path)
 
-        if isinstance(fs_paths, str):
+        if isinstance(fs_paths, (str, bytes, os.PathLike)):
             fs_paths = [fs_paths]
         fs_paths = list(fs_paths)
 
@@ -1294,7 +1314,9 @@ class Repo(BaseRepo):
                 except KeyError:
                     pass  # already removed
             else:
-                if not stat.S_ISREG(st.st_mode) and not stat.S_ISLNK(st.st_mode):
+                if not stat.S_ISREG(st.st_mode) and not stat.S_ISLNK(
+                    st.st_mode
+                ):
                     try:
                         del index[tree_path]
                     except KeyError:
@@ -1341,7 +1363,9 @@ class Repo(BaseRepo):
                     del index[tree_path]
                     continue
                 except KeyError:
-                    raise KeyError("file '%s' not in index" % (tree_path.decode()))
+                    raise KeyError(
+                        "file '%s' not in index" % (tree_path.decode())
+                    )
 
             st = None
             try:
@@ -1397,7 +1421,9 @@ class Repo(BaseRepo):
                 message=ref_message,
             )
             target_repo.refs.import_refs(
-                b"refs/tags", self.refs.as_dict(b"refs/tags"), message=ref_message
+                b"refs/tags",
+                self.refs.as_dict(b"refs/tags"),
+                message=ref_message,
             )
 
             head_chain, sha = self.refs.follow(b"HEAD")
@@ -1438,7 +1464,9 @@ class Repo(BaseRepo):
                 head = self.get_object(obj)
             tree = head.tree
         config = self.get_config()
-        honor_filemode = config.get_boolean(b"core", b"filemode", os.name != "nt")
+        honor_filemode = config.get_boolean(
+            b"core", b"filemode", os.name != "nt"
+        )
         if config.get_boolean(b"core", b"core.protectNTFS", os.name == "nt"):
             validate_path_element = validate_path_element_ntfs
         else:
@@ -1496,7 +1524,9 @@ class Repo(BaseRepo):
         for d in BASE_DIRECTORIES:
             os.mkdir(os.path.join(controldir, *d))
         if object_store is None:
-            object_store = DiskObjectStore.init(os.path.join(controldir, OBJECTDIR))
+            object_store = DiskObjectStore.init(
+                os.path.join(controldir, OBJECTDIR)
+            )
         ret = cls(path, bare=bare, object_store=object_store)
         ret.refs.set_symbolic_ref(b"HEAD", DEFAULT_REF)
         ret._init_files(bare)
@@ -1519,7 +1549,9 @@ class Repo(BaseRepo):
         return cls._init_maybe_bare(path, controldir, False)
 
     @classmethod
-    def _init_new_working_directory(cls, path, main_repo, identifier=None, mkdir=False):
+    def _init_new_working_directory(
+        cls, path, main_repo, identifier=None, mkdir=False
+    ):
         """Create a new working directory linked to a repository.
 
         Args:
@@ -1568,7 +1600,9 @@ class Repo(BaseRepo):
         """
         if mkdir:
             os.mkdir(path)
-        return cls._init_maybe_bare(path, path, True, object_store=object_store)
+        return cls._init_maybe_bare(
+            path, path, True, object_store=object_store
+        )
 
     create = init_bare
 
