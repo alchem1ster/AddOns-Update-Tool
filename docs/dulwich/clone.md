@@ -4,12 +4,12 @@
 
 Repository clone handling.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Clone
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Clone
     - [do_clone](#do_clone)
 
 ## do_clone
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/clone.py#L38)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/clone.py#L39)
 
 ```python
 def do_clone(

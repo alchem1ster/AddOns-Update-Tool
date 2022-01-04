@@ -4,7 +4,7 @@
 
 All line-ending related functions, from conversions to config processing
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Line Ending
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Line Ending
     - [BlobNormalizer](#blobnormalizer)
         - [BlobNormalizer().checkin_normalize](#blobnormalizercheckin_normalize)
         - [BlobNormalizer().checkout_normalize](#blobnormalizercheckout_normalize)

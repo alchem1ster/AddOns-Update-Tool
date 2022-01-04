@@ -4,7 +4,7 @@
 
 Generates tarballs for Git trees.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Archive
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Archive
     - [ChunkedBytesIO](#chunkedbytesio)
         - [ChunkedBytesIO().read](#chunkedbytesioread)
     - [tar_stream](#tar_stream)

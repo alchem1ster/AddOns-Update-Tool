@@ -1,23 +1,28 @@
-# Addons-update-tool Modules
+# AddOns-Update-Tool Modules
 
 > Auto-generated documentation modules index.
 
-Full list of [Addons-update-tool](README.md#addons-update-tool) project modules.
+Full list of [AddOns-Update-Tool](README.md#addons-update-tool-index) project modules.
 
-- [AddOns Update Tool](README.md#addons-update-tool)
+- [AddOns-Update-Tool Index](README.md#addons-update-tool-index)
 - [App](app.md#app)
 - [Dulwich](dulwich/index.md#dulwich)
     - [Archive](dulwich/archive.md#archive)
+    - [Bundle](dulwich/bundle.md#bundle)
+    - [Cli](dulwich/cli.md#cli)
     - [Client](dulwich/client.md#client)
     - [Clone](dulwich/clone.md#clone)
     - [Config](dulwich/config.md#config)
     - [Diff Tree](dulwich/diff_tree.md#diff-tree)
     - [Errors](dulwich/errors.md#errors)
+    - [Fastexport](dulwich/fastexport.md#fastexport)
     - [File](dulwich/file.md#file)
     - [Graph](dulwich/graph.md#graph)
+    - [Greenthreads](dulwich/greenthreads.md#greenthreads)
     - [Hooks](dulwich/hooks.md#hooks)
     - [Ignore](dulwich/ignore.md#ignore)
     - [Index](dulwich/index.md#index)
+    - [Lfs](dulwich/lfs.md#lfs)
     - [Line Ending](dulwich/line_ending.md#line-ending)
     - [Log Utils](dulwich/log_utils.md#log-utils)
     - [LRUCache](dulwich/lru_cache.md#lrucache)
@@ -33,6 +38,8 @@ Full list of [Addons-update-tool](README.md#addons-update-tool) project modules.
     - [Refs](dulwich/refs.md#refs)
     - [Repo](dulwich/repo.md#repo)
     - [Server](dulwich/server.md#server)
+    - [Stash](dulwich/stash.md#stash)
+    - [Walk](dulwich/walk.md#walk)
     - [Web](dulwich/web.md#web)
 - [Game Updater](game_updater.md#game-updater)
 - [Utils](utils/index.md#utils)

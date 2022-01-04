@@ -4,7 +4,7 @@
 
 Classes for dealing with git am-style patches.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Patch
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Patch
     - [gen_diff_header](#gen_diff_header)
     - [get_summary](#get_summary)
     - [git_am_patch_split](#git_am_patch_split)
@@ -23,7 +23,7 @@ on.
 
 ## gen_diff_header
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L252)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L260)
 
 ```python
 def gen_diff_header(paths, modes, shas):
@@ -39,7 +39,7 @@ Write a blob diff header.
 
 ## get_summary
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L93)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L97)
 
 ```python
 def get_summary(commit):
@@ -54,7 +54,7 @@ Determine the summary line for use in a filename.
 
 ## git_am_patch_split
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L341)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L351)
 
 ```python
 def git_am_patch_split(f, encoding=None):
@@ -70,7 +70,7 @@ Parse a git-am-style patch and split it up into bits.
 
 ## is_binary
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L171)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L175)
 
 ```python
 def is_binary(content):
@@ -84,7 +84,7 @@ See if the first few bytes contain any null characters.
 
 ## parse_patch_message
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L361)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L373)
 
 ```python
 def parse_patch_message(msg, encoding=None):
@@ -100,7 +100,7 @@ Extract a Commit object and patch from an e-mail message.
 
 ## patch_filename
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L187)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L191)
 
 ```python
 def patch_filename(p, root):
@@ -108,7 +108,7 @@ def patch_filename(p, root):
 
 ## shortid
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L180)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L184)
 
 ```python
 def shortid(hexsha):
@@ -116,7 +116,7 @@ def shortid(hexsha):
 
 ## unified_diff
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L117)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L121)
 
 ```python
 def unified_diff(
@@ -140,7 +140,7 @@ Based on the same function in Python2.7 difflib.py
 
 ## write_blob_diff
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L285)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L293)
 
 ```python
 def write_blob_diff(f, old_file, new_file):
@@ -184,7 +184,7 @@ tuple with filename and contents
 
 ## write_object_diff
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L194)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L198)
 
 ```python
 def write_object_diff(f, store, old_file, new_file, diff_binary=False):
@@ -205,7 +205,7 @@ Write the diff for an object.
 
 ## write_tree_diff
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L320)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/patch.py#L330)
 
 ```python
 def write_tree_diff(f, store, old_tree, new_tree, diff_binary=False):

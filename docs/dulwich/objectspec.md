@@ -4,7 +4,7 @@
 
 Object specification.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Objectspec
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Objectspec
     - [AmbiguousShortId](#ambiguousshortid)
     - [parse_commit](#parse_commit)
     - [parse_commit_range](#parse_commit_range)
@@ -19,7 +19,7 @@ Object specification.
 
 ## AmbiguousShortId
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L188)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L190)
 
 ```python
 class AmbiguousShortId(Exception):
@@ -30,7 +30,7 @@ The short id is ambiguous.
 
 ## parse_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L211)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L213)
 
 ```python
 def parse_commit(repo, committish):
@@ -51,7 +51,7 @@ Parse a string referring to a single commit.
 
 ## parse_commit_range
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L172)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L174)
 
 ```python
 def parse_commit_range(repo, committishs):
@@ -112,7 +112,7 @@ Parse a string referring to a reference.
 
 ## parse_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L153)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L155)
 
 ```python
 def parse_refs(container, refspecs):
@@ -200,7 +200,7 @@ Parse a string referring to a tree.
 
 ## scan_for_short_id
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L196)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objectspec.py#L198)
 
 ```python
 def scan_for_short_id(object_store, prefix):

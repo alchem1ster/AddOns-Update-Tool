@@ -4,7 +4,7 @@
 
 Safe access to git files.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / File
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / File
     - [FileLocked](#filelocked)
     - [GitFile](#gitfile)
     - [ensure_dir_exists](#ensure_dir_exists)

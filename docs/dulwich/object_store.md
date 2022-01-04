@@ -4,7 +4,7 @@
 
 Git object store interfaces and implementation.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Object Store
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Object Store
     - [BaseObjectStore](#baseobjectstore)
         - [BaseObjectStore().\_\_contains\_\_](#baseobjectstore__contains__)
         - [BaseObjectStore().\_\_getitem\_\_](#baseobjectstore__getitem__)
@@ -176,7 +176,7 @@ Add pack data to this object store.
 
 ### BaseObjectStore().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L397)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L399)
 
 ```python
 def close():
@@ -406,7 +406,7 @@ Find the differences between the contents of two trees
 
 ## BucketBasedObjectStore
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1526)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1548)
 
 ```python
 class BucketBasedObjectStore(PackBasedObjectStore):
@@ -420,7 +420,7 @@ Object store implementation that uses a bucket store like S3 as backend.
 
 ### BucketBasedObjectStore().add_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1567)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1589)
 
 ```python
 def add_pack():
@@ -434,7 +434,7 @@ Returns: Fileobject to write to, a commit function to
 
 ## DiskObjectStore
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L598)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L604)
 
 ```python
 class DiskObjectStore(PackBasedObjectStore):
@@ -449,7 +449,7 @@ Git-style object store that exists on disk.
 
 ### DiskObjectStore().add_alternate_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L667)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L677)
 
 ```python
 def add_alternate_path(path):
@@ -459,7 +459,7 @@ Add an alternate path to this object store.
 
 ### DiskObjectStore().add_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L913)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L925)
 
 ```python
 def add_object(obj):
@@ -473,7 +473,7 @@ Add a single object to this object store.
 
 ### DiskObjectStore().add_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L884)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L896)
 
 ```python
 def add_pack():
@@ -487,7 +487,7 @@ Returns: Fileobject to write to, a commit function to
 
 ### DiskObjectStore().add_thin_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L827)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L837)
 
 ```python
 def add_thin_pack(read_all, read_some):
@@ -510,7 +510,7 @@ directly, and always indexed and completed as they are copied.
 
 ### DiskObjectStore().alternates
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L643)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L651)
 
 ```python
 @property
@@ -519,7 +519,7 @@ def alternates():
 
 ### DiskObjectStore.from_config
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L621)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L629)
 
 ```python
 @classmethod
@@ -528,7 +528,7 @@ def from_config(path, config):
 
 ### DiskObjectStore.init
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L932)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L946)
 
 ```python
 @classmethod
@@ -537,7 +537,7 @@ def init(path):
 
 ### DiskObjectStore().move_in_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L852)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L864)
 
 ```python
 def move_in_pack(path):
@@ -554,7 +554,7 @@ Note: The file should be on the same file system as the
 
 ## MemoryObjectStore
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L943)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L957)
 
 ```python
 class MemoryObjectStore(BaseObjectStore):
@@ -569,7 +569,7 @@ Object store that keeps all objects in memory.
 
 ### MemoryObjectStore().\_\_delitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L989)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1003)
 
 ```python
 def __delitem__(name):
@@ -579,7 +579,7 @@ Delete an object from this store, for testing only.
 
 ### MemoryObjectStore().\_\_iter\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L967)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L981)
 
 ```python
 def __iter__():
@@ -589,7 +589,7 @@ Iterate over the SHAs that are present in this store.
 
 ### MemoryObjectStore().add_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L993)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1007)
 
 ```python
 def add_object(obj):
@@ -599,7 +599,7 @@ Add a single object to this object store.
 
 ### MemoryObjectStore().add_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L997)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1011)
 
 ```python
 def add_objects(objects, progress=None):
@@ -613,7 +613,7 @@ Add a set of objects to this object store.
 
 ### MemoryObjectStore().add_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1006)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1020)
 
 ```python
 def add_pack():
@@ -629,7 +629,7 @@ Returns: Fileobject to write to and a commit function to
 
 ### MemoryObjectStore().add_thin_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1052)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1066)
 
 ```python
 def add_thin_pack(read_all, read_some):
@@ -650,7 +650,7 @@ extract and add the individual objects.
 
 ### MemoryObjectStore().contains_loose
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L959)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L973)
 
 ```python
 def contains_loose(sha):
@@ -660,7 +660,7 @@ Check if a particular object is present by SHA1 and is loose.
 
 ### MemoryObjectStore().contains_packed
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L963)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L977)
 
 ```python
 def contains_packed(sha):
@@ -670,7 +670,7 @@ Check if a particular object is present by SHA1 and is packed.
 
 ### MemoryObjectStore().get_raw
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L976)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L990)
 
 ```python
 def get_raw(name):
@@ -685,7 +685,7 @@ Obtain the raw text for an object.
 
 ### MemoryObjectStore().packs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L971)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L985)
 
 ```python
 @property
@@ -696,7 +696,7 @@ List with pack objects.
 
 ## MissingObjectFinder
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1236)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1252)
 
 ```python
 class MissingObjectFinder(object):
@@ -727,7 +727,7 @@ Find the objects missing from another object store.
 
 ### MissingObjectFinder().add_todo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1318)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1334)
 
 ```python
 def add_todo(entries):
@@ -735,7 +735,7 @@ def add_todo(entries):
 
 ### MissingObjectFinder().next
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1321)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1339)
 
 ```python
 def next():
@@ -743,7 +743,7 @@ def next():
 
 ## ObjectIterator
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1078)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1094)
 
 ```python
 class ObjectIterator(object):
@@ -753,7 +753,7 @@ Interface for iterating over objects.
 
 ### ObjectIterator().iterobjects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1081)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1097)
 
 ```python
 def iterobjects():
@@ -761,7 +761,7 @@ def iterobjects():
 
 ## ObjectStoreGraphWalker
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1351)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1371)
 
 ```python
 class ObjectStoreGraphWalker(object):
@@ -775,7 +775,7 @@ Graph walker that finds what commits are missing from an object store.
 
 ### ObjectStoreGraphWalker().ack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1372)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1392)
 
 ```python
 def ack(sha):
@@ -785,7 +785,7 @@ Ack that a revision and its ancestors are present in the source.
 
 ### ObjectStoreGraphWalker().next
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1398)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1418)
 
 ```python
 def next():
@@ -795,7 +795,7 @@ Iterate over ancestors of heads in the target.
 
 ## ObjectStoreIterator
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1085)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1101)
 
 ```python
 class ObjectStoreIterator(ObjectIterator):
@@ -810,7 +810,7 @@ ObjectIterator that works on top of an ObjectStore.
 
 ### ObjectStoreIterator().\_\_bool\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1159)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1175)
 
 ```python
 def __bool__():
@@ -820,7 +820,7 @@ Indicate whether this object has contents.
 
 ### ObjectStoreIterator().\_\_contains\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1117)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1133)
 
 ```python
 def __contains__(needle):
@@ -838,7 +838,7 @@ Note: This checks if the object is present in
 
 ### ObjectStoreIterator().\_\_getitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1131)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1147)
 
 ```python
 def __getitem__(key):
@@ -852,7 +852,7 @@ Note: This retrieves the object from the underlying
 
 ### ObjectStoreIterator().\_\_iter\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1099)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1115)
 
 ```python
 def __iter__():
@@ -862,7 +862,7 @@ Yield tuple with next object and path.
 
 ### ObjectStoreIterator().\_\_len\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1140)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1156)
 
 ```python
 def __len__():
@@ -872,7 +872,7 @@ Return the number of objects.
 
 ### ObjectStoreIterator().empty
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1144)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1160)
 
 ```python
 def empty():
@@ -880,7 +880,7 @@ def empty():
 
 ### ObjectStoreIterator().iterobjects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1104)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1120)
 
 ```python
 def iterobjects():
@@ -890,7 +890,7 @@ Iterate over just the objects.
 
 ### ObjectStoreIterator().itershas
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1109)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1125)
 
 ```python
 def itershas():
@@ -900,7 +900,7 @@ Iterate over the SHAs.
 
 ## OverlayObjectStore
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1462)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1484)
 
 ```python
 class OverlayObjectStore(BaseObjectStore):
@@ -915,7 +915,7 @@ Object store that can overlay multiple object stores.
 
 ### OverlayObjectStore().add_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1469)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1491)
 
 ```python
 def add_object(object):
@@ -923,7 +923,7 @@ def add_object(object):
 
 ### OverlayObjectStore().add_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1474)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1496)
 
 ```python
 def add_objects(objects, progress=None):
@@ -931,7 +931,7 @@ def add_objects(objects, progress=None):
 
 ### OverlayObjectStore().contains_loose
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1508)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1530)
 
 ```python
 def contains_loose(sha):
@@ -939,7 +939,7 @@ def contains_loose(sha):
 
 ### OverlayObjectStore().contains_packed
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1502)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1524)
 
 ```python
 def contains_packed(sha):
@@ -947,7 +947,7 @@ def contains_packed(sha):
 
 ### OverlayObjectStore().get_raw
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1494)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1516)
 
 ```python
 def get_raw(sha_id):
@@ -955,7 +955,7 @@ def get_raw(sha_id):
 
 ### OverlayObjectStore().packs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1479)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1501)
 
 ```python
 @property
@@ -964,7 +964,7 @@ def packs():
 
 ## PackBasedObjectStore
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L402)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L404)
 
 ```python
 class PackBasedObjectStore(BaseObjectStore):
@@ -977,7 +977,7 @@ class PackBasedObjectStore(BaseObjectStore):
 
 ### PackBasedObjectStore().\_\_contains\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L424)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L426)
 
 ```python
 def __contains__(sha):
@@ -989,7 +989,7 @@ This method makes no distinction between loose and packed objects.
 
 ### PackBasedObjectStore().\_\_iter\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L525)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L529)
 
 ```python
 def __iter__():
@@ -999,7 +999,7 @@ Iterate over the SHAs that are present in this store.
 
 ### PackBasedObjectStore().add_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L587)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L591)
 
 ```python
 def add_objects(objects, progress=None):
@@ -1015,7 +1015,7 @@ Add a set of objects to this object store.
 
 ### PackBasedObjectStore().alternates
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L407)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L409)
 
 ```python
 @property
@@ -1024,7 +1024,7 @@ def alternates():
 
 ### PackBasedObjectStore().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L457)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L459)
 
 ```python
 def close():
@@ -1032,7 +1032,7 @@ def close():
 
 ### PackBasedObjectStore().contains_loose
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L539)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L543)
 
 ```python
 def contains_loose(sha):
@@ -1044,7 +1044,7 @@ This does not check alternates.
 
 ### PackBasedObjectStore().contains_packed
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L411)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L413)
 
 ```python
 def contains_packed(sha):
@@ -1056,7 +1056,7 @@ This does not check alternates.
 
 ### PackBasedObjectStore().get_raw
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L546)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L550)
 
 ```python
 def get_raw(name):
@@ -1071,7 +1071,7 @@ Obtain the raw fulltext for an object.
 
 ### PackBasedObjectStore().pack_loose_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L484)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L488)
 
 ```python
 def pack_loose_objects():
@@ -1083,7 +1083,7 @@ Returns: Number of objects packed
 
 ### PackBasedObjectStore().packs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L460)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L462)
 
 ```python
 @property
@@ -1094,7 +1094,7 @@ List with pack objects.
 
 ### PackBasedObjectStore().repack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L497)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L501)
 
 ```python
 def repack():
@@ -1107,7 +1107,7 @@ objects in memory while it repacks.
 
 ## commit_tree_changes
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1414)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1434)
 
 ```python
 def commit_tree_changes(object_store, tree, changes):
@@ -1136,7 +1136,7 @@ to a large tree, use e.g. commit_tree.
 
 ## read_packs_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1515)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1537)
 
 ```python
 def read_packs_file(f):
@@ -1146,7 +1146,7 @@ Yield the packs listed in a packs file.
 
 ## tree_lookup_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1164)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/object_store.py#L1180)
 
 ```python
 def tree_lookup_path(lookup_obj, root_sha, path):

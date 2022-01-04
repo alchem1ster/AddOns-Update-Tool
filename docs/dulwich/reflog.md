@@ -4,7 +4,7 @@
 
 Utilities for reading and generating reflogs.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Reflog
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Reflog
     - [drop_reflog_entry](#drop_reflog_entry)
     - [format_reflog_line](#format_reflog_line)
     - [parse_reflog_line](#parse_reflog_line)
@@ -12,7 +12,7 @@ Utilities for reading and generating reflogs.
 
 ## drop_reflog_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L98)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L100)
 
 ```python
 def drop_reflog_entry(f, index, rewrite=False):
@@ -55,7 +55,7 @@ Generate a single reflog line.
 
 ## parse_reflog_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L66)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L68)
 
 ```python
 def parse_reflog_line(line):
@@ -71,7 +71,7 @@ Parse a reflog line.
 
 ## read_reflog
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L87)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L89)
 
 ```python
 def read_reflog(f):

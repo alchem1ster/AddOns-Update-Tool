@@ -4,7 +4,7 @@
 
 Simple wrapper that provides porcelain-like functions on top of Dulwich.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Porcelain
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Porcelain
     - [DivergedBranches](#divergedbranches)
     - [Error](#error)
     - [NoneStream](#nonestream)
@@ -115,6 +115,10 @@ Currently implemented:
 These functions are meant to behave similarly to the git subcommands.
 Differences in behaviour are considered bugs.
 
+Note: one of the consequences of this is that paths tend to be
+interpreted relative to the current working directory rather than relative
+to the repository root.
+
 Functions should generally accept both unicode strings and bytestrings
 
 #### Attributes
@@ -123,7 +127,7 @@ Functions should generally accept both unicode strings and bytestrings
 
 ## DivergedBranches
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L275)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L262)
 
 ```python
 class DivergedBranches(Error):
@@ -137,7 +141,7 @@ Branches have diverged and fast-forward is not possible.
 
 ## Error
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L183)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L186)
 
 ```python
 class Error(Exception):
@@ -148,7 +152,7 @@ Porcelain-based error.
 
 ## NoneStream
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L160)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L163)
 
 ```python
 class NoneStream(RawIOBase):
@@ -158,7 +162,7 @@ Fallback if stdout or stderr are unavailable, does nothing.
 
 ### NoneStream().read
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L163)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L166)
 
 ```python
 def read(size=-1):
@@ -166,7 +170,7 @@ def read(size=-1):
 
 ### NoneStream().readall
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L166)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L169)
 
 ```python
 def readall():
@@ -174,7 +178,7 @@ def readall():
 
 ### NoneStream().readinto
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L169)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L172)
 
 ```python
 def readinto(b):
@@ -182,7 +186,7 @@ def readinto(b):
 
 ### NoneStream().write
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L172)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L175)
 
 ```python
 def write(b):
@@ -190,7 +194,7 @@ def write(b):
 
 ## RemoteExists
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L191)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L194)
 
 ```python
 class RemoteExists(Error):
@@ -204,7 +208,7 @@ Raised when the remote already exists.
 
 ## active_branch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1492)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1488)
 
 ```python
 def active_branch(repo):
@@ -227,7 +231,7 @@ branch name
 
 ## add
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L498)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L479)
 
 ```python
 def add(repo='.', paths=None):
@@ -247,7 +251,7 @@ files within ignored directories will not be returned.
 
 ## archive
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L295)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L282)
 
 ```python
 def archive(
@@ -274,7 +278,7 @@ Create an archive.
 
 ## branch_create
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1460)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1456)
 
 ```python
 def branch_create(repo, name, objectish=None, force=False):
@@ -291,7 +295,7 @@ Create a branch.
 
 ## branch_delete
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1444)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1440)
 
 ```python
 def branch_delete(repo, name):
@@ -306,7 +310,7 @@ Delete a branch.
 
 ## branch_list
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1482)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1478)
 
 ```python
 def branch_list(repo):
@@ -320,7 +324,7 @@ List all branches.
 
 ## check_diverged
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L279)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L266)
 
 ```python
 def check_diverged(repo, current_sha, new_sha):
@@ -369,7 +373,7 @@ Check canonical name and email of contact.
 
 ## clean
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L551)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L532)
 
 ```python
 def clean(repo='.', target_dir=None):
@@ -386,7 +390,7 @@ Equivalent to running `git clean -fd` in target_dir.
 
 ## clone
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L413)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L400)
 
 ```python
 def clone(
@@ -425,7 +429,7 @@ Clone a local or remote git repository.
 
 ## commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L345)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L332)
 
 ```python
 def commit(
@@ -451,7 +455,7 @@ Create a new commit.
 
 ## commit_decode
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L650)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L631)
 
 ```python
 def commit_decode(commit, contents, default_encoding=DEFAULT_ENCODING):
@@ -463,7 +467,7 @@ def commit_decode(commit, contents, default_encoding=DEFAULT_ENCODING):
 
 ## commit_encode
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L658)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L639)
 
 ```python
 def commit_encode(commit, contents, default_encoding=DEFAULT_ENCODING):
@@ -475,7 +479,7 @@ def commit_encode(commit, contents, default_encoding=DEFAULT_ENCODING):
 
 ## commit_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L381)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L368)
 
 ```python
 def commit_tree(repo, tree, message=None, author=None, committer=None):
@@ -492,7 +496,7 @@ Create a new commit object.
 
 ## daemon
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1339)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1335)
 
 ```python
 def daemon(path='.', address=None, port=None):
@@ -525,7 +529,7 @@ Describe the repository version.
 
 ## diff_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L877)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L863)
 
 ```python
 def diff_tree(repo, old_tree, new_tree, outstream=sys.stdout):
@@ -542,7 +546,7 @@ Compares the content and mode of blobs found via two tree objects.
 
 ## fetch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1558)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1556)
 
 ```python
 def fetch(
@@ -597,7 +601,7 @@ Check a repository.
 
 ## get_branch_remote
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1510)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1506)
 
 ```python
 def get_branch_remote(repo):
@@ -619,7 +623,7 @@ remote name
 
 ## get_object_by_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1920)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1922)
 
 ```python
 def get_object_by_path(repo, path, committish=None):
@@ -636,7 +640,7 @@ Get an object by path.
 
 ## get_remote_repo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1029)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1015)
 
 ```python
 def get_remote_repo(
@@ -651,7 +655,7 @@ def get_remote_repo(
 
 ## get_tree_changes
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1304)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1300)
 
 ```python
 def get_tree_changes(repo):
@@ -666,7 +670,7 @@ Return add/delete/modify changes to tree by comparing index to HEAD.
 
 ## get_untracked_paths
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1260)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1256)
 
 ```python
 def get_untracked_paths(frompath, basepath, index, exclude_ignored=False):
@@ -687,7 +691,7 @@ Get untracked paths.
 
 ## init
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L396)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L383)
 
 ```python
 def init(path='.', bare=False):
@@ -703,7 +707,7 @@ Create a new git repository.
 
 ## list_tags
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L972)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L958)
 
 ```python
 def list_tags(*args, **kwargs):
@@ -711,7 +715,7 @@ def list_tags(*args, **kwargs):
 
 ## log
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L809)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L790)
 
 ```python
 def log(
@@ -790,7 +794,7 @@ List contents of a tree.
 
 ## open_repo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L195)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L198)
 
 ```python
 def open_repo(path_or_repo):
@@ -800,7 +804,7 @@ Open an argument that can be a repository or a path for a repository.
 
 ## open_repo_closing
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L208)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L211)
 
 ```python
 def open_repo_closing(path_or_repo):
@@ -829,7 +833,7 @@ Pack objects into a file.
 
 ## path_to_tree_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L218)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L221)
 
 ```python
 def path_to_tree_path(repopath, path, tree_encoding=DEFAULT_ENCODING):
@@ -850,7 +854,7 @@ the repository root.
 
 ## print_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L666)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L647)
 
 ```python
 def print_commit(commit, decode, outstream=sys.stdout):
@@ -865,7 +869,7 @@ Write a human-readable commit log entry.
 
 ## print_name_status
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L780)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L761)
 
 ```python
 def print_name_status(changes):
@@ -875,7 +879,7 @@ Print a simple status summary, listing changed files.
 
 ## print_tag
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L694)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L675)
 
 ```python
 def print_tag(tag, decode, outstream=sys.stdout):
@@ -891,7 +895,7 @@ Write a human-readable tag.
 
 ## pull
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1138)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1132)
 
 ```python
 def pull(
@@ -923,7 +927,7 @@ Pull from remote via dulwich.client
 
 ## push
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1054)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1040)
 
 ```python
 def push(
@@ -955,7 +959,7 @@ Remote push with dulwich via dulwich.client
 
 ## receive_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1406)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1402)
 
 ```python
 def receive_pack(path='.', inf=None, outf=None):
@@ -987,7 +991,7 @@ Add a remote.
 
 ## remove
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L599)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L580)
 
 ```python
 def remove(repo='.', paths=None, cached=False):
@@ -1018,7 +1022,7 @@ Currently this only packs loose objects.
 
 ## reset
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1012)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L998)
 
 ```python
 def reset(repo, mode, treeish='HEAD'):
@@ -1050,7 +1054,7 @@ Reset the file to specific commit or branch.
 
 ## rev_list
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L890)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L876)
 
 ```python
 def rev_list(repo, commits, outstream=sys.stdout):
@@ -1066,7 +1070,7 @@ Lists commit objects in reverse chronological order.
 
 ## show
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L842)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L828)
 
 ```python
 def show(
@@ -1093,7 +1097,7 @@ Print the changes in a commit.
 
 ## show_blob
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L712)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L693)
 
 ```python
 def show_blob(repo, blob, decode, outstream=sys.stdout):
@@ -1110,7 +1114,7 @@ Write a blob to a stream.
 
 ## show_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L724)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L705)
 
 ```python
 def show_commit(repo, commit, decode, outstream=sys.stdout):
@@ -1127,7 +1131,7 @@ Show a commit to a stream.
 
 ## show_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L771)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L752)
 
 ```python
 def show_object(repo, obj, decode, outstream):
@@ -1135,7 +1139,7 @@ def show_object(repo, obj, decode, outstream):
 
 ## show_tag
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L758)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L739)
 
 ```python
 def show_tag(repo, tag, decode, outstream=sys.stdout):
@@ -1152,7 +1156,7 @@ Print a tag to a stream.
 
 ## show_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L745)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L726)
 
 ```python
 def show_tree(repo, tree, decode, outstream=sys.stdout):
@@ -1209,7 +1213,7 @@ Push a new stash onto the stack.
 
 ## status
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1200)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1194)
 
 ```python
 def status(repo='.', ignored=False):
@@ -1228,7 +1232,7 @@ Returns staged, unstaged, and untracked changes relative to the HEAD.
 
 ## symbolic_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L330)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L317)
 
 ```python
 def symbolic_ref(repo, ref_name, force=False):
@@ -1244,7 +1248,7 @@ Set git symbolic ref into HEAD.
 
 ## tag
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L903)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L889)
 
 ```python
 def tag(*args, **kwargs):
@@ -1252,7 +1256,7 @@ def tag(*args, **kwargs):
 
 ## tag_create
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L912)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L898)
 
 ```python
 def tag_create(
@@ -1286,7 +1290,7 @@ Creates a tag in git via dulwich calls:
 
 ## tag_delete
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L994)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L980)
 
 ```python
 def tag_delete(repo, name):
@@ -1301,7 +1305,7 @@ Remove a tag.
 
 ## tag_list
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L982)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L968)
 
 ```python
 def tag_list(repo, outstream=sys.stdout):
@@ -1335,7 +1339,7 @@ Note that this does not actually update the working tree.
 
 ## update_server_info
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L320)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L307)
 
 ```python
 def update_server_info(repo='.'):
@@ -1349,7 +1353,7 @@ Update server info files for a repository.
 
 ## upload_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1380)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1376)
 
 ```python
 def upload_pack(path='.', inf=None, outf=None):
@@ -1365,7 +1369,7 @@ Upload a pack file after negotiating its contents using smart protocol.
 
 ## web_daemon
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1353)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1349)
 
 ```python
 def web_daemon(path='.', address=None, port=None):
@@ -1381,7 +1385,7 @@ Run a daemon serving Git requests over HTTP.
 
 ## write_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1941)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/porcelain.py#L1945)
 
 ```python
 def write_tree(repo):

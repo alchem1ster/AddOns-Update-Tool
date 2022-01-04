@@ -4,7 +4,7 @@
 
 Classes for dealing with packed git objects.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Pack
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Pack
     - [DeltaChainIterator](#deltachainiterator)
         - [DeltaChainIterator().ext_refs](#deltachainiteratorext_refs)
         - [DeltaChainIterator.for_pack_data](#deltachainiteratorfor_pack_data)
@@ -132,7 +132,7 @@ a pointer in to the corresponding packfile.
 
 ## DeltaChainIterator
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1329)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1345)
 
 ```python
 class DeltaChainIterator(object):
@@ -160,7 +160,7 @@ By default, results are UnpackedObjects with the following members set:
 
 ### DeltaChainIterator().ext_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1459)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1477)
 
 ```python
 def ext_refs():
@@ -168,7 +168,7 @@ def ext_refs():
 
 ### DeltaChainIterator.for_pack_data
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1362)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1378)
 
 ```python
 @classmethod
@@ -177,7 +177,7 @@ def for_pack_data(pack_data, resolve_ext_ref=None):
 
 ### DeltaChainIterator().record
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1370)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1386)
 
 ```python
 def record(unpacked):
@@ -185,7 +185,7 @@ def record(unpacked):
 
 ### DeltaChainIterator().set_pack_data
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1381)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1397)
 
 ```python
 def set_pack_data(pack_data):
@@ -341,7 +341,7 @@ def object_sha1(index):
 
 ## Pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1965)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1991)
 
 ```python
 class Pack(object):
@@ -352,7 +352,7 @@ A Git pack object.
 
 ### Pack().\_\_contains\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2074)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2100)
 
 ```python
 def __contains__(sha1):
@@ -362,7 +362,7 @@ Check whether this pack contains a particular SHA1.
 
 ### Pack().\_\_getitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2103)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2133)
 
 ```python
 def __getitem__(sha1):
@@ -372,7 +372,7 @@ Retrieve the specified SHA1.
 
 ### Pack().\_\_iter\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2044)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2070)
 
 ```python
 def __iter__():
@@ -382,7 +382,7 @@ Iterate over all the sha1s of the objects in this pack.
 
 ### Pack().\_\_len\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2037)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2063)
 
 ```python
 def __len__():
@@ -392,7 +392,7 @@ Number of entries in this pack.
 
 ### Pack().check
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2059)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2085)
 
 ```python
 def check():
@@ -406,7 +406,7 @@ Check the integrity of this pack.
 
 ### Pack().check_length_and_checksum
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2048)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2074)
 
 ```python
 def check_length_and_checksum():
@@ -416,7 +416,7 @@ Sanity check the length and checksum of the pack index and data.
 
 ### Pack().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2022)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2048)
 
 ```python
 def close():
@@ -424,7 +424,7 @@ def close():
 
 ### Pack().data
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2003)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2029)
 
 ```python
 @property
@@ -435,7 +435,7 @@ The pack data object being used.
 
 ### Pack.from_lazy_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1978)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2004)
 
 ```python
 @classmethod
@@ -447,7 +447,7 @@ index objects.
 
 ### Pack.from_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1987)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2013)
 
 ```python
 @classmethod
@@ -458,7 +458,7 @@ Create a new pack object from pack data and index objects.
 
 ### Pack().get_raw
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2097)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2127)
 
 ```python
 def get_raw(sha1):
@@ -466,7 +466,7 @@ def get_raw(sha1):
 
 ### Pack().get_raw_unresolved
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2082)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2108)
 
 ```python
 def get_raw_unresolved(sha1):
@@ -482,7 +482,7 @@ Get raw unresolved data for a SHA.
 
 ### Pack().get_stored_checksum
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2071)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2097)
 
 ```python
 def get_stored_checksum():
@@ -490,7 +490,7 @@ def get_stored_checksum():
 
 ### Pack().index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2012)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2038)
 
 ```python
 @property
@@ -503,7 +503,7 @@ Note: This may be an in-memory index
 
 ### Pack().iterobjects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2108)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2138)
 
 ```python
 def iterobjects():
@@ -513,7 +513,7 @@ Iterate over the objects in this pack.
 
 ### Pack().keep
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2133)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2165)
 
 ```python
 def keep(msg=None):
@@ -529,7 +529,7 @@ Add a .keep file for the pack, preventing git from garbage collecting it.
 
 ### Pack().name
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1999)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2025)
 
 ```python
 def name():
@@ -539,7 +539,7 @@ The SHA over the SHAs of the objects in this pack.
 
 ### Pack().pack_tuples
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2114)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L2146)
 
 ```python
 def pack_tuples():
@@ -552,7 +552,7 @@ Returns: Object that can iterate over (object, path) tuples
 
 ## PackData
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1015)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1025)
 
 ```python
 class PackData(object):
@@ -586,7 +586,7 @@ position.  It will all just throw a zlib or KeyError.
 
 ### PackData().\_\_len\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1114)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1124)
 
 ```python
 def __len__():
@@ -596,7 +596,7 @@ Returns the number of objects in this pack.
 
 ### PackData().calculate_checksum
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1118)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1128)
 
 ```python
 def calculate_checksum():
@@ -608,7 +608,7 @@ Returns: 20-byte binary SHA1 digest
 
 ### PackData().check
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1289)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1305)
 
 ```python
 def check():
@@ -618,7 +618,7 @@ Check the consistency of this pack.
 
 ### PackData().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1080)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1090)
 
 ```python
 def close():
@@ -626,7 +626,7 @@ def close():
 
 ### PackData().create_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1269)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1285)
 
 ```python
 def create_index(filename, progress=None, version=2):
@@ -642,7 +642,7 @@ Create an  index file for this data file.
 
 ### PackData().create_index_v1
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1245)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1261)
 
 ```python
 def create_index_v1(filename, progress=None):
@@ -658,7 +658,7 @@ Create a version 1 file for this data file.
 
 ### PackData().create_index_v2
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1257)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1273)
 
 ```python
 def create_index_v2(filename, progress=None):
@@ -674,7 +674,7 @@ Create a version 2 index file for this data file.
 
 ### PackData().filename
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1064)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1074)
 
 ```python
 @property
@@ -683,7 +683,7 @@ def filename():
 
 ### PackData.from_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1072)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1082)
 
 ```python
 @classmethod
@@ -692,7 +692,7 @@ def from_file(file, size=None):
 
 ### PackData.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1076)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1086)
 
 ```python
 @classmethod
@@ -701,7 +701,7 @@ def from_path(path):
 
 ### PackData().get_compressed_data_at
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1296)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1312)
 
 ```python
 def get_compressed_data_at(offset):
@@ -715,7 +715,7 @@ function.
 
 ### PackData().get_object_at
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1312)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1328)
 
 ```python
 def get_object_at(offset):
@@ -729,7 +729,7 @@ function.
 
 ### PackData().get_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1125)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1135)
 
 ```python
 def get_ref(sha):
@@ -739,7 +739,7 @@ Get the object for a ref SHA, only looking in this pack.
 
 ### PackData().get_stored_checksum
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1284)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1300)
 
 ```python
 def get_stored_checksum():
@@ -749,7 +749,7 @@ Return the expected checksum stored in this pack.
 
 ### PackData().iterentries
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1218)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1230)
 
 ```python
 def iterentries(progress=None):
@@ -765,7 +765,7 @@ Yield entries summarizing the contents of this pack.
 
 ### PackData().iterobjects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1184)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1194)
 
 ```python
 def iterobjects(progress=None, compute_crc32=True):
@@ -773,7 +773,7 @@ def iterobjects(progress=None, compute_crc32=True):
 
 ### PackData().path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1068)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1078)
 
 ```python
 @property
@@ -782,7 +782,7 @@ def path():
 
 ### PackData().resolve_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1142)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1152)
 
 ```python
 def resolve_object(offset, type, obj, get_ref=None):
@@ -794,7 +794,7 @@ Returns: Tuple with object type and contents.
 
 ### PackData().sorted_entries
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1234)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1250)
 
 ```python
 def sorted_entries(progress=None):
@@ -928,7 +928,7 @@ Version 1 Pack Index file.
 
 ## PackIndex2
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L642)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L644)
 
 ```python
 class PackIndex2(FilePackIndex):
@@ -943,7 +943,7 @@ Version 2 Pack Index file.
 
 ## PackIndexer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1463)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1481)
 
 ```python
 class PackIndexer(DeltaChainIterator):
@@ -957,7 +957,7 @@ Delta chain iterator that yields index entries.
 
 ## PackInflater
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1472)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1490)
 
 ```python
 class PackInflater(DeltaChainIterator):
@@ -971,7 +971,7 @@ Delta chain iterator that yields ShaFile objects.
 
 ## PackStreamCopier
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L932)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L941)
 
 ```python
 class PackStreamCopier(PackStreamReader):
@@ -989,7 +989,7 @@ appropriate and written out to the given file-like object.
 
 ### PackStreamCopier().verify
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L961)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L970)
 
 ```python
 def verify():
@@ -1002,7 +1002,7 @@ throw.
 
 ## PackStreamReader
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L791)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L800)
 
 ```python
 class PackStreamReader(object):
@@ -1016,7 +1016,7 @@ appropriate.
 
 ### PackStreamReader().offset
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L851)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L860)
 
 ```python
 @property
@@ -1025,7 +1025,7 @@ def offset():
 
 ### PackStreamReader().read
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L855)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L864)
 
 ```python
 def read(size):
@@ -1035,7 +1035,7 @@ Read, blocking until size bytes are read.
 
 ### PackStreamReader().read_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L877)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L886)
 
 ```python
 def read_objects(compute_crc32=False):
@@ -1065,7 +1065,7 @@ Read the objects in this pack file.
 
 ### PackStreamReader().recv
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L864)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L873)
 
 ```python
 def recv(size):
@@ -1075,7 +1075,7 @@ Read up to size bytes, blocking until one byte is read.
 
 ## SHA1Reader
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1479)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1497)
 
 ```python
 class SHA1Reader(object):
@@ -1086,7 +1086,7 @@ Wrapper for file-like object that remembers the SHA1 of its data.
 
 ### SHA1Reader().check_sha
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1491)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1509)
 
 ```python
 def check_sha():
@@ -1094,7 +1094,7 @@ def check_sha():
 
 ### SHA1Reader().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1496)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1514)
 
 ```python
 def close():
@@ -1102,7 +1102,7 @@ def close():
 
 ### SHA1Reader().read
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1486)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1504)
 
 ```python
 def read(num=None):
@@ -1110,7 +1110,7 @@ def read(num=None):
 
 ### SHA1Reader().tell
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1499)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1517)
 
 ```python
 def tell():
@@ -1118,7 +1118,7 @@ def tell():
 
 ## SHA1Writer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1503)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1521)
 
 ```python
 class SHA1Writer(object):
@@ -1129,7 +1129,7 @@ Wrapper for file-like object that remembers the SHA1 of its data.
 
 ### SHA1Writer().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1523)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1541)
 
 ```python
 def close():
@@ -1137,7 +1137,7 @@ def close():
 
 ### SHA1Writer().offset
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1528)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1546)
 
 ```python
 def offset():
@@ -1145,7 +1145,7 @@ def offset():
 
 ### SHA1Writer().tell
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1531)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1549)
 
 ```python
 def tell():
@@ -1153,7 +1153,7 @@ def tell():
 
 ### SHA1Writer().write
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1511)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1529)
 
 ```python
 def write(data):
@@ -1161,7 +1161,7 @@ def write(data):
 
 ### SHA1Writer().write_sha
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1516)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1534)
 
 ```python
 def write_sha():
@@ -1207,7 +1207,7 @@ Return a ShaFile from this object.
 
 ## apply_delta
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1853)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1879)
 
 ```python
 def apply_delta(src_buf, delta):
@@ -1240,7 +1240,7 @@ Find a SHA in a data blob with sorted SHAs.
 
 ## chunks_length
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L703)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L712)
 
 ```python
 def chunks_length(chunks):
@@ -1248,7 +1248,7 @@ def chunks_length(chunks):
 
 ## compute_file_sha
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L987)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L996)
 
 ```python
 def compute_file_sha(f, start_ofs=0, end_ofs=0, buffer_size=1 << 16):
@@ -1267,7 +1267,7 @@ Hash a portion of a file into a new SHA.
 
 ## create_delta
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1809)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1835)
 
 ```python
 def create_delta(base_buf, target_buf):
@@ -1282,7 +1282,7 @@ Use python difflib to work out how to transform base_buf to target_buf.
 
 ## deltify_pack_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1629)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1647)
 
 ```python
 def deltify_pack_objects(objects, window_size=None):
@@ -1345,7 +1345,7 @@ Load an index file from a file-like object.
 
 ## obj_sha
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L975)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L984)
 
 ```python
 def obj_sha(type, chunks):
@@ -1355,7 +1355,7 @@ Compute the SHA for a numeric type and object chunks.
 
 ## pack_object_header
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1535)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1553)
 
 ```python
 def pack_object_header(type_num, delta_base, size):
@@ -1372,7 +1372,7 @@ Create a pack object header for the given object info.
 
 ## pack_objects_to_data
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1667)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1685)
 
 ```python
 def pack_objects_to_data(objects):
@@ -1387,7 +1387,7 @@ Create pack data from objects
 
 ## read_pack_header
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L683)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L692)
 
 ```python
 def read_pack_header(read):
@@ -1455,7 +1455,7 @@ Read bytes marked with most significant bit.
 
 ## unpack_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L710)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L719)
 
 ```python
 def unpack_object(
@@ -1493,7 +1493,7 @@ Unpack a Git object.
 
 ## write_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1591)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1609)
 
 ```python
 def write_pack(
@@ -1519,7 +1519,7 @@ Write a new pack data file.
 
 ## write_pack_data
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1717)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1735)
 
 ```python
 def write_pack_data(
@@ -1544,7 +1544,7 @@ Write a new pack data file.
 
 ## write_pack_header
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1622)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1640)
 
 ```python
 def write_pack_header(f, num_objects):
@@ -1554,7 +1554,7 @@ Write a pack header for the given number of objects.
 
 ## write_pack_index_v1
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1750)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1776)
 
 ```python
 def write_pack_index_v1(f, entries, pack_checksum):
@@ -1572,7 +1572,7 @@ Write a new pack index file.
 
 ## write_pack_index_v2
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1924)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1950)
 
 ```python
 def write_pack_index_v2(f, entries, pack_checksum):
@@ -1590,7 +1590,7 @@ Write a new pack index file.
 
 ## write_pack_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1566)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1584)
 
 ```python
 def write_pack_object(f, type, object, sha=None, compression_level=-1):
@@ -1608,7 +1608,7 @@ Write pack object to a file.
 
 ## write_pack_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1684)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/pack.py#L1702)
 
 ```python
 def write_pack_objects(

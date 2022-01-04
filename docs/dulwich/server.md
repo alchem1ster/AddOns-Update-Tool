@@ -4,7 +4,7 @@
 
 Git smart network protocol server implementation.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Server
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Server
     - [Backend](#backend)
         - [Backend().open_repository](#backendopen_repository)
     - [BackendRepo](#backendrepo)
@@ -173,7 +173,7 @@ Returns: dict of name -> sha
 
 ## DictBackend
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L182)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L184)
 
 ```python
 class DictBackend(Backend):
@@ -188,7 +188,7 @@ Trivial backend that looks up Git repositories in a dictionary.
 
 ### DictBackend().open_repository
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L188)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L190)
 
 ```python
 def open_repository(path: str) -> BaseRepo:
@@ -200,7 +200,7 @@ def open_repository(path: str) -> BaseRepo:
 
 ## FileSystemBackend
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L198)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L200)
 
 ```python
 class FileSystemBackend(Backend):
@@ -215,7 +215,7 @@ Simple backend looking up Git repositories in the local file system.
 
 ### FileSystemBackend().open_repository
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L205)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L209)
 
 ```python
 def open_repository(path):
@@ -223,7 +223,7 @@ def open_repository(path):
 
 ## Handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L215)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L221)
 
 ```python
 class Handler(object):
@@ -234,7 +234,7 @@ Smart protocol command handler base class.
 
 ### Handler().handle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L223)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L229)
 
 ```python
 def handle():
@@ -242,7 +242,7 @@ def handle():
 
 ## MultiAckDetailedGraphWalkerImpl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L859)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L876)
 
 ```python
 class MultiAckDetailedGraphWalkerImpl(object):
@@ -253,7 +253,7 @@ Graph walker implementation speaking the multi-ack-detailed protocol.
 
 ### MultiAckDetailedGraphWalkerImpl().ack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L866)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L883)
 
 ```python
 def ack(have_ref):
@@ -261,7 +261,7 @@ def ack(have_ref):
 
 ### MultiAckDetailedGraphWalkerImpl().handle_done
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L900)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L917)
 
 ```python
 def handle_done(done_required, done_received):
@@ -269,7 +269,7 @@ def handle_done(done_required, done_received):
 
 ### MultiAckDetailedGraphWalkerImpl().next
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L871)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L888)
 
 ```python
 def next():
@@ -277,7 +277,7 @@ def next():
 
 ## MultiAckGraphWalkerImpl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L800)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L817)
 
 ```python
 class MultiAckGraphWalkerImpl(object):
@@ -288,7 +288,7 @@ Graph walker implementation that speaks the multi-ack protocol.
 
 ### MultiAckGraphWalkerImpl().ack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L808)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L825)
 
 ```python
 def ack(have_ref):
@@ -296,7 +296,7 @@ def ack(have_ref):
 
 ### MultiAckGraphWalkerImpl().handle_done
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L835)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L852)
 
 ```python
 def handle_done(done_required, done_received):
@@ -304,7 +304,7 @@ def handle_done(done_required, done_received):
 
 ### MultiAckGraphWalkerImpl().next
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L816)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L833)
 
 ```python
 def next():
@@ -312,7 +312,7 @@ def next():
 
 ## PackHandler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L227)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L233)
 
 ```python
 class PackHandler(Handler):
@@ -327,7 +327,7 @@ Protocol handler for packs.
 
 ### PackHandler.capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L241)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L247)
 
 ```python
 @classmethod
@@ -336,7 +336,7 @@ def capabilities() -> Iterable[bytes]:
 
 ### PackHandler.capability_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L236)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L242)
 
 ```python
 @classmethod
@@ -345,7 +345,7 @@ def capability_line(capabilities):
 
 ### PackHandler().has_capability
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L278)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L285)
 
 ```python
 def has_capability(cap: bytes) -> bool:
@@ -353,7 +353,7 @@ def has_capability(cap: bytes) -> bool:
 
 ### PackHandler.innocuous_capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L245)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L251)
 
 ```python
 @classmethod
@@ -362,7 +362,7 @@ def innocuous_capabilities() -> Iterable[bytes]:
 
 ### PackHandler().notify_done
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L285)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L293)
 
 ```python
 def notify_done() -> None:
@@ -370,7 +370,7 @@ def notify_done() -> None:
 
 ### PackHandler.required_capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L255)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L261)
 
 ```python
 @classmethod
@@ -381,7 +381,7 @@ Return a list of capabilities that we require the client to have.
 
 ### PackHandler().set_client_capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L260)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L266)
 
 ```python
 def set_client_capabilities(caps: Iterable[bytes]) -> None:
@@ -389,7 +389,7 @@ def set_client_capabilities(caps: Iterable[bytes]) -> None:
 
 ## ReceivePackHandler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L924)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L941)
 
 ```python
 class ReceivePackHandler(PackHandler):
@@ -410,7 +410,7 @@ Protocol handler for downloading a pack from the client.
 
 ### ReceivePackHandler.capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L934)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L953)
 
 ```python
 @classmethod
@@ -419,7 +419,7 @@ def capabilities() -> Iterable[bytes]:
 
 ### ReceivePackHandler().handle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1043)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1066)
 
 ```python
 def handle() -> None:
@@ -427,7 +427,7 @@ def handle() -> None:
 
 ## SingleAckGraphWalkerImpl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L756)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L773)
 
 ```python
 class SingleAckGraphWalkerImpl(object):
@@ -438,7 +438,7 @@ Graph walker implementation that speaks the single-ack protocol.
 
 ### SingleAckGraphWalkerImpl().ack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L763)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L780)
 
 ```python
 def ack(have_ref):
@@ -446,7 +446,7 @@ def ack(have_ref):
 
 ### SingleAckGraphWalkerImpl().handle_done
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L779)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L796)
 
 ```python
 def handle_done(done_required, done_received):
@@ -454,7 +454,7 @@ def handle_done(done_required, done_received):
 
 ### SingleAckGraphWalkerImpl().next
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L768)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L785)
 
 ```python
 def next():
@@ -462,7 +462,7 @@ def next():
 
 ## TCPGitRequestHandler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1142)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1167)
 
 ```python
 class TCPGitRequestHandler(socketserver.StreamRequestHandler):
@@ -471,7 +471,7 @@ class TCPGitRequestHandler(socketserver.StreamRequestHandler):
 
 ### TCPGitRequestHandler().handle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1147)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1172)
 
 ```python
 def handle():
@@ -479,7 +479,7 @@ def handle():
 
 ## TCPGitServer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1159)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1184)
 
 ```python
 class TCPGitServer(socketserver.TCPServer):
@@ -492,7 +492,7 @@ class TCPGitServer(socketserver.TCPServer):
 
 ### TCPGitServer().handle_error
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1179)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1208)
 
 ```python
 def handle_error(request, client_address):
@@ -500,7 +500,7 @@ def handle_error(request, client_address):
 
 ### TCPGitServer().verify_request
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1175)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1204)
 
 ```python
 def verify_request(request, client_address):
@@ -508,7 +508,7 @@ def verify_request(request, client_address):
 
 ## UploadArchiveHandler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1094)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1117)
 
 ```python
 class UploadArchiveHandler(Handler):
@@ -521,7 +521,7 @@ class UploadArchiveHandler(Handler):
 
 ### UploadArchiveHandler().handle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1099)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1124)
 
 ```python
 def handle():
@@ -529,7 +529,7 @@ def handle():
 
 ## UploadPackHandler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L289)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L297)
 
 ```python
 class UploadPackHandler(PackHandler):
@@ -550,7 +550,7 @@ Protocol handler for uploading a pack to the client.
 
 ### UploadPackHandler.capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L304)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L314)
 
 ```python
 @classmethod
@@ -559,7 +559,7 @@ def capabilities():
 
 ### UploadPackHandler().get_tagged
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L331)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L344)
 
 ```python
 def get_tagged(refs=None, repo=None):
@@ -578,7 +578,7 @@ Get a dict of peeled values of tags to their original tag shas.
 
 ### UploadPackHandler().handle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L363)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L376)
 
 ```python
 def handle():
@@ -586,7 +586,7 @@ def handle():
 
 ### UploadPackHandler().progress
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L326)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L336)
 
 ```python
 def progress(message):
@@ -594,7 +594,7 @@ def progress(message):
 
 ### UploadPackHandler.required_capabilities
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L318)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L328)
 
 ```python
 @classmethod
@@ -603,7 +603,7 @@ def required_capabilities():
 
 ## generate_info_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1249)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1278)
 
 ```python
 def generate_info_refs(repo):
@@ -613,7 +613,7 @@ Generate an info refs file.
 
 ## generate_objects_info_packs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1255)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1284)
 
 ```python
 def generate_objects_info_packs(repo):
@@ -623,7 +623,7 @@ Generate an index for for packs.
 
 ## main
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1186)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1215)
 
 ```python
 def main(argv=sys.argv):
@@ -633,7 +633,7 @@ Entry point for starting a TCP git server.
 
 ## serve_command
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1219)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1248)
 
 ```python
 def serve_command(
@@ -661,7 +661,7 @@ git+ssh.
 
 ## update_server_info
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1261)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/server.py#L1290)
 
 ```python
 def update_server_info(repo):

@@ -4,7 +4,7 @@
 
 Mailmap file reader.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Mailmap
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Mailmap
     - [Mailmap](#mailmap)
         - [Mailmap().add_entry](#mailmapadd_entry)
         - [Mailmap.from_path](#mailmapfrom_path)

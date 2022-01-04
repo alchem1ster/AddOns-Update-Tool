@@ -4,7 +4,7 @@
 
 Implementation of merge-base following the approach of git
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Graph
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Graph
     - [can_fast_forward](#can_fast_forward)
     - [find_merge_base](#find_merge_base)
     - [find_octopus_base](#find_octopus_base)

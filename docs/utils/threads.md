@@ -4,7 +4,7 @@
 
 Multithreading module
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Utils](index.md#utils) / Threads
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Utils](index.md#utils) / Threads
     - [threaded](#threaded)
 
 ## threaded

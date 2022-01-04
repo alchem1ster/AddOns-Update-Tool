@@ -4,7 +4,7 @@
 
 Client side support for the Git protocol.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Client
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Client
     - [AbstractHttpGitClient](#abstracthttpgitclient)
         - [AbstractHttpGitClient().fetch_pack](#abstracthttpgitclientfetch_pack)
         - [AbstractHttpGitClient.from_parsedurl](#abstracthttpgitclientfrom_parsedurl)
@@ -94,7 +94,7 @@ Known capabilities that are not supported:
 
 ## AbstractHttpGitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1799)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1836)
 
 ```python
 class AbstractHttpGitClient(GitClient):
@@ -114,7 +114,7 @@ _http_request method.
 
 ### AbstractHttpGitClient().fetch_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1954)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1995)
 
 ```python
 def fetch_pack(
@@ -144,7 +144,7 @@ FetchPackResult object
 
 ### AbstractHttpGitClient.from_parsedurl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2036)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2081)
 
 ```python
 @classmethod
@@ -153,7 +153,7 @@ def from_parsedurl(parsedurl, **kwargs):
 
 ### AbstractHttpGitClient().get_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2024)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2069)
 
 ```python
 def get_refs(path):
@@ -163,7 +163,7 @@ Retrieve the current refs from a git smart server.
 
 ### AbstractHttpGitClient().get_url
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2030)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2075)
 
 ```python
 def get_url(path):
@@ -171,7 +171,7 @@ def get_url(path):
 
 ### AbstractHttpGitClient().send_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1890)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1931)
 
 ```python
 def send_pack(path, update_refs, generate_pack_data, progress=None):
@@ -216,7 +216,7 @@ Result of a fetch-pack operation.
 
 ## GitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L421)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L423)
 
 ```python
 class GitClient(object):
@@ -232,7 +232,7 @@ Git smart server client.
 
 ### GitClient().fetch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L498)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L500)
 
 ```python
 def fetch(path, target, determine_wants=None, progress=None, depth=None):
@@ -256,7 +256,7 @@ Dictionary with all remote refs (not just those fetched)
 
 ### GitClient().fetch_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L548)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L552)
 
 ```python
 def fetch_pack(
@@ -288,7 +288,7 @@ FetchPackResult object
 
 ### GitClient.from_parsedurl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L465)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L467)
 
 ```python
 @classmethod
@@ -307,7 +307,7 @@ A [GitClient](#gitclient) object
 
 ### GitClient().get_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L575)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L579)
 
 ```python
 def get_refs(path):
@@ -321,7 +321,7 @@ Retrieve the current refs from a git smart server.
 
 ### GitClient().get_url
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L453)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L455)
 
 ```python
 def get_url(path):
@@ -339,7 +339,7 @@ Url to path (as string)
 
 ### GitClient().send_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L477)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L479)
 
 ```python
 def send_pack(path, update_refs, generate_pack_data, progress=None):
@@ -400,7 +400,7 @@ Invalid wants.
 
 ## LocalGitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1270)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1301)
 
 ```python
 class LocalGitClient(GitClient):
@@ -415,7 +415,7 @@ Git Client that just uses a local Repo.
 
 ### LocalGitClient().fetch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1359)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1394)
 
 ```python
 def fetch(path, target, determine_wants=None, progress=None, depth=None):
@@ -439,7 +439,7 @@ FetchPackResult object
 
 ### LocalGitClient().fetch_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1384)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1421)
 
 ```python
 def fetch_pack(
@@ -471,7 +471,7 @@ FetchPackResult object
 
 ### LocalGitClient.from_parsedurl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1287)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1318)
 
 ```python
 @classmethod
@@ -480,7 +480,7 @@ def from_parsedurl(parsedurl, **kwargs):
 
 ### LocalGitClient().get_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1424)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1461)
 
 ```python
 def get_refs(path):
@@ -490,7 +490,7 @@ Retrieve the current refs from a git smart server.
 
 ### LocalGitClient().get_url
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1284)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1315)
 
 ```python
 def get_url(path):
@@ -498,7 +498,7 @@ def get_url(path):
 
 ### LocalGitClient().send_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1299)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1330)
 
 ```python
 def send_pack(path, update_refs, generate_pack_data, progress=None):
@@ -525,7 +525,7 @@ SendPackResult
 
 ## PLinkSSHVendor
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1546)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1583)
 
 ```python
 class PLinkSSHVendor(SSHVendor):
@@ -539,7 +539,7 @@ SSH vendor that shells out to the local 'plink' command.
 
 ### PLinkSSHVendor().run_command
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1549)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1586)
 
 ```python
 def run_command(
@@ -599,7 +599,7 @@ packet.
 
 ## SSHGitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1614)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1651)
 
 ```python
 class SSHGitClient(TraditionalGitClient):
@@ -622,7 +622,7 @@ class SSHGitClient(TraditionalGitClient):
 
 ### SSHGitClient.from_parsedurl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1652)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1689)
 
 ```python
 @classmethod
@@ -631,7 +631,7 @@ def from_parsedurl(parsedurl, **kwargs):
 
 ### SSHGitClient().get_url
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1642)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1679)
 
 ```python
 def get_url(path):
@@ -639,7 +639,7 @@ def get_url(path):
 
 ## SSHVendor
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1435)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1472)
 
 ```python
 class SSHVendor(object):
@@ -649,7 +649,7 @@ A client side SSH implementation.
 
 ### SSHVendor().connect_ssh
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1438)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1475)
 
 ```python
 def connect_ssh(
@@ -664,7 +664,7 @@ def connect_ssh(
 
 ### SSHVendor().run_command
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1463)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1500)
 
 ```python
 def run_command(
@@ -695,7 +695,7 @@ with the remote command.
 
 ## SendPackResult
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L331)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L333)
 
 ```python
 class SendPackResult(object):
@@ -713,7 +713,7 @@ Result of a upload-pack operation.
 
 ## StrangeHostname
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1493)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1530)
 
 ```python
 class StrangeHostname(Exception):
@@ -724,7 +724,7 @@ Refusing to connect to strange SSH hostname.
 
 ## SubprocessGitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1233)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1264)
 
 ```python
 class SubprocessGitClient(TraditionalGitClient):
@@ -738,7 +738,7 @@ Git client that talks to a server using a subprocess.
 
 ### SubprocessGitClient.from_parsedurl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1236)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1267)
 
 ```python
 @classmethod
@@ -747,7 +747,7 @@ def from_parsedurl(parsedurl, **kwargs):
 
 ## SubprocessSSHVendor
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1500)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1537)
 
 ```python
 class SubprocessSSHVendor(SSHVendor):
@@ -761,7 +761,7 @@ SSH vendor that shells out to the local 'ssh' command.
 
 ### SubprocessSSHVendor().run_command
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1503)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1540)
 
 ```python
 def run_command(
@@ -777,7 +777,7 @@ def run_command(
 
 ## SubprocessWrapper
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1190)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1221)
 
 ```python
 class SubprocessWrapper(object):
@@ -788,7 +788,7 @@ A socket-like object that talks to a subprocess via pipes.
 
 ### SubprocessWrapper().can_read
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1202)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1233)
 
 ```python
 def can_read():
@@ -796,7 +796,7 @@ def can_read():
 
 ### SubprocessWrapper().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1211)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1242)
 
 ```python
 def close():
@@ -804,7 +804,7 @@ def close():
 
 ### SubprocessWrapper().stderr
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1198)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1229)
 
 ```python
 @property
@@ -813,7 +813,7 @@ def stderr():
 
 ## TCPGitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1124)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1153)
 
 ```python
 class TCPGitClient(TraditionalGitClient):
@@ -828,7 +828,7 @@ A Git Client that works over TCP directly (i.e. git://).
 
 ### TCPGitClient.from_parsedurl
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1134)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1163)
 
 ```python
 @classmethod
@@ -837,7 +837,7 @@ def from_parsedurl(parsedurl, **kwargs):
 
 ### TCPGitClient().get_url
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1138)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1167)
 
 ```python
 def get_url(path):
@@ -845,7 +845,7 @@ def get_url(path):
 
 ## TraditionalGitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L884)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L905)
 
 ```python
 class TraditionalGitClient(GitClient):
@@ -860,7 +860,7 @@ Traditional Git client.
 
 ### TraditionalGitClient().archive
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1077)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1104)
 
 ```python
 def archive(
@@ -877,7 +877,7 @@ def archive(
 
 ### TraditionalGitClient().fetch_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L994)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1019)
 
 ```python
 def fetch_pack(
@@ -909,7 +909,7 @@ FetchPackResult object
 
 ### TraditionalGitClient().get_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1065)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1092)
 
 ```python
 def get_refs(path):
@@ -919,7 +919,7 @@ Retrieve the current refs from a git smart server.
 
 ### TraditionalGitClient().send_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L908)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L929)
 
 ```python
 def send_pack(path, update_refs, generate_pack_data, progress=None):
@@ -947,7 +947,7 @@ SendPackResult
 
 ## Urllib3HttpGitClient
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2060)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2105)
 
 ```python
 class Urllib3HttpGitClient(AbstractHttpGitClient):
@@ -968,7 +968,7 @@ class Urllib3HttpGitClient(AbstractHttpGitClient):
 
 ## ParamikoSSHVendor
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1598)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1635)
 
 ```python
 def ParamikoSSHVendor(**kwargs):
@@ -976,7 +976,7 @@ def ParamikoSSHVendor(**kwargs):
 
 ## check_wants
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L857)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L876)
 
 ```python
 def check_wants(wants, refs):
@@ -991,7 +991,7 @@ Check that a set of wants is valid.
 
 ## default_urllib3_manager
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1708)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1745)
 
 ```python
 def default_urllib3_manager(
@@ -1019,7 +1019,7 @@ proxy configurations, `proxy_manager_cls` (defaults to
 
 ## default_user_agent_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1702)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1739)
 
 ```python
 def default_user_agent_string():
@@ -1027,7 +1027,7 @@ def default_user_agent_string():
 
 ## find_git_command
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1219)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L1250)
 
 ```python
 def find_git_command():
@@ -1037,7 +1037,7 @@ Find command to run for system Git (usually C Git).
 
 ## get_credentials_from_store
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2240)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2293)
 
 ```python
 def get_credentials_from_store(
@@ -1054,7 +1054,7 @@ def get_credentials_from_store(
 
 ## get_transport_and_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2201)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2250)
 
 ```python
 def get_transport_and_path(location, **kwargs):
@@ -1076,7 +1076,7 @@ Tuple with client instance and relative path.
 
 ## get_transport_and_path_from_url
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2149)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2198)
 
 ```python
 def get_transport_and_path_from_url(url, config=None, **kwargs):
@@ -1098,7 +1098,7 @@ Tuple with client instance and relative path.
 
 ## parse_rsync_url
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2182)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/client.py#L2231)
 
 ```python
 def parse_rsync_url(location):

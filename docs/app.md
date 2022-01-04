@@ -4,7 +4,7 @@
 
 Main module CLI
 
-- [Addons-update-tool](README.md#addons-update-tool) / [Modules](MODULES.md#addons-update-tool-modules) / App
+- [AddOns-Update-Tool](README.md#addons-update-tool-index) / [Modules](MODULES.md#addons-update-tool-modules) / App
     - [main](#main)
     - [process_args](#process_args)
 

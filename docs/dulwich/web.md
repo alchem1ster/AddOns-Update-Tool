@@ -4,7 +4,7 @@
 
 HTTP server for dulwich that implements the git smart HTTP protocol.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Web
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Web
     - [GunzipFilter](#gunzipfilter)
     - [HTTPGitApplication](#httpgitapplication)
     - [HTTPGitRequest](#httpgitrequest)
@@ -47,7 +47,7 @@ HTTP server for dulwich that implements the git smart HTTP protocol.
 
 ## GunzipFilter
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L419)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L429)
 
 ```python
 class GunzipFilter(object):
@@ -59,7 +59,7 @@ passing on to the underlying application.
 
 ## HTTPGitApplication
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L358)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L366)
 
 ```python
 class HTTPGitApplication(object):
@@ -77,7 +77,7 @@ Class encapsulating the state of a git WSGI application.
 
 ## HTTPGitRequest
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L286)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L292)
 
 ```python
 class HTTPGitRequest(object):
@@ -90,7 +90,7 @@ Class encapsulating the state of a single git HTTP request.
 
 ### HTTPGitRequest().add_header
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L300)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L308)
 
 ```python
 def add_header(name, value):
@@ -100,7 +100,7 @@ Add a header to the response.
 
 ### HTTPGitRequest().cache_forever
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L348)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L356)
 
 ```python
 def cache_forever() -> None:
@@ -110,7 +110,7 @@ Set the response to be cached forever by the client.
 
 ### HTTPGitRequest().error
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L333)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L341)
 
 ```python
 def error(message: str) -> bytes:
@@ -120,7 +120,7 @@ Begin a HTTP 500 response and return the text of a message.
 
 ### HTTPGitRequest().forbidden
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L326)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L334)
 
 ```python
 def forbidden(message: str) -> bytes:
@@ -130,7 +130,7 @@ Begin a HTTP 403 response and return the text of a message.
 
 ### HTTPGitRequest().nocache
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L340)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L348)
 
 ```python
 def nocache() -> None:
@@ -140,7 +140,7 @@ Set the response to never be cached by the client.
 
 ### HTTPGitRequest().not_found
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L319)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L327)
 
 ```python
 def not_found(message: str) -> bytes:
@@ -150,7 +150,7 @@ Begin a HTTP 404 response and return the text of a message.
 
 ### HTTPGitRequest().respond
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L304)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L312)
 
 ```python
 def respond(
@@ -168,7 +168,7 @@ Begin a response with the given status and other headers.
 
 ## LimitedInputFilter
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L451)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L461)
 
 ```python
 class LimitedInputFilter(object):
@@ -180,7 +180,7 @@ specified in Content-Length.
 
 ## ServerHandlerLogger
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L481)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L491)
 
 ```python
 class ServerHandlerLogger(ServerHandler):
@@ -190,7 +190,7 @@ ServerHandler that uses dulwich's logger for logging exceptions.
 
 ### ServerHandlerLogger().log_error
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L493)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L503)
 
 ```python
 def log_error(*args):
@@ -198,7 +198,7 @@ def log_error(*args):
 
 ### ServerHandlerLogger().log_exception
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L484)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L494)
 
 ```python
 def log_exception(exc_info):
@@ -206,7 +206,7 @@ def log_exception(exc_info):
 
 ### ServerHandlerLogger().log_message
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L490)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L500)
 
 ```python
 def log_message(format, *args):
@@ -214,7 +214,7 @@ def log_message(format, *args):
 
 ## WSGIRequestHandlerLogger
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L497)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L507)
 
 ```python
 class WSGIRequestHandlerLogger(WSGIRequestHandler):
@@ -224,7 +224,7 @@ WSGIRequestHandler that uses dulwich's logger for logging exceptions.
 
 ### WSGIRequestHandlerLogger().handle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L512)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L522)
 
 ```python
 def handle():
@@ -234,7 +234,7 @@ Handle a single HTTP request
 
 ### WSGIRequestHandlerLogger().log_error
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L509)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L519)
 
 ```python
 def log_error(*args):
@@ -242,7 +242,7 @@ def log_error(*args):
 
 ### WSGIRequestHandlerLogger().log_exception
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L500)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L510)
 
 ```python
 def log_exception(exc_info):
@@ -250,7 +250,7 @@ def log_exception(exc_info):
 
 ### WSGIRequestHandlerLogger().log_message
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L506)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L516)
 
 ```python
 def log_message(format, *args):
@@ -258,7 +258,7 @@ def log_message(format, *args):
 
 ## WSGIServerLogger
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L526)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L536)
 
 ```python
 class WSGIServerLogger(WSGIServer):
@@ -266,7 +266,7 @@ class WSGIServerLogger(WSGIServer):
 
 ### WSGIServerLogger().handle_error
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L527)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L537)
 
 ```python
 def handle_error(request, client_address):
@@ -284,7 +284,7 @@ def date_time_string(timestamp: Optional[float] = None) -> str:
 
 ## get_idx_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L188)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L190)
 
 ```python
 def get_idx_file(req, backend, mat):
@@ -292,7 +292,7 @@ def get_idx_file(req, backend, mat):
 
 ## get_info_packs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L235)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L241)
 
 ```python
 def get_info_packs(req, backend, mat):
@@ -300,7 +300,7 @@ def get_info_packs(req, backend, mat):
 
 ## get_info_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L199)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L201)
 
 ```python
 def get_info_refs(req, backend, mat):
@@ -308,7 +308,7 @@ def get_info_refs(req, backend, mat):
 
 ## get_loose_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L160)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L162)
 
 ```python
 def get_loose_object(req, backend, mat):
@@ -316,7 +316,7 @@ def get_loose_object(req, backend, mat):
 
 ## get_pack_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L177)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L179)
 
 ```python
 def get_pack_file(req, backend, mat):
@@ -346,7 +346,7 @@ def get_text_file(req, backend, mat):
 
 ## handle_service_request
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L265)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L271)
 
 ```python
 def handle_service_request(req, backend, mat):
@@ -354,7 +354,7 @@ def handle_service_request(req, backend, mat):
 
 ## main
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L535)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L545)
 
 ```python
 def main(argv=sys.argv):
@@ -364,7 +364,7 @@ Entry point for starting an HTTP git server.
 
 ## make_wsgi_chain
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L472)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/web.py#L482)
 
 ```python
 def make_wsgi_chain(*args, **kwargs):

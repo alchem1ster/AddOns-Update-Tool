@@ -4,7 +4,7 @@
 
 Vault update CLI
 
-- [Addons-update-tool](README.md#addons-update-tool) / [Modules](MODULES.md#addons-update-tool-modules) / Vault Updater
+- [AddOns-Update-Tool](README.md#addons-update-tool-index) / [Modules](MODULES.md#addons-update-tool-modules) / Vault Updater
     - [main](#main)
 
 ## main

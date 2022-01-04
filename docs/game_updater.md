@@ -4,7 +4,7 @@
 
 Ingame AddOns update CLI
 
-- [Addons-update-tool](README.md#addons-update-tool) / [Modules](MODULES.md#addons-update-tool-modules) / Game Updater
+- [AddOns-Update-Tool](README.md#addons-update-tool-index) / [Modules](MODULES.md#addons-update-tool-modules) / Game Updater
     - [main](#main)
 
 ## main

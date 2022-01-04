@@ -4,7 +4,7 @@
 
 Dulwich-related exception classes and utility functions.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Errors
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Errors
     - [ApplyDeltaError](#applydeltaerror)
     - [ChecksumMismatch](#checksummismatch)
     - [CommitError](#commiterror)
@@ -30,7 +30,7 @@ Dulwich-related exception classes and utility functions.
 
 ## ApplyDeltaError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L107)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L108)
 
 ```python
 class ApplyDeltaError(Exception):
@@ -52,7 +52,7 @@ A checksum didn't match the expected contents.
 
 ## CommitError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L195)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L202)
 
 ```python
 class CommitError(Exception):
@@ -62,7 +62,7 @@ An error occurred while performing a commit.
 
 ## FileFormatException
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L179)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L186)
 
 ```python
 class FileFormatException(Exception):
@@ -72,7 +72,7 @@ Base class for exceptions relating to reading git file formats.
 
 ## GitProtocolError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L121)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L122)
 
 ```python
 class GitProtocolError(Exception):
@@ -83,7 +83,7 @@ Git protocol exception.
 
 ## HangupException
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L146)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L147)
 
 ```python
 class HangupException(GitProtocolError):
@@ -98,7 +98,7 @@ Hangup exception.
 
 ## HookError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L203)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L210)
 
 ```python
 class HookError(Exception):
@@ -108,7 +108,7 @@ An error occurred while executing a hook.
 
 ## MissingCommitError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L92)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L93)
 
 ```python
 class MissingCommitError(Exception):
@@ -119,7 +119,7 @@ Indicates that a commit was not found in the repository
 
 ## NoIndexPresent
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L191)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L198)
 
 ```python
 class NoIndexPresent(Exception):
@@ -129,7 +129,7 @@ No index is present.
 
 ## NotBlobError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L86)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L87)
 
 ```python
 class NotBlobError(WrongObjectException):
@@ -143,7 +143,7 @@ Indicates that the sha requested does not point to a blob.
 
 ## NotCommitError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L68)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L69)
 
 ```python
 class NotCommitError(WrongObjectException):
@@ -157,7 +157,7 @@ Indicates that the sha requested does not point to a commit.
 
 ## NotGitRepository
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L114)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L115)
 
 ```python
 class NotGitRepository(Exception):
@@ -168,7 +168,7 @@ Indicates that no Git repository was found.
 
 ## NotTagError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L80)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L81)
 
 ```python
 class NotTagError(WrongObjectException):
@@ -182,7 +182,7 @@ Indicates that the sha requested does not point to a tag.
 
 ## NotTreeError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L74)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L75)
 
 ```python
 class NotTreeError(WrongObjectException):
@@ -196,7 +196,7 @@ Indicates that the sha requested does not point to a tree.
 
 ## ObjectFormatException
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L187)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L194)
 
 ```python
 class ObjectFormatException(FileFormatException):
@@ -210,7 +210,7 @@ Indicates an error parsing an object.
 
 ## ObjectMissing
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L100)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L101)
 
 ```python
 class ObjectMissing(Exception):
@@ -221,7 +221,7 @@ Indicates that a requested object is missing.
 
 ## PackedRefsException
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L183)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L190)
 
 ```python
 class PackedRefsException(FileFormatException):
@@ -235,7 +235,7 @@ Indicates an error parsing a packed-refs file.
 
 ## RefFormatError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L199)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L206)
 
 ```python
 class RefFormatError(Exception):
@@ -245,7 +245,7 @@ Indicates an invalid ref name.
 
 ## SendPackError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L131)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L132)
 
 ```python
 class SendPackError(GitProtocolError):
@@ -259,7 +259,7 @@ An error occurred during send_pack.
 
 ## UnexpectedCommandError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L166)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L173)
 
 ```python
 class UnexpectedCommandError(GitProtocolError):
@@ -274,7 +274,7 @@ Unexpected command received in a proto line.
 
 ## UpdateRefsError
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L138)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L139)
 
 ```python
 class UpdateRefsError(GitProtocolError):
@@ -289,7 +289,7 @@ The server reported errors updating refs.
 
 ## WrongObjectException
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L55)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/errors.py#L56)
 
 ```python
 class WrongObjectException(Exception):

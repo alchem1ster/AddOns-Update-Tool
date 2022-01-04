@@ -4,7 +4,7 @@
 
 Utilities for diffing files and trees.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Diff Tree
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Diff Tree
     - [RenameDetector](#renamedetector)
         - [RenameDetector().changes_with_renames](#renamedetectorchanges_with_renames)
     - [TreeChange](#treechange)
@@ -20,7 +20,7 @@ Utilities for diffing files and trees.
 
 ## RenameDetector
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L403)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L409)
 
 ```python
 class RenameDetector(object):
@@ -43,7 +43,7 @@ Object for handling rename detection between two trees.
 
 ### RenameDetector().changes_with_renames
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L620)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L634)
 
 ```python
 def changes_with_renames(
@@ -121,7 +121,7 @@ Iterator over TreeChange instances for each change between the
 
 ## tree_changes_for_merge
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L246)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/diff_tree.py#L250)
 
 ```python
 def tree_changes_for_merge(

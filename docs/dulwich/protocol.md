@@ -4,7 +4,7 @@
 
 Generic functions for talking the git smart server protocol.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Protocol
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Protocol
     - [BufferedPktLineWriter](#bufferedpktlinewriter)
         - [BufferedPktLineWriter().flush](#bufferedpktlinewriterflush)
         - [BufferedPktLineWriter().write](#bufferedpktlinewriterwrite)

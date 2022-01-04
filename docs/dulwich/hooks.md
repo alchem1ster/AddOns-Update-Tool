@@ -4,7 +4,7 @@
 
 Access to hooks.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Hooks
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Hooks
     - [CommitMsgShellHook](#commitmsgshellhook)
     - [Hook](#hook)
         - [Hook().execute](#hookexecute)
@@ -114,7 +114,7 @@ def execute(client_refs):
 
 ```python
 class PreCommitShellHook(ShellHook):
-    def __init__(controldir):
+    def __init__(cwd, controldir):
 ```
 
 pre-commit shell hook

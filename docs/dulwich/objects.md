@@ -4,7 +4,7 @@
 
 Access to base git objects.
 
-- [Addons-update-tool](../README.md#addons-update-tool) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Objects
+- [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Objects
     - [Blob](#blob)
         - [Blob().check](#blobcheck)
         - [Blob.from_path](#blobfrom_path)
@@ -85,7 +85,7 @@ Access to base git objects.
 
 ## Blob
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L574)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L583)
 
 ```python
 class Blob(ShaFile):
@@ -100,7 +100,7 @@ A Git Blob object.
 
 ### Blob().check
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L622)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L631)
 
 ```python
 def check():
@@ -114,7 +114,7 @@ Check this object for internal consistency.
 
 ### Blob.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L615)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L624)
 
 ```python
 @classmethod
@@ -123,7 +123,7 @@ def from_path(path):
 
 ### Blob().splitlines
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L630)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L639)
 
 ```python
 def splitlines():
@@ -135,7 +135,7 @@ This preserves the original line endings.
 
 ## Commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1314)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1337)
 
 ```python
 class Commit(ShaFile):
@@ -150,7 +150,7 @@ A git commit object
 
 ### Commit().check
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1378)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1401)
 
 ```python
 def check():
@@ -164,7 +164,7 @@ Check this object for internal consistency.
 
 ### Commit.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1348)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1371)
 
 ```python
 @classmethod
@@ -187,7 +187,7 @@ An unexpectedly empty file was encountered.
 
 ## FixedSha
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L238)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L245)
 
 ```python
 class FixedSha(object):
@@ -198,7 +198,7 @@ SHA object that behaves like hashlib's but is given a fixed value.
 
 ### FixedSha().digest
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L251)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L258)
 
 ```python
 def digest():
@@ -208,7 +208,7 @@ Return the raw SHA digest.
 
 ### FixedSha().hexdigest
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L255)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L262)
 
 ```python
 def hexdigest():
@@ -218,7 +218,7 @@ Return the hex SHA digest.
 
 ## ShaFile
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L260)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L267)
 
 ```python
 class ShaFile(object):
@@ -233,7 +233,7 @@ A git SHA file.
 
 ### ShaFile().\_\_bytes\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L336)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L343)
 
 ```python
 def __bytes__():
@@ -243,7 +243,7 @@ Return raw string serialization of this object.
 
 ### ShaFile().\_\_cmp\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L567)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L576)
 
 ```python
 def __cmp__(other):
@@ -253,7 +253,7 @@ Compare the SHA of this object with that of the other object.
 
 ### ShaFile().\_\_eq\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L551)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L560)
 
 ```python
 def __eq__(other):
@@ -263,7 +263,7 @@ Return True if the SHAs of the two objects match.
 
 ### ShaFile().\_\_hash\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L340)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L347)
 
 ```python
 def __hash__():
@@ -273,7 +273,7 @@ Return unique hash for this object.
 
 ### ShaFile().\_\_le\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L561)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L570)
 
 ```python
 def __le__(other):
@@ -283,7 +283,7 @@ Check whether SHA of this object is less than or equal to the other.
 
 ### ShaFile().\_\_lt\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L555)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L564)
 
 ```python
 def __lt__(other):
@@ -293,7 +293,7 @@ Return whether SHA of this object is less than the other.
 
 ### ShaFile().\_\_ne\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L547)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L556)
 
 ```python
 def __ne__(other):
@@ -303,7 +303,7 @@ Check whether this object does not match the other.
 
 ### ShaFile().as_legacy_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L312)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L319)
 
 ```python
 def as_legacy_object(compression_level=-1):
@@ -313,7 +313,7 @@ Return string representing the object in the experimental format.
 
 ### ShaFile().as_legacy_object_chunks
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L301)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L308)
 
 ```python
 def as_legacy_object_chunks(compression_level=-1):
@@ -325,7 +325,7 @@ Returns: List of strings
 
 ### ShaFile().as_pretty_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L344)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L351)
 
 ```python
 def as_pretty_string():
@@ -335,7 +335,7 @@ Return a string representing this object, fit for display.
 
 ### ShaFile().as_raw_chunks
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L318)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L325)
 
 ```python
 def as_raw_chunks():
@@ -347,7 +347,7 @@ Returns: List of strings, not necessarily one per line
 
 ### ShaFile().as_raw_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L329)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L336)
 
 ```python
 def as_raw_string():
@@ -359,7 +359,7 @@ Returns: String object
 
 ### ShaFile().check
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L480)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L487)
 
 ```python
 def check():
@@ -375,7 +375,7 @@ Check this object for internal consistency.
 
 ### ShaFile().copy
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L523)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L530)
 
 ```python
 def copy():
@@ -385,7 +385,7 @@ Create a new copy of this SHA1 object from its raw string
 
 ### ShaFile.from_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L424)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L431)
 
 ```python
 @classmethod
@@ -396,7 +396,7 @@ Get the contents of a SHA file on disk.
 
 ### ShaFile.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L418)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L425)
 
 ```python
 @classmethod
@@ -407,7 +407,7 @@ Open a SHA file from disk.
 
 ### ShaFile.from_raw_chunks
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L447)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L454)
 
 ```python
 @staticmethod
@@ -424,7 +424,7 @@ Creates an object of the indicated type from the raw chunks given.
 
 ### ShaFile.from_raw_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L434)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L441)
 
 ```python
 @staticmethod
@@ -441,7 +441,7 @@ Creates an object of the indicated type from the raw string given.
 
 ### ShaFile.from_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L460)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L467)
 
 ```python
 @classmethod
@@ -452,7 +452,7 @@ Create a ShaFile from a string.
 
 ### ShaFile().get_type
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L533)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L542)
 
 ```python
 def get_type():
@@ -462,7 +462,7 @@ Return the type number for this object class.
 
 ### ShaFile().id
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L528)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L537)
 
 ```python
 @property
@@ -473,7 +473,7 @@ The hex SHA of this object.
 
 ### ShaFile().raw_length
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L505)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L512)
 
 ```python
 def raw_length():
@@ -483,7 +483,7 @@ Returns the length of the raw string of this object.
 
 ### ShaFile().set_raw_chunks
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L354)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L361)
 
 ```python
 def set_raw_chunks(chunks, sha=None):
@@ -493,7 +493,7 @@ Set the contents of this object from a list of chunks.
 
 ### ShaFile().set_raw_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L348)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L355)
 
 ```python
 def set_raw_string(text, sha=None):
@@ -503,7 +503,7 @@ Set the contents of this object from a serialized string.
 
 ### ShaFile().set_type
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L537)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L546)
 
 ```python
 def set_type(type):
@@ -513,7 +513,7 @@ Set the type number for this object class.
 
 ### ShaFile().sha
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L512)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L519)
 
 ```python
 def sha():
@@ -523,7 +523,7 @@ The SHA1 object that is the name of this object.
 
 ## Tag
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L712)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L721)
 
 ```python
 class Tag(ShaFile):
@@ -538,7 +538,7 @@ A Git Tag object.
 
 ### Tag().check
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L745)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L754)
 
 ```python
 def check():
@@ -552,7 +552,7 @@ Check this object for internal consistency.
 
 ### Tag.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L738)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L747)
 
 ```python
 @classmethod
@@ -561,7 +561,7 @@ def from_path(filename):
 
 ### Tag().sign
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L870)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L885)
 
 ```python
 def sign(keyid: Optional[str] = None):
@@ -569,7 +569,7 @@ def sign(keyid: Optional[str] = None):
 
 ### Tag().verify
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L886)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L901)
 
 ```python
 def verify(keyids: Optional[Iterable[str]] = None):
@@ -592,7 +592,7 @@ Verify GPG signature for this tag (if it is signed).
 
 ## Tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1031)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1052)
 
 ```python
 class Tree(ShaFile):
@@ -607,7 +607,7 @@ A Git tree object
 
 ### Tree().\_\_setitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1056)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1077)
 
 ```python
 def __setitem__(name, value):
@@ -624,7 +624,7 @@ Set a tree entry by name.
 
 ### Tree().add
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1079)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1100)
 
 ```python
 def add(name, mode, hexsha):
@@ -641,7 +641,7 @@ Add an entry to the tree.
 
 ### Tree().as_pretty_string
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1164)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1185)
 
 ```python
 def as_pretty_string():
@@ -649,7 +649,7 @@ def as_pretty_string():
 
 ### Tree().check
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1126)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1147)
 
 ```python
 def check():
@@ -663,7 +663,7 @@ Check this object for internal consistency.
 
 ### Tree.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1043)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1064)
 
 ```python
 @classmethod
@@ -672,7 +672,7 @@ def from_path(filename):
 
 ### Tree().items
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1108)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1129)
 
 ```python
 def items():
@@ -684,7 +684,7 @@ Returns: List with (name, mode, sha) tuples
 
 ### Tree().iteritems
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1098)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1119)
 
 ```python
 def iteritems(name_order=False):
@@ -700,7 +700,7 @@ Iterate over entries.
 
 ### Tree().lookup_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1170)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1191)
 
 ```python
 def lookup_path(lookup_obj, path):
@@ -716,7 +716,7 @@ Look up an object in a Git tree.
 
 ## TreeEntry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L920)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L937)
 
 ```python
 class TreeEntry(namedtuple('TreeEntry', ['path', 'mode', 'sha'])):
@@ -726,7 +726,7 @@ Named tuple encapsulating a single tree entry.
 
 ### TreeEntry().in_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L923)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L940)
 
 ```python
 def in_path(path):
@@ -751,7 +751,7 @@ Check if a mode indicates a submodule.
 
 ## check_hexsha
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L184)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L189)
 
 ```python
 def check_hexsha(hex, error_msg):
@@ -770,7 +770,7 @@ Check if a string is a valid hex sha string.
 
 ## check_identity
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L197)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L202)
 
 ```python
 def check_identity(identity, error_msg):
@@ -787,7 +787,7 @@ This will raise an exception if the identity is not valid.
 
 ## check_time
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L219)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L224)
 
 ```python
 def check_time(time_seconds):
@@ -813,7 +813,7 @@ Takes an object filename and returns its corresponding hex sha.
 
 ## format_timezone
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1220)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1241)
 
 ```python
 def format_timezone(offset, unnecessary_negative_timezone=False):
@@ -829,7 +829,7 @@ Format a timezone for Git serialization.
 
 ## git_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L233)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L240)
 
 ```python
 def git_line(*items):
@@ -859,7 +859,7 @@ Takes a hex sha and returns a binary sha
 
 ## key_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L993)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1014)
 
 ```python
 def key_entry(entry):
@@ -873,7 +873,7 @@ Sort key for tree entry.
 
 ## key_entry_name_order
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1005)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1026)
 
 ```python
 def key_entry_name_order(entry):
@@ -883,7 +883,7 @@ Sort key for tree entry in name order.
 
 ## object_class
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L173)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L178)
 
 ```python
 def object_class(type):
@@ -909,7 +909,7 @@ Return an object header for the given numeric type and text length.
 
 ## parse_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1263)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1286)
 
 ```python
 def parse_commit(chunks):
@@ -925,7 +925,7 @@ Parse a commit object from chunks.
 
 ## parse_time_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1238)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1261)
 
 ```python
 def parse_time_entry(value):
@@ -945,7 +945,7 @@ Parse time entry behavior
 
 ## parse_timezone
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1191)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1212)
 
 ```python
 def parse_timezone(text):
@@ -962,7 +962,7 @@ Parse a timezone text fragment (e.g. '+0100').
 
 ## parse_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L930)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L947)
 
 ```python
 def parse_tree(text, strict=False):
@@ -981,7 +981,7 @@ Parse a tree text.
 
 ## pretty_format_tree_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1010)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L1031)
 
 ```python
 def pretty_format_tree_entry(name, mode, hexsha, encoding='utf-8'):
@@ -998,7 +998,7 @@ Pretty format tree entry.
 
 ## serializable_property
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L160)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L165)
 
 ```python
 def serializable_property(name: str, docstring: Optional[str] = None):
@@ -1008,7 +1008,7 @@ A property that helps tracking whether serialization is necessary.
 
 ## serialize_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L960)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L977)
 
 ```python
 def serialize_tree(items):
@@ -1033,7 +1033,7 @@ Takes a string and returns the hex of the sha within
 
 ## sorted_tree_items
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L973)
+[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/objects.py#L994)
 
 ```python
 def sorted_tree_items(entries, name_order):
