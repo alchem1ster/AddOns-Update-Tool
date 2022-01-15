@@ -42,9 +42,6 @@ if TYPE_CHECKING:
     from dulwich.config import StackedConfig, ConfigFile
     from dulwich.index import Index
 
-from dulwich.clone import (
-    do_clone,
-)
 from dulwich.errors import (
     NoIndexPresent,
     NotBlobError,
@@ -101,6 +98,9 @@ from dulwich.refs import (  # noqa: F401
     read_packed_refs_with_peeled,
     write_packed_refs,
     SYMREF,
+    _set_default_branch,
+    _set_head,
+    _set_origin_head,
 )
 
 
@@ -151,7 +151,10 @@ def _get_default_identity() -> Tuple[str, str]:
         except KeyError:
             fullname = None
         else:
-            fullname = gecos.split(",")[0]
+            if gecos:
+                fullname = gecos.split(",")[0]
+            else:
+                fullname = None
     if not fullname:
         fullname = username
     email = os.environ.get("EMAIL")
@@ -1290,6 +1293,7 @@ class Repo(BaseRepo):
         from dulwich.index import (
             blob_from_path_and_stat,
             index_entry_from_stat,
+            index_entry_from_directory,
             _fs_to_tree_path,
         )
 
@@ -1314,7 +1318,16 @@ class Repo(BaseRepo):
                 except KeyError:
                     pass  # already removed
             else:
-                if not stat.S_ISREG(st.st_mode) and not stat.S_ISLNK(
+                if stat.S_ISDIR(st.st_mode):
+                    entry = index_entry_from_directory(st, full_path)
+                    if entry:
+                        index[tree_path] = entry
+                    else:
+                        try:
+                            del index[tree_path]
+                        except KeyError:
+                            pass
+                elif not stat.S_ISREG(st.st_mode) and not stat.S_ISLNK(
                     st.st_mode
                 ):
                     try:
@@ -1398,6 +1411,7 @@ class Repo(BaseRepo):
         origin=b"origin",
         checkout=None,
         branch=None,
+        depth=None,
     ):
         """Clone this repository.
 
@@ -1410,40 +1424,78 @@ class Repo(BaseRepo):
             cloned from this repository
           branch: Optional branch or tag to be used as HEAD in the new repository
             instead of this repository's HEAD.
+          depth: Depth at which to fetch
         Returns: Created repository as `Repo`
         """
-
-        def clone_refs(target_repo, ref_message):
-            self.fetch(target_repo)
-            target_repo.refs.import_refs(
-                b"refs/remotes/" + origin,
-                self.refs.as_dict(b"refs/heads"),
-                message=ref_message,
-            )
-            target_repo.refs.import_refs(
-                b"refs/tags",
-                self.refs.as_dict(b"refs/tags"),
-                message=ref_message,
-            )
-
-            head_chain, sha = self.refs.follow(b"HEAD")
-            head_chain = head_chain[-1] if head_chain else None
-            return head_chain, sha
 
         encoded_path = self.path
         if not isinstance(encoded_path, bytes):
             encoded_path = os.fsencode(encoded_path)
 
-        return do_clone(
-            encoded_path,
-            target_path,
-            clone_refs=clone_refs,
-            mkdir=mkdir,
-            bare=bare,
-            origin=origin,
-            checkout=checkout,
-            branch=branch,
-        )
+        if mkdir:
+            os.mkdir(target_path)
+
+        try:
+            target = None
+            if not bare:
+                target = Repo.init(target_path)
+                if checkout is None:
+                    checkout = True
+            else:
+                if checkout:
+                    raise ValueError("checkout and bare are incompatible")
+                target = Repo.init_bare(target_path)
+
+            target_config = target.get_config()
+            target_config.set((b"remote", origin), b"url", encoded_path)
+            target_config.set(
+                (b"remote", origin),
+                b"fetch",
+                b"+refs/heads/*:refs/remotes/" + origin + b"/*",
+            )
+            target_config.write_to_path()
+
+            ref_message = b"clone: from " + encoded_path
+            self.fetch(target, depth=depth)
+            target.refs.import_refs(
+                b"refs/remotes/" + origin,
+                self.refs.as_dict(b"refs/heads"),
+                message=ref_message,
+            )
+            target.refs.import_refs(
+                b"refs/tags",
+                self.refs.as_dict(b"refs/tags"),
+                message=ref_message,
+            )
+
+            head_chain, origin_sha = self.refs.follow(b"HEAD")
+            origin_head = head_chain[-1] if head_chain else None
+            if origin_sha and not origin_head:
+                # set detached HEAD
+                target.refs[b"HEAD"] = origin_sha
+
+            _set_origin_head(target.refs, origin, origin_head)
+            head_ref = _set_default_branch(
+                target.refs, origin, origin_head, branch, ref_message
+            )
+
+            # Update target head
+            if head_ref:
+                head = _set_head(target.refs, head_ref, ref_message)
+            else:
+                head = None
+
+            if checkout and head is not None:
+                target.reset_index()
+        except BaseException:
+            if target is not None:
+                target.close()
+            if mkdir:
+                import shutil
+
+                shutil.rmtree(target_path)
+            raise
+        return target
 
     def reset_index(self, tree=None):
         """Reset the index back to a specific tree.

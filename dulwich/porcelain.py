@@ -74,7 +74,6 @@ import stat
 import sys
 import time
 from typing import (
-    Dict,
     Optional,
     Tuple,
     Union,
@@ -85,9 +84,6 @@ from dulwich.archive import (
 )
 from dulwich.client import (
     get_transport_and_path,
-)
-from dulwich.clone import (
-    do_clone,
 )
 from dulwich.config import (
     StackedConfig,
@@ -140,11 +136,9 @@ from dulwich.protocol import (
     ZERO_SHA,
 )
 from dulwich.refs import (
-    ANNOTATED_TAG_SUFFIX,
     LOCAL_BRANCH_PREFIX,
     LOCAL_TAG_PREFIX,
-    strip_peeled_refs,
-    RefsContainer,
+    _import_remote_refs,
 )
 from dulwich.repo import BaseRepo, Repo
 from dulwich.server import (
@@ -404,7 +398,7 @@ def clone(
     checkout=None,
     errstream=default_bytes_err_stream,
     outstream=None,
-    origin=b"origin",
+    origin="origin",
     depth=None,
     branch=None,
     **kwargs,
@@ -432,7 +426,7 @@ def clone(
             DeprecationWarning,
             stacklevel=3,
         )
-        errstream = outstream
+        # TODO(jelmer): Capture logging output and stream to errstream
 
     if checkout is None:
         checkout = not bare
@@ -444,35 +438,17 @@ def clone(
 
     mkdir = not os.path.exists(target)
 
-    if not isinstance(source, bytes):
-        source = source.encode(DEFAULT_ENCODING)
+    (client, path) = get_transport_and_path(source)
 
-    def clone_refs(target_repo, ref_message):
-        fetch_result = fetch(
-            target_repo,
-            origin,
-            errstream=errstream,
-            message=ref_message,
-            depth=depth,
-            **kwargs,
-        )
-        head_ref = fetch_result.symrefs.get(b"HEAD", None)
-        try:
-            head_sha = target_repo[fetch_result.refs[b"HEAD"]].id
-        except KeyError:
-            head_sha = None
-        return head_ref, head_sha
-
-    return do_clone(
-        source,
+    return client.clone(
+        path,
         target,
-        clone_refs=clone_refs,
         mkdir=mkdir,
         bare=bare,
         origin=origin,
         checkout=checkout,
-        errstream=errstream,
         branch=branch,
+        depth=depth,
     )
 
 
@@ -1521,36 +1497,6 @@ def get_branch_remote(repo):
         except KeyError:
             remote_name = b"origin"
     return remote_name
-
-
-def _import_remote_refs(
-    refs_container: RefsContainer,
-    remote_name: str,
-    refs: Dict[str, str],
-    message: Optional[bytes] = None,
-    prune: bool = False,
-    prune_tags: bool = False,
-):
-    stripped_refs = strip_peeled_refs(refs)
-    branches = {
-        n[len(LOCAL_BRANCH_PREFIX) :]: v
-        for (n, v) in stripped_refs.items()
-        if n.startswith(LOCAL_BRANCH_PREFIX)
-    }
-    refs_container.import_refs(
-        b"refs/remotes/" + remote_name.encode(),
-        branches,
-        message=message,
-        prune=prune,
-    )
-    tags = {
-        n[len(b"refs/tags/") :]: v
-        for (n, v) in stripped_refs.items()
-        if n.startswith(b"refs/tags/") and not n.endswith(ANNOTATED_TAG_SUFFIX)
-    }
-    refs_container.import_refs(
-        b"refs/tags", tags, message=message, prune=prune_tags
-    )
 
 
 def fetch(
