@@ -502,7 +502,7 @@ class GitClient(object):
         self,
         path,
         target_path,
-        mkdir=True,
+        mkdir: bool = True,
         bare=False,
         origin="origin",
         checkout=None,

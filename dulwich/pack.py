@@ -1733,13 +1733,13 @@ def write_pack_objects(
 
 
 def write_pack_data(
-    f, num_records, records, progress=None, compression_level=-1
+    f, num_records=None, records=None, progress=None, compression_level=-1
 ):
     """Write a new pack data file.
 
     Args:
       f: File to write to
-      num_records: Number of records
+      num_records: Number of records (defaults to len(records) if None)
       records: Iterator over type_num, object_id, delta_base, raw
       progress: Function to report progress to
       compression_level: the zlib compression level
@@ -1748,7 +1748,10 @@ def write_pack_data(
     # Write the pack
     entries = {}
     f = SHA1Writer(f)
+    if num_records is None:
+        num_records = len(records)
     write_pack_header(f, num_records)
+    actual_num_records = 0
     for i, (type_num, object_id, delta_base, raw) in enumerate(records):
         if progress is not None:
             progress(
@@ -1769,7 +1772,13 @@ def write_pack_data(
         crc32 = write_pack_object(
             f, type_num, raw, compression_level=compression_level
         )
+        actual_num_records += 1
         entries[object_id] = (offset, crc32)
+    if actual_num_records != num_records:
+        raise AssertionError(
+            "actual records written differs: %d != %d"
+            % (actual_num_records, num_records)
+        )
     return entries, f.write_sha()
 
 
