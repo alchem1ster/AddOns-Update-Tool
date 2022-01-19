@@ -1,5 +1,7 @@
 # AddOns Update Tool
  Tool to update World of Warcraft AddOns hosted on GitHub
+ 
+<center><img src="./_res/logo.png" width="100%"/></center>
 
 <a href="https://github.com/alchem1ster/AddOns-Update-Tool/issues" alt="Issues">
 <img src="https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
