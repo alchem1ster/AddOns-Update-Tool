@@ -1,8 +1,7 @@
-# AddOns Update Tool
- Tool to update World of Warcraft AddOns hosted on GitHub
- 
-<center><img src="./_res/logo.png" width="100%"/></center>
 
+<img align="center" src="./_res/logo.png" width="100%"/>
+<div align="center"> 
+<h4>Tool to update World of Warcraft AddOns hosted on GitHub</h4>
 <a href="https://github.com/alchem1ster/AddOns-Update-Tool/issues" alt="Issues">
 <img src="https://img.shields.io/github/issues/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
 <a href="https://github.com/alchem1ster/AddOns-Update-Tool/stargazers" alt="Stars">
@@ -14,7 +13,7 @@
 <a href="https://github.com/alchem1ster/AddOns-Update-Tool/releases" alt="Downloads">
 <img src="https://img.shields.io/github/downloads/alchem1ster/AddOns-Update-Tool/total?style=flat-square" /></a>
 <a href="https://www.codefactor.io/repository/github/alchem1ster/addons-update-tool" alt="Codefactor">
-<img src="https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a>
+<img src="https://img.shields.io/codefactor/grade/github/alchem1ster/AddOns-Update-Tool?style=flat-square" /></a></div>
 
 ### Features
 - [x] Pure Python: only [Dulwich](https://github.com/dulwich/dulwich "Dulwich"), [Colorlog](https://github.com/borntyping/python-colorlog "Colorlog") and [PyYAML](https://github.com/yaml/pyyaml/)
