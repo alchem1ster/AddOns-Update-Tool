@@ -257,10 +257,10 @@
         },
         "pyinstaller-hooks-contrib": {
             "hashes": [
-                "sha256:e47b382c209dd2f62ac2ef26cade49148e9a4702ec91958772b0270599f8c2a9",
-                "sha256:e658281cbf90570d9bc6a06f4b8f64c28d1076c722f6fb80c02a863bcbb8e7cd"
+                "sha256:29f0bd8fbb2ff6f2df60a0c147e5b5ad65ae5c1a982d90641a5f712de03fa161",
+                "sha256:61b667f51b2525377fae30793f38fd9752a08032c72b209effabf707c840cc38"
             ],
-            "version": "==2021.5"
+            "version": "==2022.0"
         },
         "pylint": {
             "hashes": [
