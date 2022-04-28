@@ -438,7 +438,7 @@ def clone(
 
     mkdir = not os.path.exists(target)
 
-    (client, path) = get_transport_and_path(source)
+    (client, path) = get_transport_and_path(source, **kwargs)
 
     return client.clone(
         path,
@@ -448,6 +448,7 @@ def clone(
         origin=origin,
         checkout=checkout,
         branch=branch,
+        progress=errstream.write,
         depth=depth,
     )
 
@@ -508,7 +509,7 @@ def _is_subdir(subdir, parentdir):
 def clean(repo=".", target_dir=None):
     """Remove any untracked files from the target directory recursively
 
-    Equivalent to running `git clean -fd` in target_dir.
+    Equivalent to running ``git clean -fd`` in target_dir.
 
     Args:
       repo: Repository where the files may be tracked
@@ -836,7 +837,7 @@ def show(
             show_object(r, o, decode, outstream)
 
 
-def diff_tree(repo, old_tree, new_tree, outstream=sys.stdout):
+def diff_tree(repo, old_tree, new_tree, outstream=default_bytes_out_stream):
     """Compares the content and mode of blobs found via two tree objects.
 
     Args:
@@ -1120,7 +1121,7 @@ def pull(
     Args:
       repo: Path to repository
       remote_location: Location of the remote
-      refspec: refspecs to fetch
+      refspecs: refspecs to fetch
       outstream: A stream file to write to output
       errstream: A stream file to write to errors
     """
@@ -1172,7 +1173,7 @@ def status(repo=".", ignored=False):
 
     Args:
       repo: Path to repository or repository object
-      ignored: Whether to include ignored files in `untracked`
+      ignored: Whether to include ignored files in untracked
     Returns: GitStatus tuple,
         staged -  dict with lists of staged paths (diff index/HEAD)
         unstaged -  list of unstaged paths (diff index/working-tree)
@@ -1605,7 +1606,7 @@ def ls_tree(
 
     Args:
       repo: Path to the repository
-      tree_ish: Tree id to list
+      treeish: Tree id to list
       outstream: Output stream (defaults to stdout)
       recursive: Whether to recursively list files
       name_only: Only print item name
@@ -1676,7 +1677,7 @@ def update_head(repo, target, detached=False, new_branch=None):
 
     Args:
       repo: Path to the repository
-      detach: Create a detached head
+      detached: Create a detached head
       target: Branch or committish to switch to
       new_branch: New branch to create
     """
@@ -1794,11 +1795,18 @@ def ls_files(repo):
         return sorted(r.open_index())
 
 
+def find_unique_abbrev(object_store, object_id):
+    """For now, just return 7 characters."""
+    # TODO(jelmer): Add some logic here to return a number of characters that
+    # scales relative with the size of the repository
+    return object_id.decode("ascii")[:7]
+
+
 def describe(repo):
     """Describe the repository version.
 
     Args:
-      projdir: git repository root
+      repo: git repository
     Returns: a string description of the current git revision
 
     Examples: "gabcdefh", "v0.1" or "v0.1-5-gabcdefh".
@@ -1833,7 +1841,9 @@ def describe(repo):
 
         # If there are no tags, return the current commit
         if len(sorted_tags) == 0:
-            return "g{}".format(r[r.head()].id.decode("ascii")[:7])
+            return "g{}".format(
+                find_unique_abbrev(r.object_store, r[r.head()].id)
+            )
 
         # We're now 0 commits from the top
         commit_count = 0

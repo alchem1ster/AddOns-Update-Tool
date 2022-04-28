@@ -507,6 +507,7 @@ class GitClient(object):
         origin="origin",
         checkout=None,
         branch=None,
+        progress=None,
         depth=None,
     ):
         """Clone a repository."""
@@ -547,7 +548,7 @@ class GitClient(object):
             target_config.write_to_path()
 
             ref_message = b"clone: from " + encoded_path
-            result = self.fetch(path, target, depth=depth)
+            result = self.fetch(path, target, progress=progress, depth=depth)
             _import_remote_refs(
                 target.refs, origin, result.refs, message=ref_message
             )
@@ -1838,8 +1839,8 @@ def default_urllib3_manager(  # noqa: C901
     Honour detected proxy configurations.
 
     Args:
-      config: dulwich.config.ConfigDict` instance with Git configuration.
-      kwargs: Additional arguments for urllib3.ProxyManager
+      config: `dulwich.config.ConfigDict` instance with Git configuration.
+      override_kwargs: Additional arguments for `urllib3.ProxyManager`
 
     Returns:
       `pool_manager_cls` (defaults to `urllib3.ProxyManager`) instance for
@@ -2217,6 +2218,8 @@ class Urllib3HttpGitClient(AbstractHttpGitClient):
 
             basic_auth = urllib3.util.make_headers(basic_auth=credentials)
             self.pool_manager.headers.update(basic_auth)
+
+        self.config = config
 
         super(Urllib3HttpGitClient, self).__init__(
             base_url=base_url, dumb=dumb, **kwargs

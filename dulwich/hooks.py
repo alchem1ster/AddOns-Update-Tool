@@ -133,13 +133,7 @@ class PostCommitShellHook(ShellHook):
 
 
 class CommitMsgShellHook(ShellHook):
-    """commit-msg shell hook
-
-    Args:
-      args[0]: commit message
-    Returns:
-      new commit message or None
-    """
+    """commit-msg shell hook"""
 
     def __init__(self, controldir):
         filepath = os.path.join(controldir, "hooks", "commit-msg")
