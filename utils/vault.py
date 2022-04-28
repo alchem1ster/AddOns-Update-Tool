@@ -26,7 +26,9 @@ class Repository:
     def __init__(self, url: str, branch: str, basedir: Path):
         self.url: str = url
         try:
-            self.author: str = re_search("github.com/(.*)/", url).group(1)
+            self.author: str = re_search(
+                "(?:github|gitlab).com/(.*)/", url
+            ).group(1)
             self.name: str = re_search("(?s:.*)/(.*)", url).group(1)
         except Exception:
             log.error("%s seems to be incorrect to process", self.url)

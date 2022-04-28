@@ -132,6 +132,10 @@ class AddOnsUpdater:  # pylint: disable=too-few-public-methods
         for folder in dirs_tocopy_list:
             try:
                 copytree(str(folder), str(self.addons_folder / folder.name))
+                rmtree(
+                    str(self.addons_folder / folder.name / ".git"),
+                    ignore_errors=True,
+                )  # remove .git folder if exists
             except Exception:
                 log.error("Something went wrong while updating %s", repo_name)
                 return
