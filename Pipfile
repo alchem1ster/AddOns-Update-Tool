@@ -11,8 +11,9 @@ pyyaml = "*"
 [dev-packages]
 pyinstaller = "*"
 flake8 = "*"
-pylint = "*"
 black = "*"
+bandit = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.8"
