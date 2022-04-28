@@ -2,7 +2,7 @@
 
 > Auto-generated documentation index.
 
-<img align="center" src="./_res/logo.png" width="100%"/>
+<img align="center" src="../_res/logo.png" width="100%"/>
 <div align="center"> 
 <h4>Tool to update World of Warcraft AddOns hosted on GitHub or GitLab</h4>
 <a href="https://github.com/alchem1ster/AddOns-Update-Tool/issues" alt="Issues">
