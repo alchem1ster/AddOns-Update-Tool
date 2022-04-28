@@ -11,7 +11,6 @@ Full list of [AddOns-Update-Tool](README.md#addons-update-tool-index) project mo
     - [Bundle](dulwich/bundle.md#bundle)
     - [Cli](dulwich/cli.md#cli)
     - [Client](dulwich/client.md#client)
-    - [Clone](dulwich/clone.md#clone)
     - [Config](dulwich/config.md#config)
     - [Diff Tree](dulwich/diff_tree.md#diff-tree)
     - [Errors](dulwich/errors.md#errors)

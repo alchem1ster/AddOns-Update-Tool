@@ -1,6 +1,6 @@
 # Reflog
 
-> Auto-generated documentation for [dulwich.reflog](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py) module.
+> Auto-generated documentation for [dulwich.reflog](../../dulwich/reflog.py) module.
 
 Utilities for reading and generating reflogs.
 
@@ -12,7 +12,7 @@ Utilities for reading and generating reflogs.
 
 ## drop_reflog_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L100)
+[[find in source code]](../../dulwich/reflog.py#L100)
 
 ```python
 def drop_reflog_entry(f, index, rewrite=False):
@@ -29,7 +29,7 @@ Drop the specified reflog entry.
 
 ## format_reflog_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L38)
+[[find in source code]](../../dulwich/reflog.py#L38)
 
 ```python
 def format_reflog_line(
@@ -55,7 +55,7 @@ Generate a single reflog line.
 
 ## parse_reflog_line
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L68)
+[[find in source code]](../../dulwich/reflog.py#L68)
 
 ```python
 def parse_reflog_line(line):
@@ -71,7 +71,7 @@ Parse a reflog line.
 
 ## read_reflog
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/reflog.py#L89)
+[[find in source code]](../../dulwich/reflog.py#L89)
 
 ```python
 def read_reflog(f):

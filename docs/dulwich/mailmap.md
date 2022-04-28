@@ -1,6 +1,6 @@
 # Mailmap
 
-> Auto-generated documentation for [dulwich.mailmap](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/mailmap.py) module.
+> Auto-generated documentation for [dulwich.mailmap](../../dulwich/mailmap.py) module.
 
 Mailmap file reader.
 
@@ -14,7 +14,7 @@ Mailmap file reader.
 
 ## Mailmap
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/mailmap.py#L61)
+[[find in source code]](../../dulwich/mailmap.py#L61)
 
 ```python
 class Mailmap(object):
@@ -25,7 +25,7 @@ Class for accessing a mailmap file.
 
 ### Mailmap().add_entry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/mailmap.py#L70)
+[[find in source code]](../../dulwich/mailmap.py#L70)
 
 ```python
 def add_entry(canonical_identity, from_identity=None):
@@ -43,7 +43,7 @@ set.
 
 ### Mailmap.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/mailmap.py#L111)
+[[find in source code]](../../dulwich/mailmap.py#L111)
 
 ```python
 @classmethod
@@ -52,7 +52,7 @@ def from_path(path):
 
 ### Mailmap().lookup
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/mailmap.py#L91)
+[[find in source code]](../../dulwich/mailmap.py#L91)
 
 ```python
 def lookup(identity):
@@ -62,7 +62,7 @@ Lookup an identity in this mailmail.
 
 ## parse_identity
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/mailmap.py#L24)
+[[find in source code]](../../dulwich/mailmap.py#L24)
 
 ```python
 def parse_identity(text):
@@ -70,7 +70,7 @@ def parse_identity(text):
 
 ## read_mailmap
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/mailmap.py#L37)
+[[find in source code]](../../dulwich/mailmap.py#L37)
 
 ```python
 def read_mailmap(f):

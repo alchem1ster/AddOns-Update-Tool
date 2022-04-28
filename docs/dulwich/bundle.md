@@ -1,6 +1,6 @@
 # Bundle
 
-> Auto-generated documentation for [dulwich.bundle](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/bundle.py) module.
+> Auto-generated documentation for [dulwich.bundle](../../dulwich/bundle.py) module.
 
 Bundle format support.
 
@@ -11,7 +11,7 @@ Bundle format support.
 
 ## Bundle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/bundle.py#L28)
+[[find in source code]](../../dulwich/bundle.py#L28)
 
 ```python
 class Bundle(object):
@@ -19,7 +19,7 @@ class Bundle(object):
 
 ## read_bundle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/bundle.py#L88)
+[[find in source code]](../../dulwich/bundle.py#L88)
 
 ```python
 def read_bundle(f):
@@ -29,7 +29,7 @@ Read a bundle file.
 
 ## write_bundle
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/bundle.py#L98)
+[[find in source code]](../../dulwich/bundle.py#L98)
 
 ```python
 def write_bundle(f, bundle):

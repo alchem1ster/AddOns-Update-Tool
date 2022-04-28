@@ -1,6 +1,6 @@
 # Cli
 
-> Auto-generated documentation for [dulwich.cli](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py) module.
+> Auto-generated documentation for [dulwich.cli](../../dulwich/cli.py) module.
 
 Simple command-line interface to Dulwich>
 
@@ -105,7 +105,7 @@ a way to test Dulwich.
 
 ## Command
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L58)
+[[find in source code]](../../dulwich/cli.py#L58)
 
 ```python
 class Command(object):
@@ -115,7 +115,7 @@ A Dulwich subcommand.
 
 ### Command().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L61)
+[[find in source code]](../../dulwich/cli.py#L61)
 
 ```python
 def run(args):
@@ -125,7 +125,7 @@ Run the command.
 
 ## SuperCommand
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L581)
+[[find in source code]](../../dulwich/cli.py#L580)
 
 ```python
 class SuperCommand(Command):
@@ -137,7 +137,7 @@ class SuperCommand(Command):
 
 ### SuperCommand().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L585)
+[[find in source code]](../../dulwich/cli.py#L584)
 
 ```python
 def run(args):
@@ -145,7 +145,7 @@ def run(args):
 
 ## cmd_add
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L93)
+[[find in source code]](../../dulwich/cli.py#L93)
 
 ```python
 class cmd_add(Command):
@@ -157,7 +157,7 @@ class cmd_add(Command):
 
 ### cmd_add().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L94)
+[[find in source code]](../../dulwich/cli.py#L94)
 
 ```python
 def run(argv):
@@ -165,7 +165,7 @@ def run(argv):
 
 ## cmd_archive
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L66)
+[[find in source code]](../../dulwich/cli.py#L66)
 
 ```python
 class cmd_archive(Command):
@@ -177,7 +177,7 @@ class cmd_archive(Command):
 
 ### cmd_archive().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L67)
+[[find in source code]](../../dulwich/cli.py#L67)
 
 ```python
 def run(args):
@@ -185,7 +185,7 @@ def run(args):
 
 ## cmd_check_ignore
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L608)
+[[find in source code]](../../dulwich/cli.py#L607)
 
 ```python
 class cmd_check_ignore(Command):
@@ -197,7 +197,7 @@ class cmd_check_ignore(Command):
 
 ### cmd_check_ignore().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L609)
+[[find in source code]](../../dulwich/cli.py#L608)
 
 ```python
 def run(args):
@@ -205,7 +205,7 @@ def run(args):
 
 ## cmd_check_mailmap
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L619)
+[[find in source code]](../../dulwich/cli.py#L618)
 
 ```python
 class cmd_check_mailmap(Command):
@@ -217,7 +217,7 @@ class cmd_check_mailmap(Command):
 
 ### cmd_check_mailmap().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L620)
+[[find in source code]](../../dulwich/cli.py#L619)
 
 ```python
 def run(args):
@@ -225,7 +225,7 @@ def run(args):
 
 ## cmd_clone
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L242)
+[[find in source code]](../../dulwich/cli.py#L241)
 
 ```python
 class cmd_clone(Command):
@@ -237,7 +237,7 @@ class cmd_clone(Command):
 
 ### cmd_clone().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L243)
+[[find in source code]](../../dulwich/cli.py#L242)
 
 ```python
 def run(args):
@@ -245,7 +245,7 @@ def run(args):
 
 ## cmd_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L269)
+[[find in source code]](../../dulwich/cli.py#L268)
 
 ```python
 class cmd_commit(Command):
@@ -257,7 +257,7 @@ class cmd_commit(Command):
 
 ### cmd_commit().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L270)
+[[find in source code]](../../dulwich/cli.py#L269)
 
 ```python
 def run(args):
@@ -265,7 +265,7 @@ def run(args):
 
 ## cmd_commit_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L276)
+[[find in source code]](../../dulwich/cli.py#L275)
 
 ```python
 class cmd_commit_tree(Command):
@@ -277,7 +277,7 @@ class cmd_commit_tree(Command):
 
 ### cmd_commit_tree().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L277)
+[[find in source code]](../../dulwich/cli.py#L276)
 
 ```python
 def run(args):
@@ -285,7 +285,7 @@ def run(args):
 
 ## cmd_daemon
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L367)
+[[find in source code]](../../dulwich/cli.py#L366)
 
 ```python
 class cmd_daemon(Command):
@@ -297,7 +297,7 @@ class cmd_daemon(Command):
 
 ### cmd_daemon().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L368)
+[[find in source code]](../../dulwich/cli.py#L367)
 
 ```python
 def run(args):
@@ -305,7 +305,7 @@ def run(args):
 
 ## cmd_describe
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L669)
+[[find in source code]](../../dulwich/cli.py#L668)
 
 ```python
 class cmd_describe(Command):
@@ -317,7 +317,7 @@ class cmd_describe(Command):
 
 ### cmd_describe().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L670)
+[[find in source code]](../../dulwich/cli.py#L669)
 
 ```python
 def run(args):
@@ -325,7 +325,7 @@ def run(args):
 
 ## cmd_diff
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L173)
+[[find in source code]](../../dulwich/cli.py#L173)
 
 ```python
 class cmd_diff(Command):
@@ -337,7 +337,7 @@ class cmd_diff(Command):
 
 ### cmd_diff().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L174)
+[[find in source code]](../../dulwich/cli.py#L174)
 
 ```python
 def run(args):
@@ -345,7 +345,7 @@ def run(args):
 
 ## cmd_diff_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L310)
+[[find in source code]](../../dulwich/cli.py#L309)
 
 ```python
 class cmd_diff_tree(Command):
@@ -357,7 +357,7 @@ class cmd_diff_tree(Command):
 
 ### cmd_diff_tree().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L311)
+[[find in source code]](../../dulwich/cli.py#L310)
 
 ```python
 def run(args):
@@ -365,7 +365,7 @@ def run(args):
 
 ## cmd_dump_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L214)
+[[find in source code]](../../dulwich/cli.py#L213)
 
 ```python
 class cmd_dump_index(Command):
@@ -377,7 +377,7 @@ class cmd_dump_index(Command):
 
 ### cmd_dump_index().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L215)
+[[find in source code]](../../dulwich/cli.py#L214)
 
 ```python
 def run(args):
@@ -385,7 +385,7 @@ def run(args):
 
 ## cmd_dump_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L190)
+[[find in source code]](../../dulwich/cli.py#L189)
 
 ```python
 class cmd_dump_pack(Command):
@@ -397,7 +397,7 @@ class cmd_dump_pack(Command):
 
 ### cmd_dump_pack().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L191)
+[[find in source code]](../../dulwich/cli.py#L190)
 
 ```python
 def run(args):
@@ -405,7 +405,7 @@ def run(args):
 
 ## cmd_fetch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L127)
+[[find in source code]](../../dulwich/cli.py#L127)
 
 ```python
 class cmd_fetch(Command):
@@ -417,7 +417,7 @@ class cmd_fetch(Command):
 
 ### cmd_fetch().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L128)
+[[find in source code]](../../dulwich/cli.py#L128)
 
 ```python
 def run(args):
@@ -425,7 +425,7 @@ def run(args):
 
 ## cmd_fetch_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L109)
+[[find in source code]](../../dulwich/cli.py#L109)
 
 ```python
 class cmd_fetch_pack(Command):
@@ -437,7 +437,7 @@ class cmd_fetch_pack(Command):
 
 ### cmd_fetch_pack().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L110)
+[[find in source code]](../../dulwich/cli.py#L110)
 
 ```python
 def run(argv):
@@ -445,7 +445,7 @@ def run(argv):
 
 ## cmd_fsck
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L139)
+[[find in source code]](../../dulwich/cli.py#L139)
 
 ```python
 class cmd_fsck(Command):
@@ -457,7 +457,7 @@ class cmd_fsck(Command):
 
 ### cmd_fsck().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L140)
+[[find in source code]](../../dulwich/cli.py#L140)
 
 ```python
 def run(args):
@@ -465,7 +465,7 @@ def run(args):
 
 ## cmd_help
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L676)
+[[find in source code]](../../dulwich/cli.py#L675)
 
 ```python
 class cmd_help(Command):
@@ -477,7 +477,7 @@ class cmd_help(Command):
 
 ### cmd_help().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L677)
+[[find in source code]](../../dulwich/cli.py#L676)
 
 ```python
 def run(args):
@@ -485,7 +485,7 @@ def run(args):
 
 ## cmd_init
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L229)
+[[find in source code]](../../dulwich/cli.py#L228)
 
 ```python
 class cmd_init(Command):
@@ -497,7 +497,7 @@ class cmd_init(Command):
 
 ### cmd_init().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L230)
+[[find in source code]](../../dulwich/cli.py#L229)
 
 ```python
 def run(args):
@@ -505,7 +505,7 @@ def run(args):
 
 ## cmd_log
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L147)
+[[find in source code]](../../dulwich/cli.py#L147)
 
 ```python
 class cmd_log(Command):
@@ -517,7 +517,7 @@ class cmd_log(Command):
 
 ### cmd_log().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L148)
+[[find in source code]](../../dulwich/cli.py#L148)
 
 ```python
 def run(args):
@@ -525,7 +525,7 @@ def run(args):
 
 ## cmd_ls_files
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L661)
+[[find in source code]](../../dulwich/cli.py#L660)
 
 ```python
 class cmd_ls_files(Command):
@@ -537,7 +537,7 @@ class cmd_ls_files(Command):
 
 ### cmd_ls_files().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L662)
+[[find in source code]](../../dulwich/cli.py#L661)
 
 ```python
 def run(args):
@@ -545,7 +545,7 @@ def run(args):
 
 ## cmd_ls_remote
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L495)
+[[find in source code]](../../dulwich/cli.py#L494)
 
 ```python
 class cmd_ls_remote(Command):
@@ -557,7 +557,7 @@ class cmd_ls_remote(Command):
 
 ### cmd_ls_remote().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L496)
+[[find in source code]](../../dulwich/cli.py#L495)
 
 ```python
 def run(args):
@@ -565,7 +565,7 @@ def run(args):
 
 ## cmd_ls_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L506)
+[[find in source code]](../../dulwich/cli.py#L505)
 
 ```python
 class cmd_ls_tree(Command):
@@ -577,7 +577,7 @@ class cmd_ls_tree(Command):
 
 ### cmd_ls_tree().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L507)
+[[find in source code]](../../dulwich/cli.py#L506)
 
 ```python
 def run(args):
@@ -585,7 +585,7 @@ def run(args):
 
 ## cmd_pack_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L532)
+[[find in source code]](../../dulwich/cli.py#L531)
 
 ```python
 class cmd_pack_objects(Command):
@@ -597,7 +597,7 @@ class cmd_pack_objects(Command):
 
 ### cmd_pack_objects().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L533)
+[[find in source code]](../../dulwich/cli.py#L532)
 
 ```python
 def run(args):
@@ -605,7 +605,7 @@ def run(args):
 
 ## cmd_pull
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L554)
+[[find in source code]](../../dulwich/cli.py#L553)
 
 ```python
 class cmd_pull(Command):
@@ -617,7 +617,7 @@ class cmd_pull(Command):
 
 ### cmd_pull().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L555)
+[[find in source code]](../../dulwich/cli.py#L554)
 
 ```python
 def run(args):
@@ -625,7 +625,7 @@ def run(args):
 
 ## cmd_push
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L565)
+[[find in source code]](../../dulwich/cli.py#L564)
 
 ```python
 class cmd_push(Command):
@@ -637,7 +637,7 @@ class cmd_push(Command):
 
 ### cmd_push().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L566)
+[[find in source code]](../../dulwich/cli.py#L565)
 
 ```python
 def run(argv):
@@ -645,7 +645,7 @@ def run(argv):
 
 ## cmd_receive_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L441)
+[[find in source code]](../../dulwich/cli.py#L440)
 
 ```python
 class cmd_receive_pack(Command):
@@ -657,7 +657,7 @@ class cmd_receive_pack(Command):
 
 ### cmd_receive_pack().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L442)
+[[find in source code]](../../dulwich/cli.py#L441)
 
 ```python
 def run(args):
@@ -665,7 +665,7 @@ def run(args):
 
 ## cmd_remote
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L601)
+[[find in source code]](../../dulwich/cli.py#L600)
 
 ```python
 class cmd_remote(SuperCommand):
@@ -677,7 +677,7 @@ class cmd_remote(SuperCommand):
 
 ## cmd_remote_add
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L574)
+[[find in source code]](../../dulwich/cli.py#L573)
 
 ```python
 class cmd_remote_add(Command):
@@ -689,7 +689,7 @@ class cmd_remote_add(Command):
 
 ### cmd_remote_add().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L575)
+[[find in source code]](../../dulwich/cli.py#L574)
 
 ```python
 def run(args):
@@ -697,7 +697,7 @@ def run(args):
 
 ## cmd_repack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L346)
+[[find in source code]](../../dulwich/cli.py#L345)
 
 ```python
 class cmd_repack(Command):
@@ -709,7 +709,7 @@ class cmd_repack(Command):
 
 ### cmd_repack().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L347)
+[[find in source code]](../../dulwich/cli.py#L346)
 
 ```python
 def run(args):
@@ -717,7 +717,7 @@ def run(args):
 
 ## cmd_reset
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L353)
+[[find in source code]](../../dulwich/cli.py#L352)
 
 ```python
 class cmd_reset(Command):
@@ -729,7 +729,7 @@ class cmd_reset(Command):
 
 ### cmd_reset().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L354)
+[[find in source code]](../../dulwich/cli.py#L353)
 
 ```python
 def run(args):
@@ -737,7 +737,7 @@ def run(args):
 
 ## cmd_rev_list
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L319)
+[[find in source code]](../../dulwich/cli.py#L318)
 
 ```python
 class cmd_rev_list(Command):
@@ -749,7 +749,7 @@ class cmd_rev_list(Command):
 
 ### cmd_rev_list().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L320)
+[[find in source code]](../../dulwich/cli.py#L319)
 
 ```python
 def run(args):
@@ -757,7 +757,7 @@ def run(args):
 
 ## cmd_rm
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L101)
+[[find in source code]](../../dulwich/cli.py#L101)
 
 ```python
 class cmd_rm(Command):
@@ -769,7 +769,7 @@ class cmd_rm(Command):
 
 ### cmd_rm().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L102)
+[[find in source code]](../../dulwich/cli.py#L102)
 
 ```python
 def run(argv):
@@ -777,7 +777,7 @@ def run(argv):
 
 ## cmd_show
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L302)
+[[find in source code]](../../dulwich/cli.py#L301)
 
 ```python
 class cmd_show(Command):
@@ -789,7 +789,7 @@ class cmd_show(Command):
 
 ### cmd_show().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L303)
+[[find in source code]](../../dulwich/cli.py#L302)
 
 ```python
 def run(argv):
@@ -797,7 +797,7 @@ def run(argv):
 
 ## cmd_stash
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L652)
+[[find in source code]](../../dulwich/cli.py#L651)
 
 ```python
 class cmd_stash(SuperCommand):
@@ -809,7 +809,7 @@ class cmd_stash(SuperCommand):
 
 ## cmd_stash_list
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L628)
+[[find in source code]](../../dulwich/cli.py#L627)
 
 ```python
 class cmd_stash_list(Command):
@@ -821,7 +821,7 @@ class cmd_stash_list(Command):
 
 ### cmd_stash_list().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L629)
+[[find in source code]](../../dulwich/cli.py#L628)
 
 ```python
 def run(args):
@@ -829,7 +829,7 @@ def run(args):
 
 ## cmd_stash_pop
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L644)
+[[find in source code]](../../dulwich/cli.py#L643)
 
 ```python
 class cmd_stash_pop(Command):
@@ -841,7 +841,7 @@ class cmd_stash_pop(Command):
 
 ### cmd_stash_pop().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L645)
+[[find in source code]](../../dulwich/cli.py#L644)
 
 ```python
 def run(args):
@@ -849,7 +849,7 @@ def run(args):
 
 ## cmd_stash_push
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L636)
+[[find in source code]](../../dulwich/cli.py#L635)
 
 ```python
 class cmd_stash_push(Command):
@@ -861,7 +861,7 @@ class cmd_stash_push(Command):
 
 ### cmd_stash_push().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L637)
+[[find in source code]](../../dulwich/cli.py#L636)
 
 ```python
 def run(args):
@@ -869,7 +869,7 @@ def run(args):
 
 ## cmd_status
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L463)
+[[find in source code]](../../dulwich/cli.py#L462)
 
 ```python
 class cmd_status(Command):
@@ -881,7 +881,7 @@ class cmd_status(Command):
 
 ### cmd_status().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L464)
+[[find in source code]](../../dulwich/cli.py#L463)
 
 ```python
 def run(args):
@@ -889,7 +889,7 @@ def run(args):
 
 ## cmd_symbolic_ref
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L291)
+[[find in source code]](../../dulwich/cli.py#L290)
 
 ```python
 class cmd_symbolic_ref(Command):
@@ -901,7 +901,7 @@ class cmd_symbolic_ref(Command):
 
 ### cmd_symbolic_ref().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L292)
+[[find in source code]](../../dulwich/cli.py#L291)
 
 ```python
 def run(args):
@@ -909,7 +909,7 @@ def run(args):
 
 ## cmd_tag
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L328)
+[[find in source code]](../../dulwich/cli.py#L327)
 
 ```python
 class cmd_tag(Command):
@@ -921,7 +921,7 @@ class cmd_tag(Command):
 
 ### cmd_tag().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L329)
+[[find in source code]](../../dulwich/cli.py#L328)
 
 ```python
 def run(args):
@@ -929,7 +929,7 @@ def run(args):
 
 ## cmd_update_server_info
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L286)
+[[find in source code]](../../dulwich/cli.py#L285)
 
 ```python
 class cmd_update_server_info(Command):
@@ -941,7 +941,7 @@ class cmd_update_server_info(Command):
 
 ### cmd_update_server_info().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L287)
+[[find in source code]](../../dulwich/cli.py#L286)
 
 ```python
 def run(args):
@@ -949,7 +949,7 @@ def run(args):
 
 ## cmd_upload_pack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L452)
+[[find in source code]](../../dulwich/cli.py#L451)
 
 ```python
 class cmd_upload_pack(Command):
@@ -961,7 +961,7 @@ class cmd_upload_pack(Command):
 
 ### cmd_upload_pack().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L453)
+[[find in source code]](../../dulwich/cli.py#L452)
 
 ```python
 def run(args):
@@ -969,7 +969,7 @@ def run(args):
 
 ## cmd_web_daemon
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L401)
+[[find in source code]](../../dulwich/cli.py#L400)
 
 ```python
 class cmd_web_daemon(Command):
@@ -981,7 +981,7 @@ class cmd_web_daemon(Command):
 
 ### cmd_web_daemon().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L402)
+[[find in source code]](../../dulwich/cli.py#L401)
 
 ```python
 def run(args):
@@ -989,7 +989,7 @@ def run(args):
 
 ## cmd_write_tree
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L434)
+[[find in source code]](../../dulwich/cli.py#L433)
 
 ```python
 class cmd_write_tree(Command):
@@ -1001,7 +1001,7 @@ class cmd_write_tree(Command):
 
 ### cmd_write_tree().run
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L435)
+[[find in source code]](../../dulwich/cli.py#L434)
 
 ```python
 def run(args):
@@ -1009,7 +1009,7 @@ def run(args):
 
 ## main
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L747)
+[[find in source code]](../../dulwich/cli.py#L746)
 
 ```python
 def main(argv=None):
@@ -1017,7 +1017,7 @@ def main(argv=None):
 
 ## signal_int
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L48)
+[[find in source code]](../../dulwich/cli.py#L48)
 
 ```python
 def signal_int(signal, frame):
@@ -1025,7 +1025,7 @@ def signal_int(signal, frame):
 
 ## signal_quit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/cli.py#L52)
+[[find in source code]](../../dulwich/cli.py#L52)
 
 ```python
 def signal_quit(signal, frame):

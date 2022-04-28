@@ -1,6 +1,6 @@
 # Archive
 
-> Auto-generated documentation for [dulwich.archive](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/archive.py) module.
+> Auto-generated documentation for [dulwich.archive](../../dulwich/archive.py) module.
 
 Generates tarballs for Git trees.
 
@@ -11,7 +11,7 @@ Generates tarballs for Git trees.
 
 ## ChunkedBytesIO
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/archive.py#L35)
+[[find in source code]](../../dulwich/archive.py#L35)
 
 ```python
 class ChunkedBytesIO(object):
@@ -31,7 +31,7 @@ BytesIO(b''.join(list_of_bytestrings)) =~= ChunkedBytesIO(
 
 ### ChunkedBytesIO().read
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/archive.py#L50)
+[[find in source code]](../../dulwich/archive.py#L50)
 
 ```python
 def read(maxbytes=None):
@@ -39,7 +39,7 @@ def read(maxbytes=None):
 
 ## tar_stream
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/archive.py#L72)
+[[find in source code]](../../dulwich/archive.py#L72)
 
 ```python
 def tar_stream(store, tree, mtime, prefix=b'', format=''):

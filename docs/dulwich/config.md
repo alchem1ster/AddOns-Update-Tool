@@ -1,25 +1,33 @@
 # Config
 
-> Auto-generated documentation for [dulwich.config](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py) module.
+> Auto-generated documentation for [dulwich.config](../../dulwich/config.py) module.
 
 Reading and writing Git configuration files.
 
 - [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Config
-    - [CaseInsensitiveDict](#caseinsensitivedict)
-        - [CaseInsensitiveDict().get](#caseinsensitivedictget)
-        - [CaseInsensitiveDict.make](#caseinsensitivedictmake)
-        - [CaseInsensitiveDict().setdefault](#caseinsensitivedictsetdefault)
+    - [CaseInsensitiveOrderedMultiDict](#caseinsensitiveorderedmultidict)
+        - [CaseInsensitiveOrderedMultiDict().get](#caseinsensitiveorderedmultidictget)
+        - [CaseInsensitiveOrderedMultiDict().get_all](#caseinsensitiveorderedmultidictget_all)
+        - [CaseInsensitiveOrderedMultiDict().items](#caseinsensitiveorderedmultidictitems)
+        - [CaseInsensitiveOrderedMultiDict().keys](#caseinsensitiveorderedmultidictkeys)
+        - [CaseInsensitiveOrderedMultiDict.make](#caseinsensitiveorderedmultidictmake)
+        - [CaseInsensitiveOrderedMultiDict().setdefault](#caseinsensitiveorderedmultidictsetdefault)
+        - [CaseInsensitiveOrderedMultiDict().values](#caseinsensitiveorderedmultidictvalues)
     - [Config](#config)
         - [Config().get](#configget)
         - [Config().get_boolean](#configget_boolean)
+        - [Config().get_multivar](#configget_multivar)
         - [Config().has_section](#confighas_section)
+        - [Config().items](#configitems)
         - [Config().iteritems](#configiteritems)
         - [Config().itersections](#configitersections)
+        - [Config().sections](#configsections)
         - [Config().set](#configset)
     - [ConfigDict](#configdict)
         - [ConfigDict().get](#configdictget)
-        - [ConfigDict().iteritems](#configdictiteritems)
-        - [ConfigDict().itersections](#configdictitersections)
+        - [ConfigDict().get_multivar](#configdictget_multivar)
+        - [ConfigDict().items](#configdictitems)
+        - [ConfigDict().sections](#configdictsections)
         - [ConfigDict().set](#configdictset)
     - [ConfigFile](#configfile)
         - [ConfigFile.from_file](#configfilefrom_file)
@@ -41,17 +49,18 @@ TODO:
  * treat subsection names as case-insensitive for [branch.foo] style
    subsections
 
-## CaseInsensitiveDict
+## CaseInsensitiveOrderedMultiDict
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L65)
+[[find in source code]](../../dulwich/config.py#L62)
 
 ```python
-class CaseInsensitiveDict(OrderedDict):
+class CaseInsensitiveOrderedMultiDict(MutableMapping):
+    def __init__():
 ```
 
-### CaseInsensitiveDict().get
+### CaseInsensitiveOrderedMultiDict().get
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L95)
+[[find in source code]](../../dulwich/config.py#L115)
 
 ```python
 def get(key, default=SENTINAL):
@@ -61,18 +70,42 @@ def get(key, default=SENTINAL):
 
 - [SENTINAL](#sentinal)
 
-### CaseInsensitiveDict.make
+### CaseInsensitiveOrderedMultiDict().get_all
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L66)
+[[find in source code]](../../dulwich/config.py#L126)
+
+```python
+def get_all(key):
+```
+
+### CaseInsensitiveOrderedMultiDict().items
+
+[[find in source code]](../../dulwich/config.py#L92)
+
+```python
+def items():
+```
+
+### CaseInsensitiveOrderedMultiDict().keys
+
+[[find in source code]](../../dulwich/config.py#L89)
+
+```python
+def keys():
+```
+
+### CaseInsensitiveOrderedMultiDict.make
+
+[[find in source code]](../../dulwich/config.py#L67)
 
 ```python
 @classmethod
 def make(dict_in=None):
 ```
 
-### CaseInsensitiveDict().setdefault
+### CaseInsensitiveOrderedMultiDict().setdefault
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L106)
+[[find in source code]](../../dulwich/config.py#L132)
 
 ```python
 def setdefault(key, default=SENTINAL):
@@ -82,9 +115,17 @@ def setdefault(key, default=SENTINAL):
 
 - [SENTINAL](#sentinal)
 
+### CaseInsensitiveOrderedMultiDict().values
+
+[[find in source code]](../../dulwich/config.py#L98)
+
+```python
+def values():
+```
+
 ## Config
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L115)
+[[find in source code]](../../dulwich/config.py#L141)
 
 ```python
 class Config(object):
@@ -94,7 +135,7 @@ A Git configuration.
 
 ### Config().get
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L118)
+[[find in source code]](../../dulwich/config.py#L144)
 
 ```python
 def get(section, name):
@@ -105,7 +146,7 @@ Retrieve the contents of a configuration setting.
 #### Arguments
 
 - `section` - Tuple with section name and optional subsection namee
-- `subsection` - Subsection name
+- `name` - Variable name
 
 #### Returns
 
@@ -117,7 +158,7 @@ Contents of the setting
 
 ### Config().get_boolean
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L131)
+[[find in source code]](../../dulwich/config.py#L170)
 
 ```python
 def get_boolean(section, name, default=None):
@@ -139,9 +180,32 @@ Contents of the setting
 
 - `KeyError` - if the value is not set
 
+### Config().get_multivar
+
+[[find in source code]](../../dulwich/config.py#L157)
+
+```python
+def get_multivar(section, name):
+```
+
+Retrieve the contents of a multivar configuration setting.
+
+#### Arguments
+
+- `section` - Tuple with section name and optional subsection namee
+- `name` - Variable name
+
+#### Returns
+
+Contents of the setting as iterable
+
+#### Raises
+
+- `KeyError` - if the value is not set
+
 ### Config().has_section
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L181)
+[[find in source code]](../../dulwich/config.py#L243)
 
 ```python
 def has_section(name):
@@ -157,9 +221,27 @@ Check if a specified section exists.
 
 boolean indicating whether the section exists
 
+### Config().items
+
+[[find in source code]](../../dulwich/config.py#L203)
+
+```python
+def items(section):
+```
+
+Iterate over the configuration pairs for a specific section.
+
+#### Arguments
+
+- `section` - Tuple with section name and optional subsection namee
+
+#### Returns
+
+Iterator over (name, value) pairs
+
 ### Config().iteritems
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L164)
+[[find in source code]](../../dulwich/config.py#L213)
 
 ```python
 def iteritems(section):
@@ -177,10 +259,18 @@ Iterator over (name, value) pairs
 
 ### Config().itersections
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L174)
+[[find in source code]](../../dulwich/config.py#L228)
 
 ```python
 def itersections():
+```
+
+### Config().sections
+
+[[find in source code]](../../dulwich/config.py#L236)
+
+```python
+def sections():
 ```
 
 Iterate over the sections.
@@ -189,7 +279,7 @@ Returns: Iterator over section tuples
 
 ### Config().set
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L153)
+[[find in source code]](../../dulwich/config.py#L192)
 
 ```python
 def set(section, name, value):
@@ -202,11 +292,11 @@ Set a configuration value.
 - `section` - Tuple with section name and optional subsection namee
 - `name` - Name of the configuration value, including section
   and optional subsection
- - `value` - value of the setting
+- `value` - value of the setting
 
 ## ConfigDict
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L192)
+[[find in source code]](../../dulwich/config.py#L254)
 
 ```python
 class ConfigDict(Config, MutableMapping):
@@ -221,31 +311,39 @@ Git configuration stored in a dictionary.
 
 ### ConfigDict().get
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L251)
+[[find in source code]](../../dulwich/config.py#L324)
 
 ```python
 def get(section, name):
 ```
 
-### ConfigDict().iteritems
+### ConfigDict().get_multivar
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L270)
+[[find in source code]](../../dulwich/config.py#L313)
 
 ```python
-def iteritems(section):
+def get_multivar(section, name):
 ```
 
-### ConfigDict().itersections
+### ConfigDict().items
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L273)
+[[find in source code]](../../dulwich/config.py#L343)
 
 ```python
-def itersections():
+def items(section):
+```
+
+### ConfigDict().sections
+
+[[find in source code]](../../dulwich/config.py#L346)
+
+```python
+def sections():
 ```
 
 ### ConfigDict().set
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L262)
+[[find in source code]](../../dulwich/config.py#L335)
 
 ```python
 def set(section, name, value):
@@ -253,7 +351,7 @@ def set(section, name, value):
 
 ## ConfigFile
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L386)
+[[find in source code]](../../dulwich/config.py#L459)
 
 ```python
 class ConfigFile(ConfigDict):
@@ -268,7 +366,7 @@ A Git configuration file, like .git/config or ~/.gitconfig.
 
 ### ConfigFile.from_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L393)
+[[find in source code]](../../dulwich/config.py#L466)
 
 ```python
 @classmethod
@@ -279,7 +377,7 @@ Read configuration from a file-like object.
 
 ### ConfigFile.from_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L465)
+[[find in source code]](../../dulwich/config.py#L538)
 
 ```python
 @classmethod
@@ -290,7 +388,7 @@ Read configuration from a file on disk.
 
 ### ConfigFile().write_to_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L480)
+[[find in source code]](../../dulwich/config.py#L553)
 
 ```python
 def write_to_file(f: BinaryIO) -> None:
@@ -300,7 +398,7 @@ Write configuration to a file-like object.
 
 ### ConfigFile().write_to_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L473)
+[[find in source code]](../../dulwich/config.py#L546)
 
 ```python
 def write_to_path(path=None) -> None:
@@ -310,7 +408,7 @@ Write configuration to a file on disk.
 
 ## StackedConfig
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L562)
+[[find in source code]](../../dulwich/config.py#L635)
 
 ```python
 class StackedConfig(Config):
@@ -325,7 +423,7 @@ Configuration which reads from multiple config files..
 
 ### StackedConfig.default
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L572)
+[[find in source code]](../../dulwich/config.py#L645)
 
 ```python
 @classmethod
@@ -334,7 +432,7 @@ def default():
 
 ### StackedConfig.default_backends
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L576)
+[[find in source code]](../../dulwich/config.py#L649)
 
 ```python
 @classmethod
@@ -347,7 +445,7 @@ See git-config(1) for details on the files searched.
 
 ### StackedConfig().get
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L600)
+[[find in source code]](../../dulwich/config.py#L673)
 
 ```python
 def get(section, name):
@@ -355,7 +453,7 @@ def get(section, name):
 
 ### StackedConfig().set
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L610)
+[[find in source code]](../../dulwich/config.py#L683)
 
 ```python
 def set(section, name, value):
@@ -363,7 +461,7 @@ def set(section, name, value):
 
 ## get_win_system_paths
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L552)
+[[find in source code]](../../dulwich/config.py#L625)
 
 ```python
 def get_win_system_paths():
@@ -371,7 +469,7 @@ def get_win_system_paths():
 
 ## get_xdg_config_home_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L504)
+[[find in source code]](../../dulwich/config.py#L577)
 
 ```python
 def get_xdg_config_home_path(*path_segments):
@@ -379,7 +477,7 @@ def get_xdg_config_home_path(*path_segments):
 
 ## lower_key
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L55)
+[[find in source code]](../../dulwich/config.py#L52)
 
 ```python
 def lower_key(key):
@@ -387,7 +485,7 @@ def lower_key(key):
 
 ## parse_submodules
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/config.py#L616)
+[[find in source code]](../../dulwich/config.py#L689)
 
 ```python
 def parse_submodules(config):

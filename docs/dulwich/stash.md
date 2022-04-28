@@ -1,6 +1,6 @@
 # Stash
 
-> Auto-generated documentation for [dulwich.stash](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/stash.py) module.
+> Auto-generated documentation for [dulwich.stash](../../dulwich/stash.py) module.
 
 Stash handling.
 
@@ -14,7 +14,7 @@ Stash handling.
 
 ## Stash
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/stash.py#L38)
+[[find in source code]](../../dulwich/stash.py#L38)
 
 ```python
 class Stash(object):
@@ -31,7 +31,7 @@ Note that this doesn't currently update the working tree.
 
 ### Stash().drop
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/stash.py#L66)
+[[find in source code]](../../dulwich/stash.py#L66)
 
 ```python
 def drop(index):
@@ -41,7 +41,7 @@ Drop entry with specified index.
 
 ### Stash.from_repo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/stash.py#L61)
+[[find in source code]](../../dulwich/stash.py#L61)
 
 ```python
 @classmethod
@@ -52,7 +52,7 @@ Create a new stash from a Repo object.
 
 ### Stash().pop
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/stash.py#L77)
+[[find in source code]](../../dulwich/stash.py#L77)
 
 ```python
 def pop(index):
@@ -60,7 +60,7 @@ def pop(index):
 
 ### Stash().push
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/stash.py#L80)
+[[find in source code]](../../dulwich/stash.py#L80)
 
 ```python
 def push(committer=None, author=None, message=None):
@@ -76,7 +76,7 @@ Create a new stash.
 
 ### Stash().stashes
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/stash.py#L54)
+[[find in source code]](../../dulwich/stash.py#L54)
 
 ```python
 def stashes():

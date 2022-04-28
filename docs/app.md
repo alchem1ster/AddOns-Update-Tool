@@ -1,6 +1,6 @@
 # App
 
-> Auto-generated documentation for [app](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/app.py) module.
+> Auto-generated documentation for [app](../app.py) module.
 
 Main module CLI
 
@@ -10,7 +10,7 @@ Main module CLI
 
 ## main
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/app.py#L83)
+[[find in source code]](../app.py#L83)
 
 ```python
 def main():
@@ -20,7 +20,7 @@ Entry point
 
 ## process_args
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/app.py#L47)
+[[find in source code]](../app.py#L47)
 
 ```python
 def process_args():

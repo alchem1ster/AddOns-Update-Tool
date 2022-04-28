@@ -1,6 +1,6 @@
 # Fastexport
 
-> Auto-generated documentation for [dulwich.fastexport](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py) module.
+> Auto-generated documentation for [dulwich.fastexport](../../dulwich/fastexport.py) module.
 
 Fast export/import functionality.
 
@@ -23,7 +23,7 @@ Fast export/import functionality.
 
 ## GitFastExporter
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L48)
+[[find in source code]](../../dulwich/fastexport.py#L48)
 
 ```python
 class GitFastExporter(object):
@@ -34,7 +34,7 @@ Generate a fast-export output stream for Git objects.
 
 ### GitFastExporter().emit_blob
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L69)
+[[find in source code]](../../dulwich/fastexport.py#L69)
 
 ```python
 def emit_blob(blob):
@@ -42,7 +42,7 @@ def emit_blob(blob):
 
 ### GitFastExporter().emit_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L122)
+[[find in source code]](../../dulwich/fastexport.py#L122)
 
 ```python
 def emit_commit(commit, ref, base_tree=None):
@@ -50,7 +50,7 @@ def emit_commit(commit, ref, base_tree=None):
 
 ### GitFastExporter().print_cmd
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L57)
+[[find in source code]](../../dulwich/fastexport.py#L57)
 
 ```python
 def print_cmd(cmd):
@@ -58,7 +58,7 @@ def print_cmd(cmd):
 
 ## GitImportProcessor
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L128)
+[[find in source code]](../../dulwich/fastexport.py#L128)
 
 ```python
 class GitImportProcessor(processor.ImportProcessor):
@@ -69,7 +69,7 @@ An import processor that imports into a Git repository using Dulwich.
 
 ### GitImportProcessor().blob_handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L150)
+[[find in source code]](../../dulwich/fastexport.py#L150)
 
 ```python
 def blob_handler(cmd):
@@ -79,7 +79,7 @@ Process a BlobCommand.
 
 ### GitImportProcessor().checkpoint_handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L157)
+[[find in source code]](../../dulwich/fastexport.py#L157)
 
 ```python
 def checkpoint_handler(cmd):
@@ -89,7 +89,7 @@ Process a CheckpointCommand.
 
 ### GitImportProcessor().commit_handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L161)
+[[find in source code]](../../dulwich/fastexport.py#L161)
 
 ```python
 def commit_handler(cmd):
@@ -99,7 +99,7 @@ Process a CommitCommand.
 
 ### GitImportProcessor().feature_handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L263)
+[[find in source code]](../../dulwich/fastexport.py#L263)
 
 ```python
 def feature_handler(cmd):
@@ -109,7 +109,7 @@ Process a FeatureCommand.
 
 ### GitImportProcessor().import_stream
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L145)
+[[find in source code]](../../dulwich/fastexport.py#L145)
 
 ```python
 def import_stream(stream):
@@ -117,7 +117,7 @@ def import_stream(stream):
 
 ### GitImportProcessor().lookup_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L140)
+[[find in source code]](../../dulwich/fastexport.py#L140)
 
 ```python
 def lookup_object(objectish):
@@ -125,7 +125,7 @@ def lookup_object(objectish):
 
 ### GitImportProcessor().progress_handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L227)
+[[find in source code]](../../dulwich/fastexport.py#L227)
 
 ```python
 def progress_handler(cmd):
@@ -135,7 +135,7 @@ Process a ProgressCommand.
 
 ### GitImportProcessor().reset_handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L245)
+[[find in source code]](../../dulwich/fastexport.py#L245)
 
 ```python
 def reset_handler(cmd):
@@ -145,7 +145,7 @@ Process a ResetCommand.
 
 ### GitImportProcessor().tag_handler
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L254)
+[[find in source code]](../../dulwich/fastexport.py#L254)
 
 ```python
 def tag_handler(cmd):
@@ -155,7 +155,7 @@ Process a TagCommand.
 
 ## split_email
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/fastexport.py#L43)
+[[find in source code]](../../dulwich/fastexport.py#L43)
 
 ```python
 def split_email(text):

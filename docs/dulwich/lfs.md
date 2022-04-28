@@ -1,6 +1,6 @@
 # Lfs
 
-> Auto-generated documentation for [dulwich.lfs](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lfs.py) module.
+> Auto-generated documentation for [dulwich.lfs](../../dulwich/lfs.py) module.
 
 - [AddOns-Update-Tool](../README.md#addons-update-tool-index) / [Modules](../MODULES.md#addons-update-tool-modules) / [Dulwich](index.md#dulwich) / Lfs
     - [LFSStore](#lfsstore)
@@ -11,7 +11,7 @@
 
 ## LFSStore
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lfs.py#L26)
+[[find in source code]](../../dulwich/lfs.py#L26)
 
 ```python
 class LFSStore(object):
@@ -22,7 +22,7 @@ Stores objects on disk, indexed by SHA256.
 
 ### LFSStore.create
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lfs.py#L32)
+[[find in source code]](../../dulwich/lfs.py#L32)
 
 ```python
 @classmethod
@@ -31,7 +31,7 @@ def create(lfs_dir):
 
 ### LFSStore.from_repo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lfs.py#L40)
+[[find in source code]](../../dulwich/lfs.py#L40)
 
 ```python
 @classmethod
@@ -40,7 +40,7 @@ def from_repo(repo, create=False):
 
 ### LFSStore().open_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lfs.py#L50)
+[[find in source code]](../../dulwich/lfs.py#L50)
 
 ```python
 def open_object(sha):
@@ -50,7 +50,7 @@ Open an object by sha.
 
 ### LFSStore().write_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/lfs.py#L57)
+[[find in source code]](../../dulwich/lfs.py#L57)
 
 ```python
 def write_object(chunks):

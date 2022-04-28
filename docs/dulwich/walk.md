@@ -1,6 +1,6 @@
 # Walk
 
-> Auto-generated documentation for [dulwich.walk](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/walk.py) module.
+> Auto-generated documentation for [dulwich.walk](../../dulwich/walk.py) module.
 
 General implementation of walking commits and their contents.
 
@@ -11,7 +11,7 @@ General implementation of walking commits and their contents.
 
 ## WalkEntry
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/walk.py#L50)
+[[find in source code]](../../dulwich/walk.py#L50)
 
 ```python
 class WalkEntry(object):
@@ -22,7 +22,7 @@ Object encapsulating a single result from a walk.
 
 ### WalkEntry().changes
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/walk.py#L60)
+[[find in source code]](../../dulwich/walk.py#L60)
 
 ```python
 def changes(path_prefix=None):
@@ -42,7 +42,7 @@ Get the tree changes for this entry.
 
 ## Walker
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/walk.py#L239)
+[[find in source code]](../../dulwich/walk.py#L239)
 
 ```python
 class Walker(object):

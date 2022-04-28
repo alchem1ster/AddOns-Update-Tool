@@ -1,6 +1,6 @@
 # Repo
 
-> Auto-generated documentation for [dulwich.repo](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py) module.
+> Auto-generated documentation for [dulwich.repo](../../dulwich/repo.py) module.
 
 Repository access.
 
@@ -73,7 +73,7 @@ local disk (Repo).
 
 ## BaseRepo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L326)
+[[find in source code]](../../dulwich/repo.py#L329)
 
 ```python
 class BaseRepo(object):
@@ -82,10 +82,12 @@ class BaseRepo(object):
 
 Base class for a git repository.
 
-:ivar object_store: Dictionary-like object for accessing
-    the objects
-:ivar refs: Dictionary-like object with the refs in this
-    repository
+#### Attributes
+
+- `object_store` - Dictionary-like object for accessing
+  the objects
+- `refs` - Dictionary-like object with the refs in this
+  repository
 
 #### See also
 
@@ -94,7 +96,7 @@ Base class for a git repository.
 
 ### BaseRepo().\_\_contains\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L793)
+[[find in source code]](../../dulwich/repo.py#L797)
 
 ```python
 def __contains__(name: bytes) -> bool:
@@ -108,7 +110,7 @@ Check if a specific Git object or ref is present.
 
 ### BaseRepo().\_\_delitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L821)
+[[find in source code]](../../dulwich/repo.py#L825)
 
 ```python
 def __delitem__(name: bytes):
@@ -122,7 +124,7 @@ Remove a ref.
 
 ### BaseRepo().\_\_getitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L770)
+[[find in source code]](../../dulwich/repo.py#L774)
 
 ```python
 def __getitem__(name):
@@ -141,7 +143,7 @@ Retrieve a Git object by SHA1 or ref.
 
 ### BaseRepo().\_\_setitem\_\_
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L804)
+[[find in source code]](../../dulwich/repo.py#L808)
 
 ```python
 def __setitem__(name: bytes, value: Union[ShaFile, bytes]):
@@ -154,9 +156,13 @@ Set a ref.
 - `name` - ref name
 - `value` - Ref value - either a ShaFile object, or a hex sha
 
+#### See also
+
+- [ShaFile](objects.md#shafile)
+
 ### BaseRepo().do_commit
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L869)
+[[find in source code]](../../dulwich/repo.py#L873)
 
 ```python
 def do_commit(
@@ -177,7 +183,7 @@ def do_commit(
 
 Create a new commit.
 
-If not specified, `committer` and `author` default to
+If not specified, committer and author default to
 get_user_identity(..., 'COMMITTER')
 and get_user_identity(..., 'AUTHOR') respectively.
 
@@ -205,7 +211,7 @@ New commit SHA1
 
 ### BaseRepo().fetch
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L412)
+[[find in source code]](../../dulwich/repo.py#L416)
 
 ```python
 def fetch(target, determine_wants=None, progress=None, depth=None):
@@ -224,7 +230,7 @@ Fetch objects into another repository.
 
 ### BaseRepo().fetch_objects
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L463)
+[[find in source code]](../../dulwich/repo.py#L467)
 
 ```python
 def fetch_objects(
@@ -254,7 +260,7 @@ Fetch the missing objects required for a set of revisions.
 
 ### BaseRepo().fetch_pack_data
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L434)
+[[find in source code]](../../dulwich/repo.py#L438)
 
 ```python
 def fetch_pack_data(
@@ -284,7 +290,7 @@ Fetch the pack data required for a set of revisions.
 
 ### BaseRepo().generate_pack_data
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L552)
+[[find in source code]](../../dulwich/repo.py#L556)
 
 ```python
 def generate_pack_data(have, want, progress=None, ofs_delta=None):
@@ -301,7 +307,7 @@ Generate pack data objects for a set of wants/haves.
 
 ### BaseRepo().get_config
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L650)
+[[find in source code]](../../dulwich/repo.py#L654)
 
 ```python
 def get_config():
@@ -313,7 +319,7 @@ Returns: `ConfigFile` object for the ``.git/config`` file.
 
 ### BaseRepo().get_config_stack
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L673)
+[[find in source code]](../../dulwich/repo.py#L677)
 
 ```python
 def get_config_stack() -> 'StackedConfig':
@@ -329,7 +335,7 @@ Returns: `Config` instance for this repository
 
 ### BaseRepo().get_description
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L657)
+[[find in source code]](../../dulwich/repo.py#L661)
 
 ```python
 def get_description():
@@ -342,7 +348,7 @@ Returns: String with the description of the repository
 
 ### BaseRepo().get_graph_walker
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L569)
+[[find in source code]](../../dulwich/repo.py#L573)
 
 ```python
 def get_graph_walker(heads=None):
@@ -360,7 +366,7 @@ to find out which objects are present in this repository.
 
 ### BaseRepo().get_named_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L377)
+[[find in source code]](../../dulwich/repo.py#L381)
 
 ```python
 def get_named_file(path):
@@ -379,7 +385,7 @@ pointing to a file in that location.
 
 ### BaseRepo().get_object
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L619)
+[[find in source code]](../../dulwich/repo.py#L623)
 
 ```python
 def get_object(sha: bytes) -> ShaFile:
@@ -402,7 +408,7 @@ Retrieve the object with the specified SHA.
 
 ### BaseRepo().get_parents
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L637)
+[[find in source code]](../../dulwich/repo.py#L641)
 
 ```python
 def get_parents(sha: bytes, commit: Commit = None) -> List[bytes]:
@@ -425,7 +431,7 @@ will be returned instead.
 
 ### BaseRepo().get_peeled
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L717)
+[[find in source code]](../../dulwich/repo.py#L721)
 
 ```python
 def get_peeled(ref):
@@ -442,7 +448,7 @@ Get the peeled value of a ref.
 
 ### BaseRepo().get_refs
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L590)
+[[find in source code]](../../dulwich/repo.py#L594)
 
 ```python
 def get_refs() -> Dict[bytes, bytes]:
@@ -454,7 +460,7 @@ Returns: A ``dict`` mapping ref names to SHA1s
 
 ### BaseRepo().get_shallow
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L687)
+[[find in source code]](../../dulwich/repo.py#L691)
 
 ```python
 def get_shallow():
@@ -466,7 +472,7 @@ Returns: Set of shallow commits.
 
 ### BaseRepo().get_walker
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L731)
+[[find in source code]](../../dulwich/repo.py#L735)
 
 ```python
 def get_walker(include=None, *args, **kwargs):
@@ -500,7 +506,7 @@ Obtain a walker for this repository.
 
 ### BaseRepo().head
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L597)
+[[find in source code]](../../dulwich/repo.py#L601)
 
 ```python
 def head() -> bytes:
@@ -510,7 +516,7 @@ Return the SHA1 pointed at by HEAD.
 
 ### BaseRepo().open_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L403)
+[[find in source code]](../../dulwich/repo.py#L407)
 
 ```python
 def open_index():
@@ -525,7 +531,7 @@ Open the index for this repository.
 
 ### BaseRepo().parents_provider
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L630)
+[[find in source code]](../../dulwich/repo.py#L634)
 
 ```python
 def parents_provider():
@@ -533,7 +539,7 @@ def parents_provider():
 
 ### BaseRepo().set_description
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L665)
+[[find in source code]](../../dulwich/repo.py#L669)
 
 ```python
 def set_description(description):
@@ -547,7 +553,7 @@ Set the description for this repository.
 
 ### BaseRepo().update_shallow
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L698)
+[[find in source code]](../../dulwich/repo.py#L702)
 
 ```python
 def update_shallow(new_shallow, new_unshallow):
@@ -562,7 +568,7 @@ Update the list of shallow objects.
 
 ## InvalidUserIdentity
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L132)
+[[find in source code]](../../dulwich/repo.py#L132)
 
 ```python
 class InvalidUserIdentity(Exception):
@@ -573,7 +579,7 @@ User identity is not of the format 'user <email>'
 
 ## MemoryRepo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1636)
+[[find in source code]](../../dulwich/repo.py#L1701)
 
 ```python
 class MemoryRepo(BaseRepo):
@@ -591,7 +597,7 @@ those have a stronger dependency on the filesystem.
 
 ### MemoryRepo().get_config
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1709)
+[[find in source code]](../../dulwich/repo.py#L1774)
 
 ```python
 def get_config():
@@ -603,7 +609,7 @@ Returns: `ConfigFile` object.
 
 ### MemoryRepo().get_description
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1660)
+[[find in source code]](../../dulwich/repo.py#L1725)
 
 ```python
 def get_description():
@@ -611,7 +617,7 @@ def get_description():
 
 ### MemoryRepo().get_named_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1685)
+[[find in source code]](../../dulwich/repo.py#L1750)
 
 ```python
 def get_named_file(path, basedir=None):
@@ -630,7 +636,7 @@ pointing to a file in that location.
 
 ### MemoryRepo.init_bare
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1716)
+[[find in source code]](../../dulwich/repo.py#L1781)
 
 ```python
 @classmethod
@@ -648,7 +654,7 @@ Create a new bare repository in memory.
 
 ### MemoryRepo().open_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1701)
+[[find in source code]](../../dulwich/repo.py#L1766)
 
 ```python
 def open_index():
@@ -662,7 +668,7 @@ Fail to open index for this repo, since it is bare.
 
 ### MemoryRepo().set_description
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1657)
+[[find in source code]](../../dulwich/repo.py#L1722)
 
 ```python
 def set_description(description):
@@ -670,7 +676,7 @@ def set_description(description):
 
 ## ParentsProvider
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L308)
+[[find in source code]](../../dulwich/repo.py#L311)
 
 ```python
 class ParentsProvider(object):
@@ -679,7 +685,7 @@ class ParentsProvider(object):
 
 ### ParentsProvider().get_parents
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L314)
+[[find in source code]](../../dulwich/repo.py#L317)
 
 ```python
 def get_parents(commit_id, commit=None):
@@ -687,7 +693,7 @@ def get_parents(commit_id, commit=None):
 
 ## Repo
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1045)
+[[find in source code]](../../dulwich/repo.py#L1049)
 
 ```python
 class Repo(BaseRepo):
@@ -701,13 +707,23 @@ the path of the repository.
 
 To create a new repository, use the Repo.init class method.
 
+Note that a repository object may hold on to resources such
+as file handles for performance reasons; call .close() to free
+up those resources.
+
+#### Attributes
+
+- `path` *str* - Path to the working copy (if it exists) or repository control
+  directory (if the repository is bare)
+- `bare` *bool* - Whether this is a bare repository
+
 #### See also
 
 - [BaseRepo](#baserepo)
 
 ### Repo().clone
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1393)
+[[find in source code]](../../dulwich/repo.py#L1417)
 
 ```python
 def clone(
@@ -717,6 +733,8 @@ def clone(
     origin=b'origin',
     checkout=None,
     branch=None,
+    progress=None,
+    depth=None,
 ):
 ```
 
@@ -732,11 +750,13 @@ Clone this repository.
     cloned from this repository
   - `branch` - Optional branch or tag to be used as HEAD in the new repository
     instead of this repository's HEAD.
+  - `progress` - Optional progress function
+  - `depth` - Depth at which to fetch
 - `Returns` - Created repository as [Repo](#repo)
 
 ### Repo().close
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1609)
+[[find in source code]](../../dulwich/repo.py#L1674)
 
 ```python
 def close():
@@ -746,7 +766,7 @@ Close any files opened by this repository.
 
 ### Repo().commondir
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1176)
+[[find in source code]](../../dulwich/repo.py#L1190)
 
 ```python
 def commondir():
@@ -761,7 +781,7 @@ main working tree.
 
 ### Repo().controldir
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1172)
+[[find in source code]](../../dulwich/repo.py#L1186)
 
 ```python
 def controldir():
@@ -771,7 +791,7 @@ Return the path of the control directory.
 
 ### Repo.discover
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1151)
+[[find in source code]](../../dulwich/repo.py#L1165)
 
 ```python
 @classmethod
@@ -789,7 +809,7 @@ Git repository.
 
 ### Repo().get_blob_normalizer
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1619)
+[[find in source code]](../../dulwich/repo.py#L1684)
 
 ```python
 def get_blob_normalizer():
@@ -799,7 +819,7 @@ Return a BlobNormalizer object
 
 ### Repo().get_config
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1483)
+[[find in source code]](../../dulwich/repo.py#L1548)
 
 ```python
 def get_config() -> 'ConfigFile':
@@ -811,7 +831,7 @@ Returns: `ConfigFile` object for the ``.git/config`` file.
 
 ### Repo().get_description
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1498)
+[[find in source code]](../../dulwich/repo.py#L1563)
 
 ```python
 def get_description():
@@ -823,7 +843,7 @@ Returns: A string describing the repository or None.
 
 ### Repo().get_named_file
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1226)
+[[find in source code]](../../dulwich/repo.py#L1240)
 
 ```python
 def get_named_file(path, basedir=None):
@@ -844,7 +864,7 @@ pointing to a file in that location.
 
 ### Repo().has_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1266)
+[[find in source code]](../../dulwich/repo.py#L1280)
 
 ```python
 def has_index():
@@ -854,7 +874,7 @@ Check if an index is present.
 
 ### Repo().index_path
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1249)
+[[find in source code]](../../dulwich/repo.py#L1263)
 
 ```python
 def index_path():
@@ -864,7 +884,7 @@ Return path to the index file.
 
 ### Repo.init
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1535)
+[[find in source code]](../../dulwich/repo.py#L1600)
 
 ```python
 @classmethod
@@ -881,7 +901,7 @@ Create a new repository.
 
 ### Repo.init_bare
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1591)
+[[find in source code]](../../dulwich/repo.py#L1656)
 
 ```python
 @classmethod
@@ -899,7 +919,7 @@ Create a new bare repository.
 
 ### Repo().open_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1253)
+[[find in source code]](../../dulwich/repo.py#L1267)
 
 ```python
 def open_index() -> 'Index':
@@ -914,7 +934,7 @@ Open the index for this repository.
 
 ### Repo().reset_index
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1448)
+[[find in source code]](../../dulwich/repo.py#L1513)
 
 ```python
 def reset_index(tree=None):
@@ -928,7 +948,7 @@ Reset the index back to a specific tree.
 
 ### Repo().set_description
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1513)
+[[find in source code]](../../dulwich/repo.py#L1578)
 
 ```python
 def set_description(description):
@@ -942,7 +962,7 @@ Set the description for this repository.
 
 ### Repo().stage
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1272)
+[[find in source code]](../../dulwich/repo.py#L1286)
 
 ```python
 def stage(
@@ -958,7 +978,7 @@ Stage a set of paths.
 
 ### Repo().unstage
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1331)
+[[find in source code]](../../dulwich/repo.py#L1355)
 
 ```python
 def unstage(fs_paths: List[str]):
@@ -973,7 +993,7 @@ unstage specific file in the index
 
 ## UnsupportedVersion
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1038)
+[[find in source code]](../../dulwich/repo.py#L1042)
 
 ```python
 class UnsupportedVersion(Exception):
@@ -984,7 +1004,7 @@ Unsupported repository version.
 
 ## check_user_identity
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L215)
+[[find in source code]](../../dulwich/repo.py#L218)
 
 ```python
 def check_user_identity(identity):
@@ -1002,7 +1022,7 @@ Verify that a user identity is formatted correctly.
 
 ## get_user_identity
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L163)
+[[find in source code]](../../dulwich/repo.py#L166)
 
 ```python
 def get_user_identity(
@@ -1035,7 +1055,7 @@ A user identity
 
 ## parse_graftpoints
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L231)
+[[find in source code]](../../dulwich/repo.py#L234)
 
 ```python
 def parse_graftpoints(
@@ -1059,7 +1079,7 @@ https://git.wiki.kernel.org/index.php/GraftPoint
 
 ## read_gitfile
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L1023)
+[[find in source code]](../../dulwich/repo.py#L1027)
 
 ```python
 def read_gitfile(f):
@@ -1076,7 +1096,7 @@ The first line of the file should start with "gitdir: "
 
 ## serialize_graftpoints
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/repo.py#L264)
+[[find in source code]](../../dulwich/repo.py#L267)
 
 ```python
 def serialize_graftpoints(graftpoints: Dict[bytes, List[bytes]]) -> bytes:

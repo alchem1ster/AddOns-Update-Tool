@@ -1,6 +1,6 @@
 # Updater
 
-> Auto-generated documentation for [utils.updater](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/utils/updater.py) module.
+> Auto-generated documentation for [utils.updater](../../utils/updater.py) module.
 
 Ingame AddOns update and caching logic
 
@@ -10,7 +10,7 @@ Ingame AddOns update and caching logic
 
 ## AddOnsUpdater
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/utils/updater.py#L19)
+[[find in source code]](../../utils/updater.py#L19)
 
 ```python
 class AddOnsUpdater():
@@ -25,7 +25,7 @@ The base class of AddOns updating service
 
 ### AddOnsUpdater().install
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/utils/updater.py#L143)
+[[find in source code]](../../utils/updater.py#L147)
 
 ```python
 def install() -> None:

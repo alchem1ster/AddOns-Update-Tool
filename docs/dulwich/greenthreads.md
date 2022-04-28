@@ -1,6 +1,6 @@
 # Greenthreads
 
-> Auto-generated documentation for [dulwich.greenthreads](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/greenthreads.py) module.
+> Auto-generated documentation for [dulwich.greenthreads](../../dulwich/greenthreads.py) module.
 
 Utility module for querying an ObjectStore with gevent.
 
@@ -11,7 +11,7 @@ Utility module for querying an ObjectStore with gevent.
 
 ## GreenThreadsMissingObjectFinder
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/greenthreads.py#L68)
+[[find in source code]](../../dulwich/greenthreads.py#L68)
 
 ```python
 class GreenThreadsMissingObjectFinder(MissingObjectFinder):
@@ -37,7 +37,7 @@ except we use gevent to parallelize object retrieval.
 
 ## GreenThreadsObjectStoreIterator
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/greenthreads.py#L119)
+[[find in source code]](../../dulwich/greenthreads.py#L119)
 
 ```python
 class GreenThreadsObjectStoreIterator(ObjectStoreIterator):
@@ -55,7 +55,7 @@ except we use gevent to parallelize object retrieval.
 
 ### GreenThreadsObjectStoreIterator().retrieve
 
-[[find in source code]](https://github.com/alchem1ster/AddOns-Update-Tool/blob/main/dulwich/greenthreads.py#L131)
+[[find in source code]](../../dulwich/greenthreads.py#L131)
 
 ```python
 def retrieve(args):
