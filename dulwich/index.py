@@ -422,7 +422,7 @@ class Index(object):
             entry = self[path]
             return entry.sha, cleanup_mode(entry.mode)
 
-        for (name, mode, sha) in changes_from_tree(
+        for name, mode, sha in changes_from_tree(
             self._byname.keys(),
             lookup_entry,
             object_store,
@@ -527,7 +527,7 @@ def changes_from_tree(
     other_names = set(names)
 
     if tree is not None:
-        for (name, mode, sha) in object_store.iter_tree_contents(tree):
+        for name, mode, sha in object_store.iter_tree_contents(tree):
             try:
                 (other_sha, other_mode) = lookup_entry(name)
             except KeyError:

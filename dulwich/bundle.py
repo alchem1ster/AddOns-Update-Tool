@@ -114,7 +114,7 @@ def write_bundle(f, bundle):
             if value is not None:
                 f.write(b"=" + value.encode("utf-8"))
             f.write(b"\n")
-    for (obj_id, comment) in bundle.prerequisites:
+    for obj_id, comment in bundle.prerequisites:
         f.write(b"-%s %s\n" % (obj_id, comment.encode("utf-8")))
     for ref, obj_id in bundle.references.items():
         f.write(b"%s %s\n" % (obj_id, ref))

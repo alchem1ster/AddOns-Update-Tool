@@ -140,7 +140,7 @@ class cmd_fsck(Command):
     def run(self, args):
         opts, args = getopt(args, "", [])
         opts = dict(opts)
-        for (obj, msg) in porcelain.fsck("."):
+        for obj, msg in porcelain.fsck("."):
             print("%s: %s" % (obj, msg))
 
 

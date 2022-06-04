@@ -64,7 +64,7 @@ class Mailmap(object):
     def __init__(self, map=None):
         self._table = {}
         if map:
-            for (canonical_identity, from_identity) in map:
+            for canonical_identity, from_identity in map:
                 self.add_entry(canonical_identity, from_identity)
 
     def add_entry(self, canonical_identity, from_identity=None):
